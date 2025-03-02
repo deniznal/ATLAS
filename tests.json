@@ -1,0 +1,138 @@
+[
+        {
+            "stage": "Stage 1",
+            "order": 1,
+            "test": "Gas Amount Determination",
+            "temperature": "32°C/38°C/43°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 2",
+            "order": 2,
+            "test": "Pulldown",
+            "temperature": "32°C/38°C/43°C",
+            "humidity": "NORMAL",
+            "test_duration": "5 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 3,
+            "test": "Energy Efficiency",
+            "temperature": "32°C",
+            "humidity": "NORMAL",
+            "test_duration": "15 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 4,
+            "test": "Energy Efficiency",
+            "temperature": "16°C",
+            "humidity": "NORMAL",
+            "test_duration": "15 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 5,
+            "test": "Performance",
+            "temperature": "25°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 6,
+            "test": "Performance",
+            "temperature": "43°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 6,
+            "test": "Performance",
+            "temperature": "38°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 6,
+            "test": "Performance",
+            "temperature": "32°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 6,
+            "test": "Performance",
+            "temperature": "16°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 3",
+            "order": 6,
+            "test": "Performance",
+            "temperature": "10°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 4",
+            "order": 7,
+            "test": "Freezing Capacity",
+            "temperature": "25°C",
+            "humidity": "NORMAL",
+            "test_duration": "10 Day"
+        },
+        {
+            "stage": "Stage 4",
+            "order": 8,
+            "test": "Temperature Rise",
+            "temperature": "25°C",
+            "humidity": "NORMAL",
+            "test_duration": "5 Day"
+        },
+        {
+            "stage": "Stage 5",
+            "order": 9,
+            "test": "Consumer Usage",
+            "temperature": "10°C",
+            "humidity": "NORMAL",
+            "test_duration": "15 Day"
+        },
+        {
+            "stage": "Stage 5",
+            "order": 10,
+            "test": "Consumer Usage",
+            "temperature": "25°C",
+            "humidity": "85%",
+            "test_duration": "15 Day"
+        },
+        {
+            "stage": "Stage 5",
+            "order": 11,
+            "test": "Consumer Usage",
+            "temperature": "32°C",
+            "humidity": "85%",
+            "test_duration": "15 Day"
+        },
+        {
+            "stage": "Other",
+            "order": "-",
+            "test": "A Brand Customer Tests",
+            "temperature": "-",
+            "humidity": "NORMAL",
+            "test_duration": "15 Day"
+        },
+        {
+            "stage": "Other",
+            "order": "-",
+            "test": "Benchmark Tests",
+            "temperature": "-",
+            "humidity": "NORMAL",
+            "test_duration": "5 Day"
+        }
+    ]
