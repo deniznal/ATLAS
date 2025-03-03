@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Optional
+from typing import List
 import json
 
 @dataclass
@@ -27,9 +27,9 @@ class ProductTest:
 
 class TestManager:
     def __init__(self):
-        self.tests = []
+        self.tests : List[ProductTest] = []
 
-    def load_from_json(self, json_file:str):
+    def load_from_json(self, json_file: str) -> None:
         try:
             with open(json_file, 'r') as f:
                 tests_data = json.load(f)
@@ -48,7 +48,7 @@ class TestManager:
         except json.JSONDecodeError:
             print(f"Error: Invalid JSON format.")
 
-    def get_tests(self):
+    def get_tests(self) -> List[ProductTest]:
         return self.tests
 
 
