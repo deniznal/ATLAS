@@ -18,7 +18,6 @@ class Chamber:
 class ChamberManager:
     def __init__(self, json_file: str = "chambers.json"):
         self.chambers: List[Chamber] = []
-        self.load_from_json(json_file)
 
     def load_from_json(self, json_file: str) -> None:
         try:
