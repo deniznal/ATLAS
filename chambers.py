@@ -26,12 +26,12 @@ class ChamberManager:
                 chambers_data = json.load(f)
                 for chamber_data in chambers_data:
                     chamber = Chamber(
-                        chamber=chamber_data['CHAMBER'],
-                        station=chamber_data['STATION'],
-                        temperature_adjustment=chamber_data['TEMPERATURE_ADJUSTMENT'],
-                        set_value=chamber_data['SET_VALUE'],
-                        humidity_adjustment=chamber_data['HUMIDITY_ADJUSTMENT'],
-                        voltage_adjustment=chamber_data['VOLTAGE_ADJUSTMENT']
+                        chamber=chamber_data['chamber'],
+                        station=chamber_data['station'],
+                        temperature_adjustment=chamber_data['temperature_adjustment'],
+                        set_value=chamber_data['set_value'],
+                        humidity_adjustment=chamber_data['humidity_adjustment'],
+                        voltage_adjustment=chamber_data['voltage_adjustment']
                     )
                     self.chambers.append(chamber)
         except FileNotFoundError:
