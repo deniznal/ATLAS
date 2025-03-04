@@ -6,7 +6,8 @@ from Model.task_times import Task
 from gantt_chart import gantt_chart
 
 def main():
-    test_count: int = 5
+    test_count_per_chamber: int = 5
+    time_between_tests: int = 1 
 
     chamber_data_path: str = "Data/chambers.json"
     test_data_path: str = "Data/tests.json"
@@ -23,13 +24,13 @@ def main():
         schedule_list.append(Task(name=chamber.chamber, slots=[], tests=[], start=0))
 
     
-    for _ in range(test_count):
+    for _ in range(test_count_per_chamber):
         for task in schedule_list:
             test: ProductTest = random.choice(test_manager.tests)
             task.tests.append(test.test)
             test_duration: int = int(test.test_duration.split()[0])
             task.slots.append((task.start, test_duration))
-            task.start += test_duration + 1
+            task.start += test_duration + time_between_tests
 
     gantt_chart(schedule_list)
     
