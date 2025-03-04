@@ -55,7 +55,7 @@ class TestManager:
 
 if __name__ == "__main__":
     manager = TestManager()
-    manager.load_from_json("tests.json")
+    manager.load_from_json("Data/tests.json")
 
     for test in manager.get_tests():
         print(test)

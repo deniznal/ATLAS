@@ -49,7 +49,7 @@ class ChamberManager:
     
 if __name__ == "__main__":
     manager = ChamberManager()
-    manager.load_from_json("chambers.json")
+    manager.load_from_json("Data/chambers.json")
 
     for test in manager.chambers:
         print(test)
