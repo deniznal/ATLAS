@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List
-import json
+import pandas as pd
 
 @dataclass
 class ProductTest:
@@ -27,25 +27,24 @@ class ProductTest:
 
 class TestManager:
     def __init__(self):
-        self.tests : List[ProductTest] = []
+        self.tests: List[ProductTest] = []
 
     def load_from_json(self, json_file: str) -> None:
         try:
-            with open(json_file, 'r') as f:
-                tests_data = json.load(f)
-                for test_data in tests_data:
-                    test_data = ProductTest(
-                        stage=test_data['stage'],
-                        order=test_data['order'],
-                        test=test_data['test'],
-                        temperature=test_data['temperature'],
-                        humidity=test_data['humidity'],
-                        test_duration=test_data['test_duration']
-                    )
-                    self.tests.append(test_data)
+            df = pd.read_json(json_file)
+            for _, row in df.iterrows():
+                test = ProductTest(
+                    stage=row['stage'],
+                    order=row['order'],
+                    test=row['test'],
+                    temperature=row['temperature'],
+                    humidity=row['humidity'],
+                    test_duration=row['test_duration']
+                )
+                self.tests.append(test)
         except FileNotFoundError:
             print(f"Error: Could not find the JSON file.")
-        except json.JSONDecodeError:
+        except ValueError:
             print(f"Error: Invalid JSON format.")
 
     def get_tests(self) -> List[ProductTest]:

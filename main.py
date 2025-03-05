@@ -1,6 +1,5 @@
 import random
-from typing import Optional
-from Model.chambers import Chamber, ChamberManager
+from Model.chambers import ChamberManager
 from Model.product_tests import ProductTest, TestManager
 from Model.task_times import Task
 from gantt_chart import gantt_chart

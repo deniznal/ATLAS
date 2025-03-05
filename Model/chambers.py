@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Optional
-import json
+import pandas as pd
 
 
 @dataclass
@@ -21,21 +21,20 @@ class ChamberManager:
 
     def load_from_json(self, json_file: str) -> None:
         try:
-            with open(json_file, 'r') as f:
-                chambers_data = json.load(f)
-                for chamber_data in chambers_data:
-                    chamber = Chamber(
-                        chamber=chamber_data['chamber'],
-                        station=chamber_data['station'],
-                        temperature_adjustment=chamber_data['temperature_adjustment'],
-                        set_value=chamber_data['set_value'],
-                        humidity_adjustment=chamber_data['humidity_adjustment'],
-                        voltage_adjustment=chamber_data['voltage_adjustment']
-                    )
-                    self.chambers.append(chamber)
+            df = pd.read_json(json_file)
+            for _, row in df.iterrows():
+                chamber = Chamber(
+                    chamber=row['chamber'],
+                    station=row['station'],
+                    temperature_adjustment=row['temperature_adjustment'],
+                    set_value=row['set_value'],
+                    humidity_adjustment=row['humidity_adjustment'],
+                    voltage_adjustment=row['voltage_adjustment']
+                )
+                self.chambers.append(chamber)
         except FileNotFoundError:
             print(f"Error: Could not find the JSON file.")
-        except json.JSONDecodeError:
+        except ValueError:
             print(f"Error: Invalid JSON format.")
 
     def get_chamber_by_id(self, chamber_id: str) -> Optional[Chamber]:
