@@ -12,10 +12,10 @@ def main():
     chamber_data_path: str = "Data/chambers.json"
     test_data_path: str = "Data/tests.json"
 
-    chamber_manager : Optional[ChamberManager] = ChamberManager()
+    chamber_manager : ChamberManager = ChamberManager()
     chamber_manager.load_from_json(chamber_data_path)
 
-    test_manager : Optional[TestManager]= TestManager()
+    test_manager : TestManager = TestManager()
     test_manager.load_from_json(test_data_path)
 
     schedule_list: list[Task] = []

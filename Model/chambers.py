@@ -46,10 +46,3 @@ class ChamberManager:
 
     def get_chambers_by_station(self, station: int) -> List[Chamber]:
         return [chamber for chamber in self.chambers if chamber.station == station]
-    
-if __name__ == "__main__":
-    manager = ChamberManager()
-    manager.load_from_json("Data/chambers.json")
-
-    for test in manager.chambers:
-        print(test)

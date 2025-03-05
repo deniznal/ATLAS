@@ -50,12 +50,3 @@ class TestManager:
 
     def get_tests(self) -> List[ProductTest]:
         return self.tests
-
-
-
-if __name__ == "__main__":
-    manager = TestManager()
-    manager.load_from_json("Data/tests.json")
-
-    for test in manager.get_tests():
-        print(test)
