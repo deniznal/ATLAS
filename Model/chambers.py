@@ -11,6 +11,7 @@ class Chamber:
     set_value: str
     humidity_adjustment: str
     voltage_adjustment: str
+    #list_of_tests: List[int]
 
     def __str__(self) -> str:
         return f"Chamber {self.chamber} (Station {self.station})"

@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from typing import List
 import pandas as pd
 
+#sample count attribbute will be added to each object in the array
+
 @dataclass
 class ProductTest:
     stage: str
@@ -10,6 +12,7 @@ class ProductTest:
     temperature: str
     humidity: str
     test_duration: str
+    # which product will be applied
     
     def to_dict(self):
         return {

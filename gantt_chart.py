@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from typing import List
 from Model.task_times import Task
 import random
-
+# can we do dynamic filtering
 def gantt_chart(tasks: List[Task]) -> None:
     fig, ax = plt.subplots()
     yticks: List[int] = []
