@@ -1,6 +1,6 @@
 [
     {
-        "chamber": "T001",
+        "chamber": "CH01",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -8,7 +8,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T002",
+        "chamber": "CH02",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "38°C",
@@ -16,7 +16,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T003",
+        "chamber": "CH03",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -24,7 +24,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T004",
+        "chamber": "CH04",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "16°C",
@@ -32,7 +32,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T005",
+        "chamber": "CH05",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -40,7 +40,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T006",
+        "chamber": "CH06",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -48,7 +48,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T007",
+        "chamber": "CH07",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "25°C",
@@ -56,7 +56,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T008",
+        "chamber": "CH08",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "16°C",
@@ -64,7 +64,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T009",
+        "chamber": "CH09",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "16°C",
@@ -72,7 +72,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T010",
+        "chamber": "CH10",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -80,7 +80,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T011",
+        "chamber": "CH11",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "32°C %85 HUMIDITY",
@@ -88,7 +88,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T012",
+        "chamber": "CH12",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "10°C",
@@ -96,7 +96,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T013",
+        "chamber": "CH13",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "25°C %85 HUMIDITY",
@@ -104,7 +104,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T014",
+        "chamber": "CH14",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "43°C",
@@ -112,7 +112,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T015",
+        "chamber": "CH15",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -120,7 +120,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T016",
+        "chamber": "CH16",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -128,7 +128,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T017",
+        "chamber": "CH17",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "25°C",
@@ -136,7 +136,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T018",
+        "chamber": "CH18",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -144,7 +144,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T019",
+        "chamber": "CH19",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -152,7 +152,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T020",
+        "chamber": "CH20",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -160,7 +160,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T021",
+        "chamber": "CH21",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -168,7 +168,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T022",
+        "chamber": "CH22",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -176,7 +176,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T023",
+        "chamber": "CH23",
         "station": 6,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -184,7 +184,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T024",
+        "chamber": "CH24",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "16°C",
@@ -192,7 +192,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T025",
+        "chamber": "CH25",
         "station": 8,
         "temperature_adjustment": "YES",
         "set_value": "43°C",
@@ -200,7 +200,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T026",
+        "chamber": "CH26",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "43°C",
@@ -208,7 +208,7 @@
         "voltage_adjustment": "NO"
     },
     {
-        "chamber": "T027",
+        "chamber": "CH27",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "32°C",
@@ -216,7 +216,7 @@
         "voltage_adjustment": "YES"
     },
     {
-        "chamber": "T028",
+        "chamber": "CH28",
         "station": 12,
         "temperature_adjustment": "YES",
         "set_value": "16°C",
