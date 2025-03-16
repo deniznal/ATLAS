@@ -1,6 +1,7 @@
 import random
 from Model.chambers import ChamberManager
 from Model.product_tests import ProductTest, TestManager
+from Model.products import ProductsManager
 from Model.task_times import Task
 from gantt_chart import gantt_chart
 
@@ -10,12 +11,16 @@ def main():
 
     chamber_data_path: str = "Data/chambers.json"
     test_data_path: str = "Data/tests.json"
+    product_data_path: str = "Data/products.json"
 
     chamber_manager : ChamberManager = ChamberManager()
     chamber_manager.load_from_json(chamber_data_path)
 
     test_manager : TestManager = TestManager()
     test_manager.load_from_json(test_data_path)
+
+    product_manager : ProductsManager = ProductsManager()
+    product_manager.load_from_json(product_data_path)
 
     schedule_list: list[Task] = []
 
