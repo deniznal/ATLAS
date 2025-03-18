@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from typing import List
+from typing import List, Dict
 from Model.task_times import Task
 import random
 # can we do dynamic filtering
@@ -10,13 +10,22 @@ def gantt_chart(tasks: List[Task]) -> None:
 
     bar_height = 2  # Adjust the bar height
     bar_spacing = 4  # Adjust the spacing between bars
+    
+    # Create a color map for test names
+    test_colors: Dict[str, tuple] = {}
 
     for i, task in enumerate(tasks):
         for j, slot in enumerate(task.slots):
-            color = (random.random(), random.random(), random.random())
+            test_name = task.tests[j]
+            
+            # If this test doesn't have a color yet, assign one
+            if test_name not in test_colors:
+                test_colors[test_name] = (random.random(), random.random(), random.random())
+                
+            color = test_colors[test_name]
             ax.broken_barh([slot], (i * bar_spacing - bar_height / 2, bar_height), facecolors=(color,))
             start_time, duration = slot
-            ax.text(start_time + duration / 2, i * bar_spacing, task.tests[j], ha='center', va='center', color='white')
+            ax.text(start_time + duration / 2, i * bar_spacing, test_name, ha='center', va='center', color='white')
 
         yticks.append(i * bar_spacing)
         ylabels.append(task.name)

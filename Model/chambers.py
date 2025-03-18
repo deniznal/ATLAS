@@ -11,7 +11,7 @@ class Chamber:
     set_value: str
     humidity_adjustment: str
     voltage_adjustment: str
-    #list_of_tests: List[int]
+    list_of_tests: List[str]
 
     def __str__(self) -> str:
         return f"Chamber {self.chamber} (Station {self.station})"
@@ -30,7 +30,8 @@ class ChamberManager:
                     temperature_adjustment=row['temperature_adjustment'],
                     set_value=row['set_value'],
                     humidity_adjustment=row['humidity_adjustment'],
-                    voltage_adjustment=row['voltage_adjustment']
+                    voltage_adjustment=row['voltage_adjustment'],
+                    list_of_tests=[]
                 )
                 self.chambers.append(chamber)
         except FileNotFoundError:
