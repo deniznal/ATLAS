@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from typing import List, Dict
 from Model.task_times import Task
 import random
+from Model.product_tests import TestManager
 # can we do dynamic filtering
 def gantt_chart(tasks: List[Task]) -> None:
     fig, ax = plt.subplots()
@@ -11,8 +12,22 @@ def gantt_chart(tasks: List[Task]) -> None:
     bar_height = 2  # Adjust the bar height
     bar_spacing = 4  # Adjust the spacing between bars
     
+    # Load tests to get colors
+    test_mgr = TestManager()
+    test_mgr.load_from_json("Data/tests.json")
+    
     # Create a color map for test names
     test_colors: Dict[str, tuple] = {}
+    
+    # Get colors directly from tests
+    for test in test_mgr.tests:
+        if test.color:
+            # Try to use the color directly
+            try:
+                test_colors[test.test] = plt.cm.colors.to_rgb(test.color)
+            except:
+                # If matplotlib can't convert the color, use random
+                test_colors[test.test] = (random.random(), random.random(), random.random())
 
     for i, task in enumerate(tasks):
         for j, slot in enumerate(task.slots):

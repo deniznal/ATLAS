@@ -5,7 +5,8 @@
             "test": "Gas Amount Determination",
             "temperature": "32°C/38°C/43°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "blue"
         },
         {
             "stage": "Stage 2",
@@ -13,7 +14,8 @@
             "test": "Pulldown",
             "temperature": "32°C/38°C/43°C",
             "humidity": "NORMAL",
-            "test_duration": "5 Day"
+            "test_duration": "5 Day",
+            "color": "green"
         },
         {
             "stage": "Stage 3",
@@ -21,7 +23,8 @@
             "test": "Energy Efficiency",
             "temperature": "32°C",
             "humidity": "NORMAL",
-            "test_duration": "15 Day"
+            "test_duration": "15 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 3",
@@ -29,7 +32,8 @@
             "test": "Energy Efficiency",
             "temperature": "16°C",
             "humidity": "NORMAL",
-            "test_duration": "15 Day"
+            "test_duration": "15 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 3",
@@ -37,7 +41,8 @@
             "test": "Performance",
             "temperature": "25°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 3",
@@ -45,7 +50,8 @@
             "test": "Performance",
             "temperature": "43°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 3",
@@ -53,7 +59,8 @@
             "test": "Performance",
             "temperature": "38°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 3",
@@ -61,7 +68,8 @@
             "test": "Performance",
             "temperature": "32°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 3",
@@ -69,7 +77,8 @@
             "test": "Performance",
             "temperature": "16°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 3",
@@ -77,7 +86,8 @@
             "test": "Performance",
             "temperature": "10°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "orange"
         },
         {
             "stage": "Stage 4",
@@ -85,7 +95,8 @@
             "test": "Freezing Capacity",
             "temperature": "25°C",
             "humidity": "NORMAL",
-            "test_duration": "10 Day"
+            "test_duration": "10 Day",
+            "color": "red"
         },
         {
             "stage": "Stage 4",
@@ -93,7 +104,8 @@
             "test": "Temperature Rise",
             "temperature": "25°C",
             "humidity": "NORMAL",
-            "test_duration": "5 Day"
+            "test_duration": "5 Day",
+            "color": "red"
         },
         {
             "stage": "Stage 5",
@@ -101,7 +113,8 @@
             "test": "Consumer Usage",
             "temperature": "10°C",
             "humidity": "NORMAL",
-            "test_duration": "15 Day"
+            "test_duration": "15 Day",
+            "color": "purple"
         },
         {
             "stage": "Stage 5",
@@ -109,7 +122,8 @@
             "test": "Consumer Usage",
             "temperature": "25°C",
             "humidity": "85%",
-            "test_duration": "15 Day"
+            "test_duration": "15 Day",
+            "color": "purple"
         },
         {
             "stage": "Stage 5",
@@ -117,7 +131,8 @@
             "test": "Consumer Usage",
             "temperature": "32°C",
             "humidity": "85%",
-            "test_duration": "15 Day"
+            "test_duration": "15 Day",
+            "color": "purple"
         },
         {
             "stage": "Other",
@@ -125,7 +140,8 @@
             "test": "A Brand Customer Tests",
             "temperature": "-",
             "humidity": "NORMAL",
-            "test_duration": "15 Day"
+            "test_duration": "15 Day",
+            "color": "green"
         },
         {
             "stage": "Other",
@@ -133,6 +149,7 @@
             "test": "Benchmark Tests",
             "temperature": "-",
             "humidity": "NORMAL",
-            "test_duration": "5 Day"
+            "test_duration": "5 Day",
+            "color": "pink"
         }
     ]

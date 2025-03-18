@@ -12,6 +12,7 @@ class ProductTest:
     temperature: str
     humidity: str
     test_duration: str
+    color: str = None
     # which product will be applied
     
     def to_dict(self):
@@ -22,10 +23,11 @@ class ProductTest:
             "temperature": self.temperature,
             "humidity": self.humidity,
             "test_duration": self.test_duration,
+            "color": self.color
         }
 
     def __str__(self) -> str:
-        return f"Test(stage='{self.stage}', order={self.order}, test='{self.test}', temperature='{self.temperature}', humidity='{self.humidity}', test_duration='{self.test_duration}')"
+        return f"Test(stage='{self.stage}', order={self.order}, test='{self.test}', temperature='{self.temperature}', humidity='{self.humidity}', test_duration='{self.test_duration}', color='{self.color}')"
 
 
 class TestManager:
@@ -42,7 +44,8 @@ class TestManager:
                     test=row['test'],
                     temperature=row['temperature'],
                     humidity=row['humidity'],
-                    test_duration=row['test_duration']
+                    test_duration=row['test_duration'],
+                    color=row.get('color')  # Will be None if 'color' doesn't exist
                 )
                 self.tests.append(test)
         except FileNotFoundError:
