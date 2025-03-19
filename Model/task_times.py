@@ -2,7 +2,8 @@ from dataclasses import dataclass
 from typing import List, Tuple
 
 @dataclass
-class Task:
+class Task2:
+
     name: str
     #chamber: int
     #station: int

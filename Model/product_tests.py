@@ -6,20 +6,19 @@ import pandas as pd
 
 @dataclass
 class ProductTest:
-    stage: str
-    order: int
-    test: str
-    temperature: str
-    humidity: str
-    test_duration: str
+    stage: int
+    id: int
+    test_name: str
+    temperature: List[int]
+    humidity: int
+    test_duration: int
     color: str = None
-    # which product will be applied
     
     def to_dict(self):
         return {
             "stage": self.stage,
-            "order": self.order,
-            "test": self.test,
+            "order": self.id,
+            "test": self.test_name,
             "temperature": self.temperature,
             "humidity": self.humidity,
             "test_duration": self.test_duration,
@@ -27,7 +26,7 @@ class ProductTest:
         }
 
     def __str__(self) -> str:
-        return f"Test(stage='{self.stage}', order={self.order}, test='{self.test}', temperature='{self.temperature}', humidity='{self.humidity}', test_duration='{self.test_duration}', color='{self.color}')"
+        return f"Test(stage='{self.stage}', order={self.id}, test='{self.test_name}', temperature='{self.temperature}', humidity='{self.humidity}', test_duration='{self.test_duration}', color='{self.color}')"
 
 
 class TestManager:
@@ -38,13 +37,28 @@ class TestManager:
         try:
             df = pd.read_json(json_file)
             for _, row in df.iterrows():
+
+                temperature = [
+                    int(temp.replace("°C", "").strip())
+                    for temp in row['temperature'].split("/")
+                    if temp.strip() != "-"
+                ]
+
+                humidity = (
+                    int(row['humidity'].replace("%", "").strip())
+                    if "%" in row['humidity']
+                    else 100
+                )
+
+                test_duration = int(row['test_duration'].replace("Day", "").strip())
+
                 test = ProductTest(
-                    stage=row['stage'],
-                    order=row['order'],
-                    test=row['test'],
-                    temperature=row['temperature'],
-                    humidity=row['humidity'],
-                    test_duration=row['test_duration'],
+                    stage=int(row['stage'].replace("Stage ", "").strip()) if "Stage" in row["stage"] else -1,
+                    id=int(row['order']) if row['order'] != "-" else -1,
+                    test_name=row['test'],
+                    temperature=temperature,
+                    humidity=humidity,
+                    test_duration=test_duration,
                     color=row.get('color')  # Will be None if 'color' doesn't exist
                 )
                 self.tests.append(test)
