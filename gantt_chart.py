@@ -66,7 +66,7 @@ def gantt_chart(chambers: List[Chamber]) -> None:
                 ax.text(
                     start_time + duration/2,
                     y_position,
-                    task.test.test_name,
+                    task.test.test_name + " Product: " +str(task.product.id),
                     ha='center',
                     va='center'
                 )
