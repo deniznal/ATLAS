@@ -14,7 +14,7 @@ class Scheduler:
         self.product_tests = product_tests
 
     def is_compatible_with_chamber(self, test: ProductTest, product: Product, chamber: Chamber):
-        return True
+        #return True
         product_voltage_requirement: bool = 1 in product.voltage_requirements
         
         temperature_match: bool = False
@@ -25,7 +25,8 @@ class Scheduler:
                 break
         
         temperature_match: bool = temperature_match
-        return temperature_match and (product_voltage_requirement == 0 or chamber.voltage_adjustment == product_voltage_requirement)
+        #return temperature_match and (product_voltage_requirement == False or chamber.voltage_adjustment == product_voltage_requirement)
+        return temperature_match
         
     def get_station_last_task_time(self, chamber: Chamber, station_id: int) -> int:
         max_end_time = 0
@@ -47,7 +48,7 @@ class Scheduler:
                         task_end_time = task.start_time + task.duration
                         if max_end_time < task_end_time:
                             max_end_time = task_end_time
-        # print(f"max_end_time: {max_end_time}, current_stage: {current_stage}, current_test_id: {current_test_id}")
+        print(f"max_end_time: {max_end_time}, current_stage: {current_stage}, current_test_id: {current_test_id}")
         return max_end_time
     
     def find_available_slot(self, test: ProductTest, product: Product, min_start_time: int) -> tuple[Chamber, int, str, int]:
@@ -58,8 +59,7 @@ class Scheduler:
                 continue
 
             for station_id in range(len(chamber.list_of_tests)):
-                if self.get_station_last_task_time(chamber, station_id) >= min_start_time and self.get_station_last_task_time(chamber, station_id) <= task_start_time:
-                    task_start_time = self.get_station_last_task_time(chamber, station_id)
+                if self.get_station_last_task_time(chamber, station_id) <= min_start_time:
                     station_name = f"{chamber.name} - Station {station_id}"
                     # print(station_id)
                     return chamber, station_id, station_name
@@ -80,13 +80,7 @@ class Scheduler:
                     
                         if slot:
                             chamber, station_id, station_name = slot
-                            task = Task(
-                                test=test,
-                                start_time=min_start_time,
-                                product=product,
-                                duration=test.test_duration,
-                                station_name=station_name
-                            )
+                            task = Task(test=test, start_time=min_start_time, product=product, duration=test.test_duration, station_name=station_name)
                             Chamber.add_task_to_station(chamber, task, station_id)
                             assigned = True
                             print(f"Assigned {test.test_name} to {station_name} at time {min_start_time}")

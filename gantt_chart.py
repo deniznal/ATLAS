@@ -49,8 +49,8 @@ def gantt_chart(chambers: List[Chamber]) -> None:
                     test_colors[task.test.id] = (random.random(), random.random(), random.random())
 
                 color = test_colors[task.test.id]
-                start_time = task.start_time + 1
-                duration = task.duration + 1
+                start_time = task.start_time 
+                duration = task.duration
                 
                 # Update max_time for x-axis limit
                 max_time = max(max_time, start_time + duration)

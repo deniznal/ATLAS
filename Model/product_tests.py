@@ -53,8 +53,8 @@ class TestManager:
                 test_duration = int(row['test_duration'].replace("Day", "").strip())
 
                 test = ProductTest(
-                    stage=int(row['stage'].replace("Stage ", "").strip()) if "Stage" in row["stage"] else -1,
-                    id=int(row['order']) if row['order'] != "-" else -1,
+                    stage=int(row['stage'].replace("Stage ", "").strip()) if "Stage" in row["stage"] else 10,
+                    id=int(row['order']) if row['order'] != "-" else 12,
                     test_name=row['test'],
                     temperature=temperature,
                     humidity=humidity,

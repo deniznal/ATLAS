@@ -63,8 +63,8 @@ class ChamberManager:
             df = pd.read_json(json_file)
             for _, row in df.iterrows():
 
-                temp_value = ''.join([c for c in row['set_value'] if c.isdigit() or c == '°'])
-                temperature = int(temp_value.replace("°C", "").strip()) if "°C" in temp_value else None
+                temp_value = row['set_value']
+                temperature = int(temp_value[:2])
 
                 chamber = Chamber(
                     name=row['chamber'],
