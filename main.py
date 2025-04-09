@@ -5,11 +5,11 @@ from Model.products import ProductsManager
 #from Model.task_times import Task
 from Model.task import Task
 from gantt_chart import gantt_chart
+from gantt_chart_product import gantt_chart_product
 from Algorithm.scheduler import Scheduler
 
 def main():
-    test_count_per_chamber: int = 5
-    time_between_tests: int = 1 
+
 
     chamber_data_path: str = "Data/chambers.json"
     test_data_path: str = "Data/tests.json"
@@ -61,6 +61,9 @@ def main():
     #         task.start += test_duration + time_between_tests
 
     gantt_chart(chamber_manager.chambers)
+    
+    # Create product-based Gantt chart
+    gantt_chart_product(chamber_manager.chambers)
     
 
     # for test in test_manager.tests:
