@@ -1,226 +1,254 @@
 [
     {
-        "chamber": "CH01",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "NO"
+        "chamber":"CH01",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"25°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH02",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "38°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "YES"
+        "chamber":"CH02",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"25°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"YES",
+        "humidity_value":"85%"
     },
     {
-        "chamber": "CH03",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "YES"
+        "chamber":"CH03",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"25°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"YES",
+        "humidity_value":"85%"
     },
     {
-        "chamber": "CH04",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "16°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "YES"
+        "chamber":"CH04",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"32°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"YES",
+        "humidity_value":"85%"
     },
     {
-        "chamber": "CH05",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH05",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"25°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH06",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "NO"
+        "chamber":"CH06",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"32°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH07",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "25°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "NO"
+        "chamber":"CH07",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"25°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH08",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "16°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH08",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"32°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH09",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "16°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "NO"
+        "chamber":"CH09",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"16°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH10",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH10",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"32°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH11",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C %85 HUMIDITY",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH11",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"16°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH12",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "10°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH12",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"10°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH13",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "25°C %85 HUMIDITY",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH13",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"25°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH14",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "43°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH14",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"43°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH15",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH15",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"38°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH16",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH16",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"10°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH17",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "25°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH17",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"10°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH18",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH18",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"43°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH19",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH19",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"32°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH20",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH20",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"32°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH21",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH21",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"38°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH22",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH22",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"16°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH23",
-        "station": 6,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH23",
+        "station":6,
+        "temperature_adjustment":"YES",
+        "set_value":"43°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH24",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "16°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH24",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"43°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"NO",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH25",
-        "station": 8,
-        "temperature_adjustment": "YES",
-        "set_value": "43°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "YES"
+        "chamber":"CH25",
+        "station":8,
+        "temperature_adjustment":"YES",
+        "set_value":"16°C",
+        "humidity_adjustment":"YES",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH26",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "43°C",
-        "humidity_adjustment": "YES",
-        "voltage_adjustment": "NO"
+        "chamber":"CH26",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"43°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH27",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "32°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH27",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"10°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     },
     {
-        "chamber": "CH28",
-        "station": 12,
-        "temperature_adjustment": "YES",
-        "set_value": "16°C",
-        "humidity_adjustment": "NO",
-        "voltage_adjustment": "YES"
+        "chamber":"CH28",
+        "station":12,
+        "temperature_adjustment":"YES",
+        "set_value":"43°C",
+        "humidity_adjustment":"NO",
+        "voltage_adjustment":"YES",
+        "humidity_value":"40%"
     }
 ]
