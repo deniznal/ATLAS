@@ -1,0 +1,23 @@
+SchedulerVer2 Pseudocode:
+
+Class SchedulerVer2:
+    - chambers: List of Chamber objects
+    - product_tests: List of ProductTest objects
+
+    Method __init__(chambers, product_tests):
+        - Initialize chambers and product_tests
+
+    Method least_test_required_product(products):
+        - Sort products by the sum of their tests
+        - For each product in sorted products:
+            - For each test and sample_count in product.tests:
+                - Get the corresponding ProductTest object
+                - For each sample in sample_count:
+                    - Sort chambers by their most available station time
+                    - For each chamber in sorted chambers:
+                        - If chamber is suitable for the test:
+                            - Get the most available station ID and time
+                            - Create a Task with test, start_time, duration, product, and station_name
+                            - If task is successfully added to the chamber's station:
+                                - Break the loop
+        - Return the list of chambers 
