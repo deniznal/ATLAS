@@ -2,8 +2,6 @@ from dataclasses import dataclass
 from typing import List
 import pandas as pd
 
-#sample count attribbute will be added to each object in the array
-
 @dataclass
 class ProductTest:
     stage: int
@@ -47,7 +45,7 @@ class TestManager:
                 humidity = (
                     int(row['humidity'].replace("%", "").strip())
                     if "%" in row['humidity']
-                    else 100
+                    else 40
                 )
 
                 test_duration = int(row['test_duration'].replace("Day", "").strip())
