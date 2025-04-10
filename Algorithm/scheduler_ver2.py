@@ -17,14 +17,13 @@ class SchedulerVer2:
 
     def least_test_required_product(self, products: List[Product]):
 
-        sorted_products = list(range(len(products)))
-        sorted_products = sorted(sorted_products, key = lambda x: sum(products[x].tests))
+        products = sorted(products, key = lambda x: sum(x.tests))
 
-        for i in sorted_products:
+        for product in products:
 
-            for test, sample_count in enumerate(products[i].tests):
+            for test, sample_count in enumerate(product.tests):
                 test_obj : ProductTest = self.product_tests[test]
-                for count in range(sample_count):
+                for _ in range(sample_count):
                     most_available_chamber_sorted = sorted(self.chambers, key=lambda chamber: chamber.get_most_available_station_and_time()[1])
                     for chamber in most_available_chamber_sorted:
                         if chamber.is_test_suitable(test_obj):
@@ -33,7 +32,7 @@ class SchedulerVer2:
                                 test = test_obj,
                                 start_time = chamber.list_of_tests_ver2[station_id].endtime,
                                 duration = test_obj.test_duration,
-                                product = products[i],
+                                product = product,
                                 station_name = chamber.name,
                                 )
                             if chamber.add_task_to_station_ver2(task, station_id):
