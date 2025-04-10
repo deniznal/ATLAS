@@ -30,6 +30,9 @@ def main():
 
     scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
     scheduler.least_test_required_product(product_manager.products)
+    
+    for chamber in chamber_manager.chambers:
+        chamber.make_gant_chartable()
    
     gantt_chart(chamber_manager.chambers)
     

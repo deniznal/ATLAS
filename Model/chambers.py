@@ -78,6 +78,10 @@ class Chamber:
             print(f"Error: Station {station_id} does not exist in chamber {self.name}.")
             return False
         
+    def make_gant_chartable(self):
+        for index, schedule in enumerate(self.list_of_tests_ver2):
+            self.list_of_tests[index] = schedule.tasks
+        
     def get_unavailable_station_periods(self, station_id:int):
         if station_id < self.station:
             periods :List[Tuple[int, int]] = []
