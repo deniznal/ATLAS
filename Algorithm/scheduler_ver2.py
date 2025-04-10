@@ -22,21 +22,22 @@ class SchedulerVer2:
 
         for i in sorted_products:
 
-            for test in products[i].tests:
+            for test, sample_count in enumerate(products[i].tests):
                 test_obj : ProductTest = self.product_tests[test]
-                most_available_chamber_sorted = sorted(self.chambers, key=lambda chamber: chamber.get_most_available_station_and_time()[1])
-                for chamber in most_available_chamber_sorted:
-                    if chamber.is_test_suitable(test_obj):
-                        station_id, _ = chamber.get_most_available_station_and_time()
-                        task = Task(
-                            test = test_obj,
-                            start_time = chamber.list_of_tests_ver2[station_id].endtime,
-                            duration = test_obj.test_duration,
-                            product = products[i],
-                            station_name = chamber.name,
-                            )
-                        if chamber.add_task_to_station_ver2(task, station_id):
-                            break
+                for count in range(sample_count):
+                    most_available_chamber_sorted = sorted(self.chambers, key=lambda chamber: chamber.get_most_available_station_and_time()[1])
+                    for chamber in most_available_chamber_sorted:
+                        if chamber.is_test_suitable(test_obj):
+                            station_id, _ = chamber.get_most_available_station_and_time()
+                            task = Task(
+                                test = test_obj,
+                                start_time = chamber.list_of_tests_ver2[station_id].endtime,
+                                duration = test_obj.test_duration,
+                                product = products[i],
+                                station_name = chamber.name,
+                                )
+                            if chamber.add_task_to_station_ver2(task, station_id):
+                                break
         return self.chambers
 
     
