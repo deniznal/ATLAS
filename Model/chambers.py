@@ -51,11 +51,9 @@ class Chamber:
     def is_test_suitable(self, product_test: ProductTest) -> bool:
             
         if self.temperature not in product_test.temperature:
-            print(f"Error: Chamber temperature {self.temperature}°C is not suitable for test {product_test.test_name} which requires {product_test.temperature}°C.")
             return False
             
         if product_test.humidity != self.humidity:
-            print(f"Error: Test {product_test} humidity requirement does not match chamber {self.name}.")
             return False
             
         return True

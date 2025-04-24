@@ -26,7 +26,7 @@ def main():
     # scheduler.first_come_first_served(product_manager.products)
 
     scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
-    scheduler.least_test_required_product(product_manager.products)
+    scheduler.shortest_due_time(product_manager.products)
     
     for chamber in chamber_manager.chambers:
         chamber.make_gant_chartable()

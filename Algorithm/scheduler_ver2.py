@@ -25,6 +25,7 @@ class SchedulerVer2:
                 test_obj : ProductTest = self.product_tests[test]
                 for _ in range(sample_count):
                     most_available_chamber_sorted = sorted(self.chambers, key=lambda chamber: chamber.get_most_available_station_and_time()[1])
+                    test_done : bool = False
                     for chamber in most_available_chamber_sorted:
                         if chamber.is_test_suitable(test_obj):
                             station_id, _ = chamber.get_most_available_station_and_time()
@@ -36,8 +37,38 @@ class SchedulerVer2:
                                 station_name = chamber.name,
                                 )
                             if chamber.add_task_to_station_ver2(task, station_id):
+                                test_done = True
                                 break
+                    if not test_done:
+                        print(f"Error: No suitable chamber found for test {test_obj.name} of product {product.name}.")
         return self.chambers
 
+    def shortest_due_time(self, products: List[Product]):
+
+        products = sorted(products, key = lambda x: x.due_time)
+
+        for product in products:
+
+            for test, sample_count in enumerate(product.tests):
+                test_obj : ProductTest = self.product_tests[test]
+                for _ in range(sample_count):
+                    most_available_chamber_sorted = sorted(self.chambers, key=lambda chamber: chamber.get_most_available_station_and_time()[1])
+                    test_done : bool = False
+                    for chamber in most_available_chamber_sorted:
+                        if chamber.is_test_suitable(test_obj):
+                            station_id, _ = chamber.get_most_available_station_and_time()
+                            task = Task(
+                                test = test_obj,
+                                start_time = chamber.list_of_tests_ver2[station_id].endtime,
+                                duration = test_obj.test_duration,
+                                product = product,
+                                station_name = chamber.name,
+                                )
+                            if chamber.add_task_to_station_ver2(task, station_id):
+                                test_done = True
+                                break
+                    if not test_done:
+                        print(f"Error: No suitable chamber found for test {test_obj.name} of product {product.name}.")
+        return self.chambers
     
 
