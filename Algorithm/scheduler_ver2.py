@@ -46,6 +46,7 @@ class SchedulerVer2:
     def shortest_due_time(self, products: List[Product]):
 
         products = sorted(products, key = lambda x: x.due_time)
+        tardinesses = [0] * len(products)
 
         for product in products:
 
@@ -64,11 +65,19 @@ class SchedulerVer2:
                                 product = product,
                                 station_name = chamber.name,
                                 )
+                            tardinesses[products.index(product)] += max(0, task.start_time - product.due_time)
                             if chamber.add_task_to_station_ver2(task, station_id):
                                 test_done = True
                                 break
                     if not test_done:
-                        print(f"Error: No suitable chamber found for test {test_obj.name} of product {product.name}.")
+                        print(f"Error: No suitable chamber found for test {test_obj.test_name} of product {product.id}.")
+        
+        for ind, tardiness in enumerate(tardinesses):
+            if tardiness > 0:
+                print(f"Product {products[ind]} Tardiness: {tardiness}")
+        else:
+            print("All products are on time.")
+
         return self.chambers
     
 
