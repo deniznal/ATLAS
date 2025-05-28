@@ -4,7 +4,7 @@ from Model.product_tests import TestManager
 from Model.products import ProductsManager
 from gantt_chart import gantt_chart
 from gantt_chart_product import gantt_chart_product
-
+from Algorithm.scheduler import Scheduler
 
 def main():
 
@@ -22,14 +22,14 @@ def main():
     product_manager : ProductsManager = ProductsManager()
     product_manager.load_from_json(product_data_path, product_due_time_path)
 
-    # scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
-    # scheduler.first_come_first_served(product_manager.products)
+    scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
+    scheduler.first_come_first_served(product_manager.products)
 
-    scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
-    scheduler.shortest_due_time(product_manager.products)
+    # scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
+    # scheduler.shortest_due_time(product_manager.products)
     
-    for chamber in chamber_manager.chambers:
-        chamber.make_gant_chartable()
+    # for chamber in chamber_manager.chambers:
+    #     chamber.make_gant_chartable()
    
     gantt_chart(chamber_manager.chambers)
     
