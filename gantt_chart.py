@@ -38,10 +38,13 @@ def gantt_chart(chambers: List[Chamber]) -> None:
     y_position = 0
     max_time = 0
 
+    output_lines_txt = [] # Initialize the list to store output lines of the txt file.
+
     # Iterate through chambers and their stations
     for chamber in chambers:
         for station_id, station_tasks in enumerate(chamber.list_of_tests, start=1):
             station_name = f"{chamber.name} - Station {station_id}"
+            output_lines_txt.append(f"Chamber - Station: {station_name}") # Add station name to output
             
             for task in station_tasks:
                 # Assign color for the test
@@ -70,11 +73,14 @@ def gantt_chart(chambers: List[Chamber]) -> None:
                     ha='center',
                     va='center'
                 )
+                # Add task details to output
+                output_lines_txt.append(f"  Task: {task.test.test_name}, Product: {task.product.id}, Start Time: {start_time}, Duration: {duration}")
 
             # Add labels for the station
             yticks.append(y_position)
             ylabels.append(station_name)
             y_position += bar_spacing
+            output_lines_txt.append("") # Add an empty line after each station's tasks
 
     # Set up the axes
     ax.set_yticks(yticks)
@@ -91,3 +97,8 @@ def gantt_chart(chambers: List[Chamber]) -> None:
     # Adjust layout to prevent label cutoff
     plt.tight_layout()
     plt.show()
+
+    # Write the output to a text file
+    with open("gantt_chart_output.txt", "w") as f:
+        for line in output_lines_txt:
+            f.write(line + "\n")

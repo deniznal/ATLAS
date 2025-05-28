@@ -1,0 +1,562 @@
+Product 8 - Sample 1
+  Task: Performance, Start Time: 0, Duration: 10
+  Task: Temperature Rise, Start Time: 0, Duration: 5
+
+Product 8 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 8 - Sample 3
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 8 - Sample 4
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 8 - Sample 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 8 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 8 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 6 - Sample 1
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 6 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 6 - Sample 3
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 6 - Sample 4
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 6 - Sample 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 6 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 6 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 14 - Sample 1
+  Task: Performance, Start Time: 0, Duration: 10
+  Task: Temperature Rise, Start Time: 0, Duration: 5
+
+Product 14 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 14 - Sample 3
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 14 - Sample 4
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 14 - Sample 5
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 14 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 14 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 17 - Sample 1
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 17 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 17 - Sample 3
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 17 - Sample 4
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 17 - Sample 5
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 17 - Sample 6
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 17 - Sample 7
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 17 - Sample 8
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 17 - Sample 9
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 17 - Sample 10
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 12 - Sample 1
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 12 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 12 - Sample 3
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 12 - Sample 4
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 12 - Sample 5
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 12 - Sample 6
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 12 - Sample 7
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 12 - Sample 8
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 1 - Sample 1
+  Task: Temperature Rise, Start Time: 0, Duration: 5
+
+Product 1 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 1 - Sample 3
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 1 - Sample 4
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 1 - Sample 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 1 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 1 - Sample 7
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 1 - Sample 8
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 1 - Sample 9
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 18 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 18 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 18 - Sample 3
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 18 - Sample 4
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 18 - Sample 5
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 18 - Sample 6
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 18 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 10 - Sample 1
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 10 - Sample 2
+  Task: Consumer Usage, Start Time: 30, Duration: 15
+
+Product 10 - Sample 3
+  Task: Freezing Capacity, Start Time: 0, Duration: 10
+
+Product 10 - Sample 4
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+  Task: Performance, Start Time: 5, Duration: 10
+
+Product 10 - Sample 5
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 10 - Sample 6
+  Task: Performance, Start Time: 0, Duration: 10
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 10 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 10 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 10 - Sample 9
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 9 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 9 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 9 - Sample 3
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 9 - Sample 4
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 9 - Sample 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 9 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 9 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 3 - Sample 1
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 3 - Sample 2
+  Task: Consumer Usage, Start Time: 30, Duration: 15
+
+Product 3 - Sample 3
+  Task: Freezing Capacity, Start Time: 0, Duration: 10
+
+Product 3 - Sample 4
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 3 - Sample 5
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 3 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 3 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 3 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 0 - Sample 1
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 0 - Sample 2
+  Task: Consumer Usage, Start Time: 30, Duration: 15
+
+Product 0 - Sample 3
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 0 - Sample 4
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 0 - Sample 5
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 0 - Sample 6
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 0 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 0 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 16 - Sample 1
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 16 - Sample 2
+  Task: Consumer Usage, Start Time: 30, Duration: 15
+
+Product 16 - Sample 3
+  Task: Pulldown, Start Time: 5, Duration: 5
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 16 - Sample 4
+  Task: Performance, Start Time: 5, Duration: 10
+
+Product 16 - Sample 5
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 16 - Sample 6
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 16 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 16 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 11 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 11 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 11 - Sample 3
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 11 - Sample 4
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 11 - Sample 5
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 11 - Sample 6
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 11 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 7 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 7 - Sample 2
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 7 - Sample 3
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 7 - Sample 4
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 7 - Sample 5
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 7 - Sample 6
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 7 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 7 - Sample 8
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 13 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 13 - Sample 2
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 13 - Sample 3
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 13 - Sample 4
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 13 - Sample 5
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 13 - Sample 6
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 13 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 13 - Sample 8
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 5 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 5 - Sample 2
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 5 - Sample 3
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 5 - Sample 4
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 5 - Sample 5
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 5 - Sample 6
+  Task: Performance, Start Time: 5, Duration: 10
+
+Product 5 - Sample 7
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 5 - Sample 8
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 15 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 15 - Sample 2
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 15 - Sample 3
+  Task: Freezing Capacity, Start Time: 0, Duration: 10
+
+Product 15 - Sample 4
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+  Task: Performance, Start Time: 5, Duration: 10
+
+Product 15 - Sample 5
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 15 - Sample 6
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 15 - Sample 7
+  Task: Performance, Start Time: 0, Duration: 10
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 15 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 4 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 4 - Sample 2
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 4 - Sample 3
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 4 - Sample 4
+  Task: Performance, Start Time: 5, Duration: 10
+
+Product 4 - Sample 5
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 4 - Sample 6
+  Task: Performance, Start Time: 0, Duration: 10
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 4 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+
+Product 4 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 4 - Sample 9
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 19 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 19 - Sample 2
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 19 - Sample 3
+  Task: Performance, Start Time: 0, Duration: 10
+  Task: Temperature Rise, Start Time: 0, Duration: 5
+
+Product 19 - Sample 4
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 19 - Sample 5
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 19 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 19 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 19 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+
+Product 2 - Sample 1
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 2 - Sample 2
+  Task: Consumer Usage, Start Time: 15, Duration: 15
+
+Product 2 - Sample 3
+  Task: Performance, Start Time: 0, Duration: 10
+  Task: Freezing Capacity, Start Time: 0, Duration: 10
+
+Product 2 - Sample 4
+  Task: Energy Efficiency, Start Time: 5, Duration: 15
+
+Product 2 - Sample 5
+  Task: Performance, Start Time: 10, Duration: 10
+
+Product 2 - Sample 6
+  Task: Consumer Usage, Start Time: 0, Duration: 15
+
+Product 2 - Sample 7
+  Task: Energy Efficiency, Start Time: 0, Duration: 15
+  Task: Performance, Start Time: 0, Duration: 10
+
+Product 2 - Sample 8
+  Task: Gas Amount Determination, Start Time: 0, Duration: 10
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+  Task: Pulldown, Start Time: 0, Duration: 5
+

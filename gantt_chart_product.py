@@ -38,6 +38,8 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
     y_position = 0
     max_time = 0
 
+    output_lines_txt = [] # Initialize the list to store output lines of the txt file.
+
     # Group tasks by product and sample
     product_samples = defaultdict(lambda: defaultdict(list))
     
@@ -58,6 +60,7 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
         sample_counter = 1
         for sample_id, tasks in samples.items():
             product_label = f"Product {product_id} - Sample {sample_counter}"
+            output_lines_txt.append(product_label) # Add product label to output
             sample_counter += 1
             
             for task in tasks:
@@ -87,11 +90,14 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
                     ha='center',
                     va='center'
                 )
+                # Add task details to output
+                output_lines_txt.append(f"  Task: {task.test.test_name}, Start Time: {start_time}, Duration: {duration}")
 
             # Add labels for the product sample
             yticks.append(y_position)
             ylabels.append(product_label)
             y_position += bar_spacing
+            output_lines_txt.append("") # Add an empty line after each product sample's tasks
 
     # Set up the axes
     ax.set_yticks(yticks)
@@ -107,3 +113,8 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
     # Adjust layout to prevent label cutoff
     plt.tight_layout()
     plt.show()
+
+    # Write the output to a text file
+    with open("gantt_chart_product_output.txt", "w") as f:
+        for line in output_lines_txt:
+            f.write(line + "\n")
