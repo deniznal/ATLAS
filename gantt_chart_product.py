@@ -86,12 +86,12 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
                 ax.text(
                     start_time + duration/2,
                     y_position,
-                    task.test.test_name,
+                    task.test.test_name + " (Chamber: " + str(task.station_name) + ")",
                     ha='center',
                     va='center'
                 )
                 # Add task details to output
-                output_lines_txt.append(f"  Task: {task.test.test_name}, Start Time: {start_time}, Duration: {duration}")
+                output_lines_txt.append(f"  Task: {task.test.test_name}, (Chamber: {task.station_name}), Start Time: {start_time}, Duration: {duration}")
 
             # Add labels for the product sample
             yticks.append(y_position)
