@@ -22,17 +22,17 @@ def main():
     product_manager : ProductsManager = ProductsManager()
     product_manager.load_from_json(product_data_path, product_due_time_path)
 
-    scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
-    scheduler.first_come_first_served(product_manager.products)
+    # scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
+    # chart = scheduler.first_come_first_served(product_manager.products)
 
-    # fcfs = FirstComeFirstServe(chamber_manager.chambers, test_manager.tests)
+    #fcfs = FirstComeFirstServe(chamber_manager.chambers, test_manager.tests)
     # chmabe= fcfs.run_algorithm(product_manager.products)
 
-    # scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
-    # scheduler.shortest_due_time(product_manager.products)
+    scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
+    scheduler.shortest_due_time(product_manager.products)
     
-    # for chamber in chamber_manager.chambers:
-    #     chamber.make_gant_chartable()
+    for chamber in chamber_manager.chambers:
+        chamber.make_gant_chartable()
    
     gantt_chart(chamber_manager.chambers)
     

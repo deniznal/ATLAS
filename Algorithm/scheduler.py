@@ -251,4 +251,36 @@ class Scheduler:
                     self.schedule_single_test(test, product, test_index, sample_number)
 
         return self.chambers
+    
+    def least_test_required_product(self, products: List[Product]) -> List[Chamber]:
+
+        products = sorted(products, key = lambda x: sum(x.tests))
+
+        for product in products:
+            # Sort tests by stage
+            test_indices = list(range(len(product.tests)))
+            test_indices.sort(key=lambda i: self.product_tests[i].stage)
+            
+            for test_index in test_indices:
+                test = self.product_tests[test_index]
+                for sample_number in range(product.tests[test_index]):
+                    self.schedule_single_test(test, product, test_index, sample_number)
+
+        return self.chambers
+    
+    def shortest_due_time(self, products: List[Product]) -> List[Chamber]:
+
+        products = sorted(products, key = lambda x: x.due_time)
+
+        for product in products:
+            # Sort tests by stage
+            test_indices = list(range(len(product.tests)))
+            test_indices.sort(key=lambda i: self.product_tests[i].stage)
+            
+            for test_index in test_indices:
+                test = self.product_tests[test_index]
+                for sample_number in range(product.tests[test_index]):
+                    self.schedule_single_test(test, product, test_index, sample_number)
+
+        return self.chambers
                 

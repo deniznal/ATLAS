@@ -67,9 +67,12 @@ class Chamber:
             return False
 
     def is_test_suitable(self, product_test: ProductTest) -> bool:
-        if self.temperature not in product_test.temperature:
+        """Check if the chamber is suitable for the given test."""
+        # Check temperature compatibility
+        if not any(self.temperature == temp for temp in product_test.temperature):
             return False
             
+        # Check humidity compatibility
         if product_test.humidity != self.humidity:
             return False
             
