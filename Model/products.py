@@ -1,12 +1,12 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Tuple
 import pandas as pd
 
-@dataclass
+@dataclass(frozen=True)  # Make the class immutable and automatically implement __hash__
 class Product:
     id: int
-    tests: List[int]
-    voltage_requirements: List[int]
+    tests: Tuple[int, ...]  # Tuple of integers
+    voltage_requirements: Tuple[int, ...]  # Tuple of integers
     due_time: int = 0
 
     def __str__(self) -> str:
@@ -28,8 +28,8 @@ class ProductsManager:
             for product, voltage, due_time in zip(row['product_matrix'], row['voltage_requirements'], row_due_time["product_due_time"]):
                 product = Product(
                     id=index,
-                    tests=product,
-                    voltage_requirements=voltage,
+                    tests=tuple(product),  # Convert list to tuple
+                    voltage_requirements=tuple(voltage),  # Convert list to tuple
                     due_time=due_time
                 )
                 self.products.append(product)

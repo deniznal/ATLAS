@@ -25,6 +25,9 @@ def main():
     scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
     scheduler.first_come_first_served(product_manager.products)
 
+    # fcfs = FirstComeFirstServe(chamber_manager.chambers, test_manager.tests)
+    # chmabe= fcfs.run_algorithm(product_manager.products)
+
     # scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
     # scheduler.shortest_due_time(product_manager.products)
     
@@ -34,7 +37,8 @@ def main():
     gantt_chart(chamber_manager.chambers)
     
     gantt_chart_product(chamber_manager.chambers)
-    
+
+
 
 
 if __name__ == "__main__":

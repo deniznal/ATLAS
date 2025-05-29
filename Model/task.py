@@ -9,7 +9,8 @@ class Task:
     duration: int
     product: Product
     station_name: str
+    sample_number: int = 0  # 0-based index of the sample
 
     def __str__(self) -> str:
-        return f"Task {self.test} (Start {self.start_time}, Duration {self.duration})"
+        return f"Task {self.test} (Sample {self.sample_number + 1}, Start {self.start_time}, Duration {self.duration})"
     

@@ -34,11 +34,29 @@ class Chamber:
         return f"Chamber {self.name} (Station {self.station})"
     
     def get_most_available_station_and_time(self) -> Tuple[int, int]:
-
         indexed_stations = list(enumerate(self.list_of_tests_ver2))
         most_available_station = min(indexed_stations, key=lambda x: x[1].endtime)[0]
-
         return (most_available_station, self.list_of_tests_ver2[most_available_station].endtime)
+
+    def get_station_last_task_time(self, station_id: int) -> int:
+        """
+        Get the end time of the last task in a specific station.
+        
+        Args:
+            station_id: The ID of the station within the chamber
+            
+        Returns:
+            int: The end time of the last task in the station
+        """
+        if station_id >= self.station:
+            print(f"Error: Station {station_id} does not exist in chamber {self.name}.")
+            return 0
+            
+        max_end_time = 0
+        for task in self.list_of_tests[station_id]:
+            end_time = task.start_time + task.duration
+            max_end_time = max(max_end_time, end_time)
+        return max_end_time
 
     def add_task_to_station_ver2(self, task: Task, station_id: int) -> bool:
         if station_id < self.station:
@@ -49,7 +67,6 @@ class Chamber:
             return False
 
     def is_test_suitable(self, product_test: ProductTest) -> bool:
-            
         if self.temperature not in product_test.temperature:
             return False
             
@@ -72,6 +89,7 @@ class Chamber:
                     return True
                 
             self.list_of_tests[station_id].insert(-1,task)
+            return True
         else:
             print(f"Error: Station {station_id} does not exist in chamber {self.name}.")
             return False
