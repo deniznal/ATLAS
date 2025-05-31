@@ -142,7 +142,7 @@ class SchedulerVer2:
         for product in products:
             # Sort tests by stage
             test_indices = list(range(len(product.tests)))
-            test_indices.sort(key=lambda i: self.product_tests[i].stage)
+            # test_indices.sort(key=lambda i: self.product_tests[i].stage)
             
             for test_index in test_indices:
                 test = self.product_tests[test_index]
@@ -190,7 +190,7 @@ class SchedulerVer2:
         for product in products:
             # Sort tests by stage
             test_indices = list(range(len(product.tests)))
-            test_indices.sort(key=lambda i: self.product_tests[i].stage)
+            # test_indices.sort(key=lambda i: self.product_tests[i].stage)
             
             for test_index in test_indices:
                 test = self.product_tests[test_index]

@@ -5,6 +5,8 @@ from Model.products import ProductsManager
 from gantt_chart import gantt_chart
 from gantt_chart_product import gantt_chart_product
 from Algorithm.scheduler import Scheduler
+from Test.test_schedule_output_validator import ScheduleOutputValidator
+
 
 def main():
 
@@ -23,7 +25,7 @@ def main():
     product_manager.load_from_json(product_data_path, product_due_time_path)
 
     # scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
-    # chart = scheduler.first_come_first_served(product_manager.products)
+    # chart = scheduler.first_come_first_serve
 
     #fcfs = FirstComeFirstServe(chamber_manager.chambers, test_manager.tests)
     # chmabe= fcfs.run_algorithm(product_manager.products)
@@ -34,9 +36,23 @@ def main():
     for chamber in chamber_manager.chambers:
         chamber.make_gant_chartable()
    
-    gantt_chart(chamber_manager.chambers)
+    # gantt_chart(chamber_manager.chambers)
     
-    gantt_chart_product(chamber_manager.chambers)
+    # gantt_chart_product(chamber_manager.chambers)
+
+    # Initialize the validator
+    validator = ScheduleOutputValidator(chamber_manager.chambers, test_manager.tests, product_manager.products)
+
+    # Validate an output file
+    errors = validator.validate_output_file("gantt_chart_output.txt")
+
+    # Check if there are any errors
+    if errors:
+        print("Validation errors found:")
+        for error in errors:
+            print(f"- {error}")
+    else:
+        print("Schedule is valid!")
 
 
 
