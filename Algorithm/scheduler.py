@@ -226,6 +226,55 @@ class Scheduler:
             print(f"No suitable chamber found for test {test.test_name} (Sample {available_sample + 1}) at or after time {min_start_time}. Increasing base_increase by {self.base_days_between_tests}")
             base_increase += self.base_days_between_tests
 
+    def measure_tardiness(self, products: List[Product], algorithm_name: str) -> Tuple[List[int], bool]:
+        """
+        Measure tardiness for all products and generate a detailed report.
+        
+        Args:
+            products: List of products to measure tardiness for
+            algorithm_name: Name of the algorithm used for scheduling
+            
+        Returns:
+            Tuple[List[int], bool]: List of tardiness values and whether all products are on time
+        """
+        tardinesses = [0] * len(products)
+        all_on_time = True
+        total_tardiness = 0
+
+        for product in products:
+            product_tasks = []
+            for chamber in self.chambers:
+                for station in chamber.list_of_tests:
+                    for task in station:
+                        if task.product == product:
+                            product_tasks.append(task)
+            
+            if product_tasks:
+                last_task_end = max(task.start_time + task.duration for task in product_tasks)
+                tardiness = max(0, last_task_end - product.due_time)
+                tardinesses[products.index(product)] = tardiness
+                total_tardiness += tardiness
+                if tardiness > 0:
+                    all_on_time = False
+
+        # Print tardiness information
+        print(f"\nTardiness Report ({algorithm_name} Algorithm):")
+        print("-" * 50)
+        for ind, tardiness in enumerate(tardinesses):
+            if tardiness > 0:
+                print(f"Product {products[ind].id} is {tardiness} time units late")
+            else:
+                print(f"Product {products[ind].id} is on time")
+        print("-" * 50)
+        print(f"Total tardiness across all products: {total_tardiness} time units")
+        if all_on_time:
+            print("All products are on time!")
+        else:
+            print("Some products are delayed. See details above.")
+        print()
+
+        return tardinesses, all_on_time
+
     def first_come_first_served(self, products: List[Product]) -> List[Chamber]:
         """
         Schedule tests for all products using First Come First Served algorithm.
@@ -236,22 +285,64 @@ class Scheduler:
         Returns:
             List[Chamber]: List of chambers with scheduled tasks
         """
-        # Ensure products are processed in the order they are provided (FCFS)
-        # The products list is assumed to be in FCFS order when passed to this method.
-        # Sort tests by stage for internal processing within a product
-        
         for product in products:
-            # Sort tests by stage
             test_indices = list(range(len(product.tests)))
-            # test_indices.sort(key=lambda i: self.product_tests[i].stage)
             
             for test_index in test_indices:
                 test = self.product_tests[test_index]
                 for sample_number in range(product.tests[test_index]):
                     self.schedule_single_test(test, product, test_index, sample_number)
 
+        # Measure tardiness after scheduling
+        self.measure_tardiness(products, "First Come First Served")
         return self.chambers
 
-    def least_sum_of_tests(self, products: List[Product]) -> List[Chamber]:
-        products_sorted = sorted(products, key=lambda x: sum(x.tests))
-        return self.first_come_first_served(products_sorted)         
+    def least_test_required(self, products: List[Product]) -> List[Chamber]:
+        """
+        Schedule products with least test requirements first.
+        
+        Args:
+            products: List of products to be tested
+            
+        Returns:
+            List[Chamber]: List of chambers with scheduled tasks
+        """
+        # Sort products by total number of tests required
+        products = sorted(products, key=lambda x: sum(x.tests))
+
+        for product in products:
+            test_indices = list(range(len(product.tests)))
+            
+            for test_index in test_indices:
+                test = self.product_tests[test_index]
+                for sample_number in range(product.tests[test_index]):
+                    self.schedule_single_test(test, product, test_index, sample_number)
+
+        # Measure tardiness after scheduling
+        self.measure_tardiness(products, "Least Test Required")
+        return self.chambers
+
+    def shortest_due_time(self, products: List[Product]) -> List[Chamber]:
+        """
+        Schedule products with earliest due dates first.
+        
+        Args:
+            products: List of products to be tested
+            
+        Returns:
+            List[Chamber]: List of chambers with scheduled tasks
+        """
+        # Sort products by due time
+        products = sorted(products, key=lambda x: x.due_time)
+
+        for product in products:
+            test_indices = list(range(len(product.tests)))
+            
+            for test_index in test_indices:
+                test = self.product_tests[test_index]
+                for sample_number in range(product.tests[test_index]):
+                    self.schedule_single_test(test, product, test_index, sample_number)
+
+        # Measure tardiness after scheduling
+        self.measure_tardiness(products, "Shortest Due Time")
+        return self.chambers     

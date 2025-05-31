@@ -33,23 +33,20 @@ def main():
     product_manager.load_from_json(product_data_path, product_due_time_path, product_set=args.product_set)
 
     # Initialize scheduler based on selected algorithm
-    if args.algorithm == 'fcfs':
-        scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
-        chamber_chart = scheduler.first_come_first_served(product_manager.products)
-        gantt_chart(chamber_chart)
-        gantt_chart_product(chamber_chart)
-    else:
-        scheduler = SchedulerVer2(chamber_manager.chambers, test_manager.tests)
-        if args.algorithm == 'ltr':
-            scheduler.least_test_required_product(product_manager.products)
-        else:  # sdt
-            scheduler.shortest_due_time(product_manager.products)
-            for chamber in chamber_manager.chambers:
-                chamber.make_gant_chartable()
-   
-            gantt_chart(chamber_manager.chambers)
+    scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
     
-            gantt_chart_product(chamber_manager.chambers)
+    
+    if args.algorithm == 'fcfs':
+        chart = scheduler.first_come_first_served(product_manager.products)
+    elif args.algorithm == 'ltr':
+        chart = scheduler.least_test_required(product_manager.products)
+    else:  # sdt
+        chart = scheduler.shortest_due_time(product_manager.products)
+    
+   
+    gantt_chart(chart)
+    
+    gantt_chart_product(chart)
 
     # Initialize the validator
     validator = ScheduleOutputValidator(chamber_manager.chambers, test_manager.tests, product_manager.products)
