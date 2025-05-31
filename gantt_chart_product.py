@@ -81,7 +81,7 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
     for product_id, samples in sorted_products:
         sorted_samples = sorted(samples.items())
         for sample_id, tasks in sorted_samples:
-            product_label = f"Product {product_id} - Sample {sample_id + 1}"
+            product_label = f"Product {product_id + 1} - Sample {sample_id + 1}"
             output_lines_txt.append(product_label)
             
             sorted_tasks = sorted(tasks, key=lambda t: t.start_time)
