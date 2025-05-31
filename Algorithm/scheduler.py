@@ -273,9 +273,9 @@ class Scheduler:
         # Add sorted product tardiness information
         for product_id, tardiness in product_tardiness:
             if tardiness > 0:
-                report_lines.append(f"Product {product_id} is {tardiness} time units late")
+                report_lines.append(f"Product {product_id + 1} is {tardiness} time units late")
             else:
-                report_lines.append(f"Product {product_id} is on time")
+                report_lines.append(f"Product {product_id + 1} is on time")
         
         report_lines.extend([
             "-" * 50,
