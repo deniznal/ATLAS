@@ -1,0 +1,26 @@
+
+Tardiness Report (Shortest Due Time Algorithm):
+--------------------------------------------------
+Product 0 is on time
+Product 1 is on time
+Product 2 is on time
+Product 3 is on time
+Product 4 is on time
+Product 5 is on time
+Product 6 is on time
+Product 7 is on time
+Product 8 is on time
+Product 9 is on time
+Product 10 is on time
+Product 11 is on time
+Product 12 is on time
+Product 13 is on time
+Product 14 is on time
+Product 15 is on time
+Product 16 is on time
+Product 17 is on time
+Product 18 is on time
+Product 19 is on time
+--------------------------------------------------
+Total tardiness across all products: 0 time units
+All products are on time!

@@ -1,917 +1,364 @@
 Product 0 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 7, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 0, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 1, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 4, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 6, Start Time: 35, Duration: 15
+  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 2, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH06 - Station 7, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 2, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH09 - Station 3, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH15 - Station 0, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 2, Start Time: 35, Duration: 15
 
 Product 0 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 0, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 6, Start Time: 35, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH06 - Station 6, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 2, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 2, Start Time: 35, Duration: 15
 
 Product 0 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH01 - Station 3, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 35, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH08 - Station 0, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH01 - Station 0, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 35, Duration: 15
 
 Product 1 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 10, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 9, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH19 - Station 1, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH25 - Station 4, Start Time: 25, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 4, Start Time: 35, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 7, Start Time: 45, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 0, Start Time: 60, Duration: 15
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 5, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH15 - Station 2, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 6, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH22 - Station 0, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH21 - Station 4, Start Time: 25, Duration: 10
+  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 1, Start Time: 35, Duration: 5
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 5, Start Time: 40, Duration: 15
 
 Product 1 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 8, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 2, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 10, Start Time: 50, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH15 - Station 1, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 11, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 1, Start Time: 40, Duration: 15
 
 Product 1 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 10, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH18 - Station 3, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 85, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH15 - Station 3, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH18 - Station 0, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 50, Duration: 15
 
 Product 2 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 1, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 8, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 2, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 5, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 0, Start Time: 25, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 4, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 0, Start Time: 45, Duration: 15
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 6, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH15 - Station 5, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 7, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH22 - Station 2, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH21 - Station 5, Start Time: 25, Duration: 10
+  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 2, Start Time: 35, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 0, Start Time: 45, Duration: 15
 
 Product 2 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 7, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 4, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 8, Start Time: 45, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH15 - Station 4, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 1, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 0, Start Time: 45, Duration: 15
 
 Product 2 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 9, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH01 - Station 5, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 50, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH18 - Station 0, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH01 - Station 4, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 50, Duration: 15
 
 Product 3 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 7, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 0, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 10, Start Time: 15, Duration: 15
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 6, Start Time: 40, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 2, Start Time: 55, Duration: 15
+  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 1, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH06 - Station 4, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 1, Start Time: 15, Duration: 15
+  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 0, Start Time: 30, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 1, Start Time: 40, Duration: 15
 
 Product 3 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 7, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 9, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 9, Start Time: 50, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH06 - Station 3, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 1, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 1, Start Time: 40, Duration: 15
 
 Product 3 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 1, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH21 - Station 1, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 80, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH06 - Station 5, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH15 - Station 1, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 1, Start Time: 40, Duration: 15
 
 Product 4 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 0, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 2, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH12 - Station 1, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH10 - Station 1, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 0, Start Time: 35, Duration: 15
+  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 3, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH08 - Station 2, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 3, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH12 - Station 0, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH06 - Station 4, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 3, Start Time: 35, Duration: 15
 
 Product 4 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 7, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 6, Start Time: 50, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH08 - Station 1, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 4, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 3, Start Time: 35, Duration: 15
 
 Product 4 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 4, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 65, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH08 - Station 3, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH15 - Station 2, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 35, Duration: 15
 
 Product 5 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 1, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 3, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 5, Start Time: 25, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 4, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 1, Start Time: 45, Duration: 15
+  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 4, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH08 - Station 5, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 5, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH09 - Station 6, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH15 - Station 1, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 4, Start Time: 35, Duration: 15
 
 Product 5 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 2, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 1, Start Time: 50, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH08 - Station 4, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 5, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 4, Start Time: 35, Duration: 15
 
 Product 5 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH18 - Station 1, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 1, Start Time: 70, Duration: 15
+  Task: Pulldown (Stage 2), Chamber: CH08 - Station 6, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH14 - Station 0, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 4, Start Time: 35, Duration: 15
 
 Product 6 - Sample 1
   Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 5, Start Time: 0, Duration: 10
   Task: Pulldown (Stage 2), Chamber: CH08 - Station 8, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 6, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 9, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 3, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 4, Start Time: 35, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH09 - Station 8, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH15 - Station 2, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 5, Start Time: 35, Duration: 15
 
 Product 6 - Sample 2
   Task: Pulldown (Stage 2), Chamber: CH08 - Station 7, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 8, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 4, Start Time: 35, Duration: 15
+  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 7, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 5, Start Time: 35, Duration: 15
 
 Product 6 - Sample 3
   Task: Pulldown (Stage 2), Chamber: CH08 - Station 9, Start Time: 10, Duration: 5
   Task: Performance (Stage 3), Chamber: CH01 - Station 1, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 4, Start Time: 35, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 35, Duration: 15
 
 Product 7 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH18 - Station 3, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 0, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 2, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 2, Start Time: 40, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 1, Start Time: 55, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 5, Start Time: 65, Duration: 15
-
-Product 7 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 11, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 0, Start Time: 40, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 0, Start Time: 75, Duration: 15
-
-Product 7 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 1, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH23 - Station 4, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 115, Duration: 15
-
-Product 8 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 0, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 1, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 3, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 5, Start Time: 25, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 3, Start Time: 35, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 7, Start Time: 40, Duration: 15
-
-Product 8 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 2, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 7, Start Time: 40, Duration: 15
-
-Product 8 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 6, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH01 - Station 4, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 40, Duration: 15
-
-Product 9 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 3, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 6, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 2, Start Time: 40, Duration: 15
-
-Product 9 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 9, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 3, Start Time: 50, Duration: 15
-
-Product 9 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH21 - Station 0, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 70, Duration: 15
-
-Product 10 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 2, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 4, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH12 - Station 2, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH10 - Station 5, Start Time: 25, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 2, Start Time: 40, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 2, Start Time: 50, Duration: 15
-
-Product 10 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 7, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 4, Start Time: 50, Duration: 15
-
-Product 10 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 5, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 70, Duration: 15
-
-Product 11 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH15 - Station 5, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 0, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 6, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH25 - Station 7, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 3, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 0, Start Time: 55, Duration: 15
-
-Product 11 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 7, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 5, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 2, Start Time: 70, Duration: 15
-
-Product 11 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 1, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH23 - Station 1, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 110, Duration: 15
-
-Product 12 - Sample 1
   Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 6, Start Time: 0, Duration: 10
   Task: Pulldown (Stage 2), Chamber: CH08 - Station 11, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 7, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 11, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 2, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH14 - Station 0, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 5, Start Time: 35, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH09 - Station 10, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH15 - Station 3, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 6, Start Time: 35, Duration: 15
 
-Product 12 - Sample 2
+Product 7 - Sample 2
   Task: Pulldown (Stage 2), Chamber: CH08 - Station 10, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 10, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 5, Start Time: 35, Duration: 15
+  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 9, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 6, Start Time: 35, Duration: 15
 
-Product 12 - Sample 3
+Product 7 - Sample 3
   Task: Pulldown (Stage 2), Chamber: CH10 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH01 - Station 2, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 35, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH14 - Station 1, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 35, Duration: 15
 
-Product 13 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH15 - Station 3, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 2, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH12 - Station 6, Start Time: 20, Duration: 10
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 4, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH22 - Station 5, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 1, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 1, Start Time: 55, Duration: 15
-
-Product 13 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 1, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 3, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 6, Start Time: 65, Duration: 15
-
-Product 13 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 3, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH23 - Station 0, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 110, Duration: 15
-
-Product 14 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH15 - Station 4, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 5, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 5, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH25 - Station 3, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 2, Start Time: 45, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 4, Start Time: 55, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 1, Start Time: 70, Duration: 15
-
-Product 14 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 4, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 1, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 2, Start Time: 60, Duration: 15
-
-Product 14 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 6, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH07 - Station 2, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 4, Start Time: 110, Duration: 15
-
-Product 15 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH14 - Station 0, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH12 - Station 4, Start Time: 15, Duration: 10
-  Task: Energy Efficiency (Stage 3), Chamber: CH19 - Station 4, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH19 - Station 5, Start Time: 25, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH05 - Station 0, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 7, Start Time: 60, Duration: 15
-
-Product 15 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 1, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 2, Start Time: 55, Duration: 15
-
-Product 15 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 4, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH21 - Station 3, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 90, Duration: 15
-
-Product 16 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH14 - Station 1, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 6, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH20 - Station 0, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 4, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 5, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH27 - Station 0, Start Time: 45, Duration: 15
-
-Product 16 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 3, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 3, Start Time: 65, Duration: 15
-
-Product 16 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 7, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH18 - Station 4, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 95, Duration: 15
-
-Product 17 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH14 - Station 4, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH19 - Station 5, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH20 - Station 3, Start Time: 20, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 4, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 2, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 7, Start Time: 55, Duration: 15
-
-Product 17 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH19 - Station 3, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 2, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 6, Start Time: 65, Duration: 15
-
-Product 17 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 2, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH07 - Station 0, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 95, Duration: 15
-
-Product 18 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 4, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH14 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 5, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 11, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 3, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 11, Start Time: 35, Duration: 15
-
-Product 18 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH14 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 10, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 3, Start Time: 35, Duration: 15
-
-Product 18 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH15 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH14 - Station 4, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 50, Duration: 15
-
-Product 19 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 3, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH08 - Station 2, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH06 - Station 3, Start Time: 15, Duration: 10
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 4, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 5, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 1, Start Time: 25, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 2, Start Time: 35, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 2, Start Time: 40, Duration: 15
-
-Product 19 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH08 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 4, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 2, Start Time: 40, Duration: 15
-
-Product 19 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH08 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH01 - Station 0, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 40, Duration: 15
-
-Product 20 - Sample 1
+Product 8 - Sample 1
   Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 7, Start Time: 0, Duration: 10
   Task: Pulldown (Stage 2), Chamber: CH18 - Station 2, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 8, Start Time: 15, Duration: 15
   Task: Performance (Stage 3), Chamber: CH22 - Station 4, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 5, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 2, Start Time: 35, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH15 - Station 0, Start Time: 35, Duration: 10
+  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 0, Start Time: 45, Duration: 5
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 2, Start Time: 50, Duration: 15
 
-Product 20 - Sample 2
+Product 8 - Sample 2
   Task: Pulldown (Stage 2), Chamber: CH18 - Station 1, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 3, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 6, Start Time: 35, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 2, Start Time: 50, Duration: 15
 
-Product 20 - Sample 3
+Product 8 - Sample 3
   Task: Pulldown (Stage 2), Chamber: CH18 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH01 - Station 7, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 55, Duration: 15
-
-Product 21 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 1, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH06 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 1, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 2, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 0, Start Time: 25, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 0, Start Time: 35, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 1, Start Time: 40, Duration: 15
-
-Product 21 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH06 - Station 3, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 1, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 1, Start Time: 40, Duration: 15
-
-Product 21 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH06 - Station 5, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH14 - Station 0, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 1, Start Time: 40, Duration: 15
-
-Product 22 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH14 - Station 2, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 9, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH20 - Station 1, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 8, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 0, Start Time: 45, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 0, Start Time: 55, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 4, Start Time: 65, Duration: 15
-
-Product 22 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 8, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 6, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 0, Start Time: 65, Duration: 15
-
-Product 22 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 10, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 6, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 4, Start Time: 95, Duration: 15
-
-Product 23 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 5, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH15 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 6, Start Time: 15, Duration: 15
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 5, Start Time: 30, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 4, Start Time: 40, Duration: 15
-
-Product 23 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH15 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 0, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 0, Start Time: 40, Duration: 15
-
-Product 23 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH15 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 3, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH01 - Station 5, Start Time: 15, Duration: 10
   Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 1, Start Time: 55, Duration: 15
 
-Product 24 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH14 - Station 5, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 4, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH12 - Station 5, Start Time: 20, Duration: 10
-  Task: Energy Efficiency (Stage 3), Chamber: CH20 - Station 4, Start Time: 20, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH06 - Station 0, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 11, Start Time: 55, Duration: 15
-
-Product 24 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 3, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 6, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 1, Start Time: 65, Duration: 15
-
-Product 24 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 5, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 3, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 1, Start Time: 100, Duration: 15
-
-Product 25 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 11, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 0, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH10 - Station 1, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH25 - Station 6, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 3, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 5, Start Time: 45, Duration: 15
-
-Product 25 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 5, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 5, Start Time: 50, Duration: 15
-
-Product 25 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH18 - Station 0, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 65, Duration: 15
-
-Product 26 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH18 - Station 5, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 6, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH12 - Station 8, Start Time: 20, Duration: 10
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 4, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 9, Start Time: 40, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 3, Start Time: 55, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 6, Start Time: 65, Duration: 15
-
-Product 26 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 5, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 8, Start Time: 40, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 3, Start Time: 80, Duration: 15
-
-Product 26 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 7, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH07 - Station 4, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 125, Duration: 15
-
-Product 27 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 8, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 3, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 11, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH22 - Station 2, Start Time: 25, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 2, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 3, Start Time: 45, Duration: 15
-
-Product 27 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 11, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 7, Start Time: 55, Duration: 15
-
-Product 27 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 4, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH18 - Station 2, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 80, Duration: 15
-
-Product 28 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH15 - Station 0, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 5, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH20 - Station 5, Start Time: 20, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 8, Start Time: 30, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 2, Start Time: 55, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 2, Start Time: 65, Duration: 15
-
-Product 28 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH21 - Station 4, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH07 - Station 1, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 8, Start Time: 60, Duration: 15
-
-Product 28 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 0, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 4, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 100, Duration: 15
-
-Product 29 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH15 - Station 1, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 2, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 1, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 0, Start Time: 55, Duration: 15
-
-Product 29 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 1, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 10, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 3, Start Time: 65, Duration: 15
-
-Product 29 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 3, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 5, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 100, Duration: 15
-
-Product 30 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH18 - Station 1, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 6, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 0, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH22 - Station 2, Start Time: 35, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 5, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 5, Start Time: 55, Duration: 15
-
-Product 30 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 5, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 5, Start Time: 35, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 4, Start Time: 70, Duration: 15
-
-Product 30 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 7, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH23 - Station 2, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 1, Start Time: 115, Duration: 15
-
-Product 31 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 9, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 6, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH19 - Station 0, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH25 - Station 0, Start Time: 25, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 3, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 4, Start Time: 45, Duration: 15
-
-Product 31 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 4, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 4, Start Time: 55, Duration: 15
-
-Product 31 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 7, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 5, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 1, Start Time: 85, Duration: 15
-
-Product 32 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 3, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH14 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 4, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 9, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 2, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 10, Start Time: 35, Duration: 15
-
-Product 32 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH14 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 8, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 2, Start Time: 35, Duration: 15
-
-Product 32 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH14 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH14 - Station 3, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 50, Duration: 15
-
-Product 33 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 5, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 8, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 5, Start Time: 25, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 0, Start Time: 35, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 3, Start Time: 45, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 6, Start Time: 50, Duration: 15
-
-Product 33 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 3, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 6, Start Time: 50, Duration: 15
-
-Product 33 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 3, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 80, Duration: 15
-
-Product 34 - Sample 1
+Product 9 - Sample 1
   Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 0, Start Time: 0, Duration: 10
   Task: Pulldown (Stage 2), Chamber: CH06 - Station 1, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 0, Start Time: 15, Duration: 15
   Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 0, Start Time: 30, Duration: 15
 
-Product 34 - Sample 2
+Product 9 - Sample 2
   Task: Pulldown (Stage 2), Chamber: CH06 - Station 0, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 0, Start Time: 15, Duration: 15
   Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 0, Start Time: 30, Duration: 15
 
-Product 34 - Sample 3
+Product 9 - Sample 3
   Task: Pulldown (Stage 2), Chamber: CH06 - Station 2, Start Time: 10, Duration: 5
   Task: Performance (Stage 3), Chamber: CH15 - Station 0, Start Time: 15, Duration: 10
   Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 30, Duration: 15
 
-Product 35 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 2, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH06 - Station 7, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 2, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH12 - Station 0, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH06 - Station 3, Start Time: 25, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 1, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 0, Start Time: 45, Duration: 15
-
-Product 35 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH06 - Station 6, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 3, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 0, Start Time: 45, Duration: 15
-
-Product 35 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH08 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 1, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 45, Duration: 15
-
-Product 36 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH15 - Station 2, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 5, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 2, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH22 - Station 1, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 0, Start Time: 45, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 3, Start Time: 55, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 5, Start Time: 65, Duration: 15
-
-Product 36 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 4, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 0, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 4, Start Time: 65, Duration: 15
-
-Product 36 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 0, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH18 - Station 5, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 105, Duration: 15
-
-Product 37 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 6, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH15 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 7, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH22 - Station 2, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 4, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 1, Start Time: 35, Duration: 15
-
-Product 37 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH15 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 1, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 5, Start Time: 35, Duration: 15
-
-Product 37 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH18 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH01 - Station 6, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 55, Duration: 15
-
-Product 38 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 4, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH08 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 5, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 7, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 2, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 3, Start Time: 35, Duration: 15
-
-Product 38 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH08 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 6, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 3, Start Time: 35, Duration: 15
-
-Product 38 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH08 - Station 6, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH14 - Station 1, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 35, Duration: 15
-
-Product 39 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 4, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 7, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 1, Start Time: 25, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 5, Start Time: 35, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 1, Start Time: 45, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 5, Start Time: 50, Duration: 15
-
-Product 39 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH23 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 11, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 5, Start Time: 50, Duration: 15
-
-Product 39 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 2, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 75, Duration: 15
-
-Product 40 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH18 - Station 4, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 3, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH12 - Station 7, Start Time: 20, Duration: 10
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 3, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH09 - Station 7, Start Time: 40, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH06 - Station 0, Start Time: 45, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 1, Start Time: 65, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 7, Start Time: 75, Duration: 15
-
-Product 40 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 2, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 4, Start Time: 40, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 2, Start Time: 75, Duration: 15
-
-Product 40 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 4, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH15 - Station 2, Start Time: 55, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 120, Duration: 15
-
-Product 41 - Sample 1
+Product 10 - Sample 1
   Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 8, Start Time: 0, Duration: 10
   Task: Pulldown (Stage 2), Chamber: CH18 - Station 5, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 9, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH25 - Station 0, Start Time: 15, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 0, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 3, Start Time: 45, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH12 - Station 1, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH08 - Station 10, Start Time: 25, Duration: 10
+  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 3, Start Time: 35, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 6, Start Time: 45, Duration: 15
 
-Product 41 - Sample 2
+Product 10 - Sample 2
   Task: Pulldown (Stage 2), Chamber: CH18 - Station 4, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH22 - Station 5, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 7, Start Time: 45, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 2, Start Time: 45, Duration: 15
 
-Product 41 - Sample 3
+Product 10 - Sample 3
   Task: Pulldown (Stage 2), Chamber: CH19 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH14 - Station 5, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH15 - Station 3, Start Time: 15, Duration: 10
   Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 60, Duration: 15
 
-Product 42 - Sample 1
+Product 11 - Sample 1
+  Task: Gas Amount Determination (Stage 1), Chamber: CH06 - Station 7, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 2, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 0, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH11 - Station 0, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH15 - Station 4, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 7, Start Time: 35, Duration: 15
+
+Product 11 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 1, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 11, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 7, Start Time: 35, Duration: 15
+
+Product 11 - Sample 3
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 3, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH14 - Station 2, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 35, Duration: 15
+
+Product 12 - Sample 1
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 0, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 5, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 1, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH11 - Station 2, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH15 - Station 5, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 8, Start Time: 35, Duration: 15
+
+Product 12 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 4, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 1, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 0, Start Time: 35, Duration: 15
+
+Product 12 - Sample 3
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 6, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH01 - Station 2, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 0, Start Time: 45, Duration: 15
+
+Product 13 - Sample 1
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 1, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 8, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 2, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH11 - Station 4, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH21 - Station 0, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 9, Start Time: 35, Duration: 15
+
+Product 13 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 7, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 3, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 1, Start Time: 35, Duration: 15
+
+Product 13 - Sample 3
+  Task: Pulldown (Stage 2), Chamber: CH10 - Station 9, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH14 - Station 3, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 50, Duration: 15
+
+Product 14 - Sample 1
   Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 9, Start Time: 0, Duration: 10
   Task: Pulldown (Stage 2), Chamber: CH19 - Station 2, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 10, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH25 - Station 2, Start Time: 15, Duration: 10
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 11, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH25 - Station 1, Start Time: 15, Duration: 10
   Task: Performance (Stage 3), Chamber: CH15 - Station 1, Start Time: 35, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 4, Start Time: 45, Duration: 15
-
-Product 42 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH19 - Station 1, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 1, Start Time: 15, Duration: 15
+  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 1, Start Time: 45, Duration: 5
   Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 3, Start Time: 50, Duration: 15
 
-Product 42 - Sample 3
+Product 14 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH19 - Station 1, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 0, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 3, Start Time: 50, Duration: 15
+
+Product 14 - Sample 3
   Task: Pulldown (Stage 2), Chamber: CH19 - Station 3, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 0, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH01 - Station 6, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 65, Duration: 15
+
+Product 15 - Sample 1
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 10, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH19 - Station 5, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 0, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH12 - Station 2, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH10 - Station 1, Start Time: 25, Duration: 10
+  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 4, Start Time: 35, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 7, Start Time: 45, Duration: 15
+
+Product 15 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH19 - Station 4, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 2, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 3, Start Time: 45, Duration: 15
+
+Product 15 - Sample 3
+  Task: Pulldown (Stage 2), Chamber: CH20 - Station 0, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH15 - Station 4, Start Time: 15, Duration: 10
   Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 65, Duration: 15
 
-Product 43 - Sample 1
+Product 16 - Sample 1
   Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 2, Start Time: 0, Duration: 10
   Task: Pulldown (Stage 2), Chamber: CH10 - Station 11, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 3, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 7, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH11 - Station 6, Start Time: 15, Duration: 10
   Task: Performance (Stage 3), Chamber: CH21 - Station 1, Start Time: 25, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 9, Start Time: 35, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 10, Start Time: 35, Duration: 15
 
-Product 43 - Sample 2
+Product 16 - Sample 2
   Task: Pulldown (Stage 2), Chamber: CH10 - Station 10, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 6, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 1, Start Time: 35, Duration: 15
+  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 5, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 2, Start Time: 35, Duration: 15
 
-Product 43 - Sample 3
+Product 16 - Sample 3
   Task: Pulldown (Stage 2), Chamber: CH14 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH14 - Station 2, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH14 - Station 4, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 3, Start Time: 50, Duration: 15
+
+Product 17 - Sample 1
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 3, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH14 - Station 2, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 4, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH11 - Station 8, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH21 - Station 2, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 11, Start Time: 35, Duration: 15
+
+Product 17 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH14 - Station 1, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 7, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 3, Start Time: 35, Duration: 15
+
+Product 17 - Sample 3
+  Task: Pulldown (Stage 2), Chamber: CH14 - Station 3, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH01 - Station 3, Start Time: 15, Duration: 10
   Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 4, Start Time: 50, Duration: 15
 
-Product 44 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 10, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH19 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 11, Start Time: 15, Duration: 15
+Product 18 - Sample 1
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 4, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH14 - Station 5, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 5, Start Time: 15, Duration: 15
+  Task: Performance (Stage 3), Chamber: CH11 - Station 10, Start Time: 15, Duration: 10
+  Task: Performance (Stage 3), Chamber: CH21 - Station 3, Start Time: 25, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH16 - Station 0, Start Time: 35, Duration: 15
+
+Product 18 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH14 - Station 4, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 9, Start Time: 15, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 4, Start Time: 35, Duration: 15
+
+Product 18 - Sample 3
+  Task: Pulldown (Stage 2), Chamber: CH15 - Station 0, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH14 - Station 5, Start Time: 15, Duration: 10
+  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 50, Duration: 15
+
+Product 19 - Sample 1
+  Task: Gas Amount Determination (Stage 1), Chamber: CH08 - Station 11, Start Time: 0, Duration: 10
+  Task: Pulldown (Stage 2), Chamber: CH20 - Station 2, Start Time: 10, Duration: 5
+  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 2, Start Time: 15, Duration: 15
   Task: Performance (Stage 3), Chamber: CH25 - Station 4, Start Time: 15, Duration: 10
   Task: Performance (Stage 3), Chamber: CH15 - Station 2, Start Time: 35, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 0, Start Time: 45, Duration: 5
+  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 2, Start Time: 45, Duration: 5
   Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 4, Start Time: 50, Duration: 15
 
-Product 44 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH19 - Station 4, Start Time: 10, Duration: 5
+Product 19 - Sample 2
+  Task: Pulldown (Stage 2), Chamber: CH20 - Station 1, Start Time: 10, Duration: 5
   Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 3, Start Time: 15, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 3, Start Time: 50, Duration: 15
+  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 4, Start Time: 50, Duration: 15
 
-Product 44 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH20 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 1, Start Time: 15, Duration: 10
+Product 19 - Sample 3
+  Task: Pulldown (Stage 2), Chamber: CH20 - Station 3, Start Time: 10, Duration: 5
+  Task: Performance (Stage 3), Chamber: CH01 - Station 7, Start Time: 15, Duration: 10
   Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 4, Start Time: 65, Duration: 15
-
-Product 45 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH18 - Station 0, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 3, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH06 - Station 7, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 1, Start Time: 35, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH21 - Station 4, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 2, Start Time: 55, Duration: 15
-
-Product 45 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 2, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 5, Start Time: 35, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 7, Start Time: 70, Duration: 15
-
-Product 45 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 4, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH07 - Station 3, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 6, Start Time: 110, Duration: 15
-
-Product 46 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH18 - Station 2, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 9, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH08 - Station 1, Start Time: 30, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH25 - Station 4, Start Time: 35, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 0, Start Time: 55, Duration: 10
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 0, Start Time: 65, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 0, Start Time: 75, Duration: 15
-
-Product 46 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 8, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 0, Start Time: 35, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 1, Start Time: 70, Duration: 15
-
-Product 46 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 10, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH23 - Station 3, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 2, Start Time: 115, Duration: 15
-
-Product 47 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH14 - Station 3, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH10 - Station 5, Start Time: 15, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH20 - Station 2, Start Time: 20, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH11 - Station 0, Start Time: 30, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH15 - Station 1, Start Time: 45, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 1, Start Time: 55, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 5, Start Time: 65, Duration: 15
-
-Product 47 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 11, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH09 - Station 10, Start Time: 30, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 3, Start Time: 65, Duration: 15
-
-Product 47 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH18 - Station 5, Start Time: 15, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 7, Start Time: 20, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 5, Start Time: 95, Duration: 15
-
-Product 48 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 6, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 5, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH10 - Station 9, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH21 - Station 1, Start Time: 35, Duration: 10
-  Task: Freezing Capacity (Stage 4), Chamber: CH01 - Station 4, Start Time: 45, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH02 - Station 1, Start Time: 55, Duration: 15
-
-Product 48 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 4, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH11 - Station 7, Start Time: 25, Duration: 15
-  Task: Temperature Rise (Stage 4), Chamber: CH01 - Station 5, Start Time: 45, Duration: 5
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 4, Start Time: 80, Duration: 15
-
-Product 48 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH24 - Station 6, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH05 - Station 4, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH12 - Station 1, Start Time: 55, Duration: 15
-
-Product 49 - Sample 1
-  Task: Gas Amount Determination (Stage 1), Chamber: CH10 - Station 11, Start Time: 0, Duration: 10
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 0, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH12 - Station 3, Start Time: 15, Duration: 10
-  Task: Energy Efficiency (Stage 3), Chamber: CH19 - Station 2, Start Time: 15, Duration: 15
-  Task: Performance (Stage 3), Chamber: CH19 - Station 3, Start Time: 25, Duration: 10
-  Task: Performance (Stage 3), Chamber: CH09 - Station 0, Start Time: 30, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH17 - Station 5, Start Time: 40, Duration: 15
-
-Product 49 - Sample 2
-  Task: Pulldown (Stage 2), Chamber: CH26 - Station 11, Start Time: 10, Duration: 5
-  Task: Energy Efficiency (Stage 3), Chamber: CH25 - Station 6, Start Time: 25, Duration: 15
-  Task: Consumer Usage (Stage 5), Chamber: CH03 - Station 0, Start Time: 60, Duration: 15
-
-Product 49 - Sample 3
-  Task: Pulldown (Stage 2), Chamber: CH28 - Station 1, Start Time: 10, Duration: 5
-  Task: Performance (Stage 3), Chamber: CH21 - Station 2, Start Time: 15, Duration: 10
-  Task: Consumer Usage (Stage 5), Chamber: CH04 - Station 7, Start Time: 85, Duration: 15
 

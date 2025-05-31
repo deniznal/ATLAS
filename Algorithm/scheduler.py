@@ -229,6 +229,8 @@ class Scheduler:
     def measure_tardiness(self, products: List[Product], algorithm_name: str) -> Tuple[List[int], bool]:
         """
         Measure tardiness for all products and generate a detailed report.
+        Saves the report to a text file and prints it to console.
+        Products are sorted by ID in ascending order.
         
         Args:
             products: List of products to measure tardiness for
@@ -241,6 +243,7 @@ class Scheduler:
         all_on_time = True
         total_tardiness = 0
 
+        # Calculate tardiness for all products
         for product in products:
             product_tasks = []
             for chamber in self.chambers:
@@ -257,21 +260,49 @@ class Scheduler:
                 if tardiness > 0:
                     all_on_time = False
 
-        # Print tardiness information
-        print(f"\nTardiness Report ({algorithm_name} Algorithm):")
-        print("-" * 50)
-        for ind, tardiness in enumerate(tardinesses):
+        # Create list of (product_id, tardiness) tuples and sort by product_id
+        product_tardiness = [(products[i].id, tardinesses[i]) for i in range(len(products))]
+        product_tardiness.sort(key=lambda x: x[0])  # Sort by product ID
+
+        # Prepare report content
+        report_lines = [
+            f"\nTardiness Report ({algorithm_name} Algorithm):",
+            "-" * 50
+        ]
+        
+        # Add sorted product tardiness information
+        for product_id, tardiness in product_tardiness:
             if tardiness > 0:
-                print(f"Product {products[ind].id} is {tardiness} time units late")
+                report_lines.append(f"Product {product_id} is {tardiness} time units late")
             else:
-                print(f"Product {products[ind].id} is on time")
-        print("-" * 50)
-        print(f"Total tardiness across all products: {total_tardiness} time units")
+                report_lines.append(f"Product {product_id} is on time")
+        
+        report_lines.extend([
+            "-" * 50,
+            f"Total tardiness across all products: {total_tardiness} time units"
+        ])
+        
         if all_on_time:
-            print("All products are on time!")
+            report_lines.append("All products are on time!")
         else:
-            print("Some products are delayed. See details above.")
-        print()
+            report_lines.append("Some products are delayed. See details above.")
+        
+        report_lines.append("")  # Add empty line at the end
+        
+        # Join lines with newlines
+        report_content = "\n".join(report_lines)
+        
+        # Print to console
+        print(report_content)
+        
+        # Save to file
+        filename = f"tardiness_report_{algorithm_name.lower().replace(' ', '_')}.txt"
+        try:
+            with open(filename, 'w') as f:
+                f.write(report_content)
+            print(f"Tardiness report saved to {filename}")
+        except IOError as e:
+            print(f"Error saving tardiness report: {e}")
 
         return tardinesses, all_on_time
 
