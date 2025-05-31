@@ -38,7 +38,7 @@ def gantt_chart(chambers: List[Chamber]) -> None:
     ylabels: List[str] = []
 
     bar_height = 1.0  # Further increased bar height
-    bar_spacing = 1.8  # Further increased spacing between bars
+    bar_spacing = 3.0  # Further increased spacing between bars
 
     # Load tests to get colors
     test_mgr = TestManager()
