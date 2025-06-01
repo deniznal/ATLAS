@@ -22,13 +22,13 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
     # Set font properties for academic papers
     plt.rcParams.update({
         'font.family': 'serif',
-        'font.size': 10,
-        'axes.labelsize': 12,
-        'axes.titlesize': 14,
-        'xtick.labelsize': 10,
-        'ytick.labelsize': 10,
-        'legend.fontsize': 10,
-        'figure.titlesize': 14
+        'font.size': 8,
+        'axes.labelsize': 10,
+        'axes.titlesize': 12,
+        'xtick.labelsize': 8,
+        'ytick.labelsize': 8,
+        'legend.fontsize': 8,
+        'figure.titlesize': 12
     })
 
     # Create figure with specific size for academic papers (width in inches)
@@ -110,7 +110,7 @@ def gantt_chart_product(chambers: List[Chamber]) -> None:
                     f"{task.test.test_name}\nStage {task.test.stage}",
                     ha='center',
                     va='center',
-                    fontsize=7,  # Slightly decreased font size for better fit
+                    fontsize=6,
                     color='black'
                 )
                 output_lines_txt.append(f"  Task: {task.test.test_name} (Stage {task.test.stage}), Chamber: {task.station_name}, Start Time: {start_time}, Duration: {duration}")

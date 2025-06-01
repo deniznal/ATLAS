@@ -174,3 +174,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 .DS_Store
+
+#output text files
+gantt_chart_output.txt
+gantt_chart_product_output.txt
