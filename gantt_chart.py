@@ -32,7 +32,7 @@ def gantt_chart(chambers: List[Chamber]) -> None:
     })
 
     # Create figure with specific size for academic papers (width in inches)
-    fig, ax = plt.subplots(figsize=(7.5, 5))  # Standard width for academic papers
+    fig, ax = plt.subplots(figsize=(10, 8))  # Increased figure size for better label spacing
     
     yticks: List[int] = []
     ylabels: List[str] = []
@@ -87,15 +87,18 @@ def gantt_chart(chambers: List[Chamber]) -> None:
                        alpha=0.8)  # Slightly transparent for better appearance
 
                 # Add the test name as a label with improved formatting
-                ax.text(
-                    start_time + duration/2,
-                    y_position,
-                    f"{task.test.test_name}\nP{task.product.id}",
-                    ha='center',
-                    va='center',
-                    fontsize=6,
-                    color='black'
-                )
+                # Only show label if the bar is within the visible x-axis range
+                x_min, x_max = ax.get_xlim()
+                if start_time + duration >= x_min and start_time <= x_max:
+                    ax.text(
+                        start_time + duration/2,
+                        y_position,
+                        f"{task.test.test_name}\nP{task.product.id}",
+                        ha='center',
+                        va='center',
+                        fontsize=6,
+                        color='black'
+                    )
                 output_lines_txt.append(f"  Task: {task.test.test_name}, Product: {task.product.id}, Start Time: {start_time}, Duration: {duration}")
 
             yticks.append(y_position)
@@ -116,11 +119,11 @@ def gantt_chart(chambers: List[Chamber]) -> None:
     ax.set_ylabel('Chamber - Station', fontweight='bold')
     ax.set_title('Task Schedule by Chamber and Station', pad=20)
 
-    # Adjust layout and add tight padding
-    plt.tight_layout()
+    # Adjust layout with increased padding
+    plt.tight_layout(pad=3.0)
     
-    # Save the figure in high resolution for publication
-    plt.savefig('gantt_chart.png', dpi=300, bbox_inches='tight')
+    # Save the figure in high resolution for publication with tight bounding box
+    plt.savefig('gantt_chart.png', dpi=300, bbox_inches='tight', pad_inches=0.5)
     plt.show()
 
     # Write the output to a text file
