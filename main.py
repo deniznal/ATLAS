@@ -11,12 +11,12 @@ import argparse
 
 def main():
     # Set up argument parser
-    parser = argparse.ArgumentParser(description='Run the scheduling algorithm with different product sets.')
-    parser.add_argument('--product-set', type=int, choices=[0, 1], default=0,
-                      help='Select product set (0 for first set, 1 for second set)')
-    parser.add_argument('--algorithm', type=str, choices=['fcfs', 'ltr', 'sdt'], default='sdt',
-                      help='Select scheduling algorithm (fcfs: First Come First Served, ltr: Least Test Required, sdt: Shortest Due Time)')
-    args = parser.parse_args()
+    # parser = argparse.ArgumentParser(description='Run the scheduling algorithm with different product sets.')
+    # parser.add_argument('--product-set', type=int, choices=[0, 1], default=0,
+    #                   help='Select product set (0 for first set, 1 for second set)')
+    # parser.add_argument('--algorithm', type=str, choices=['fcfs', 'ltr', 'sdt'], default='sdt',
+    #                   help='Select scheduling algorithm (fcfs: First Come First Served, ltr: Least Test Required, sdt: Shortest Due Time)')
+    # args = parser.parse_args()
 
     chamber_data_path: str = "Data/chambers.json"
     test_data_path: str = "Data/tests.json"
@@ -30,15 +30,15 @@ def main():
     test_manager.load_from_json(test_data_path)
 
     product_manager : ProductsManager = ProductsManager()
-    product_manager.load_from_json(product_data_path, product_due_time_path, product_set=args.product_set)
+    product_manager.load_from_json(product_data_path, product_due_time_path, product_set=0)
 
     # Initialize scheduler based on selected algorithm
     scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
     
     
-    if args.algorithm == 'fcfs':
+    if True:
         chart = scheduler.first_come_first_served(product_manager.products)
-    elif args.algorithm == 'ltr':
+    elif False:
         chart = scheduler.least_test_required(product_manager.products)
     else:  # sdt
         chart = scheduler.shortest_due_time(product_manager.products)

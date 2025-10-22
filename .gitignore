@@ -178,3 +178,6 @@ cython_debug/
 #output text files
 gantt_chart_output.txt
 gantt_chart_product_output.txt
+gantt_chart_product.png
+gantt_chart.png
+tardiness_report_first_come_first_served.txt
