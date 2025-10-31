@@ -1,4 +1,3 @@
-from Algorithm.scheduler_ver2 import SchedulerVer2
 from Model.chambers import ChamberManager
 from Model.product_tests import TestManager
 from Model.products import ProductsManager
