@@ -4,7 +4,6 @@ from Model.chambers import Chamber, ChamberManager
 from Model.task import Task
 from Model.product_tests import ProductTest, TestManager
 from Model.products import Product, ProductsManager
-from Model.schedule import Schedule
 
 class ScheduleOutputValidator:
     def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest], products: List[Product]):

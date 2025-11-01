@@ -376,4 +376,12 @@ class Scheduler:
 
         # Measure tardiness after scheduling
         self.measure_tardiness(products, "Shortest Due Time")
-        return self.chambers     
+        return self.chambers
+
+    def output_schedule_json(self) -> Dict:
+        """
+        Output the current schedule in JSON format.
+        
+        Returns:
+            Dict: JSON representation of the schedule
+        """

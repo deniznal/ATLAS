@@ -3,7 +3,6 @@ from typing import List, Optional, Tuple
 import pandas as pd
 
 from Model.product_tests import ProductTest
-from Model.schedule import Schedule
 from Model.task import Task
 
  
@@ -17,9 +16,9 @@ class Chamber:
     humidity : int
     voltage_adjustment: bool
     list_of_tests: List[List[Task]]
-    list_of_tests_ver2: List[Schedule]
 
-    def __init__(self, name:str, station:int, temperature_adjustment:bool, temperature:int, humidity_adjustment:bool, humidity, voltage_adjustment:bool, list_of_tests:List[List[Task]], list_of_tests_ver2:List[Schedule]=None):
+
+    def __init__(self, name:str, station:int, temperature_adjustment:bool, temperature:int, humidity_adjustment:bool, humidity, voltage_adjustment:bool, list_of_tests:List[List[Task]]):
         self.name = name
         self.station = station
         self.temperature_adjustment = temperature_adjustment
@@ -28,7 +27,6 @@ class Chamber:
         self.humidity = humidity
         self.voltage_adjustment = voltage_adjustment
         self.list_of_tests = [[] for _ in range(self.station)]
-        self.list_of_tests_ver2 = [Schedule() for _ in range(self.station)]
 
     def __str__(self) -> str:
         return f"Chamber {self.name} (Station {self.station})"
@@ -58,13 +56,6 @@ class Chamber:
             max_end_time = max(max_end_time, end_time)
         return max_end_time
 
-    def add_task_to_station_ver2(self, task: Task, station_id: int) -> bool:
-        if station_id < self.station:
-            schedule = self.list_of_tests_ver2[station_id]
-            return schedule.add_task(task)
-        else:
-            print(f"Error: Station {station_id} does not exist in chamber {self.name}.")
-            return False
 
     def is_test_suitable(self, product_test: ProductTest) -> bool:
         """Check if the chamber is suitable for the given test."""
