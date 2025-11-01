@@ -3,7 +3,7 @@ from Model.product_tests import TestManager
 from Model.products import ProductsManager
 from gantt_chart import gantt_chart
 from gantt_chart_product import gantt_chart_product
-from Algorithm.scheduler import Scheduler
+from Algorithm.greedy_scheduler import GreedyScheduler
 from Test.test_schedule_output_validator import ScheduleOutputValidator
 import argparse
 
@@ -32,7 +32,7 @@ def main():
     product_manager.load_from_json(product_data_path, product_due_time_path, product_set=0)
 
     # Initialize scheduler based on selected algorithm
-    scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
+    scheduler = GreedyScheduler(chamber_manager.chambers, test_manager.tests)
     
     
     if True:
@@ -45,13 +45,10 @@ def main():
     json_schedule = scheduler.output_schedule_json()
     with open("gantt_chart_output.json", "w") as json_file:
         json_file.write(json_schedule)
-
-    # with open("gantt_chart_output.json", "w") as json_file:
-    #     json_file.write(json_schedule)
    
-    # gantt_chart(chart)
+    gantt_chart(chart)
     
-    # gantt_chart_product(chart)
+    gantt_chart_product(chart)
 
     # Initialize the validator
     validator = ScheduleOutputValidator(chamber_manager.chambers, test_manager.tests, product_manager.products)

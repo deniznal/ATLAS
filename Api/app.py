@@ -8,7 +8,7 @@ import os
 # Add parent directory to path to import our modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from Algorithm.scheduler import Scheduler
+from Algorithm.greedy_scheduler import GreedyScheduler
 from Model.chambers import ChamberManager
 from Model.product_tests import TestManager
 from Model.products import ProductsManager
@@ -260,7 +260,7 @@ async def run_schedule(request: ScheduleRequest):
             )
 
             # Run the scheduler
-            scheduler = Scheduler(chamber_manager.chambers, test_manager.tests)
+            scheduler = GreedyScheduler(chamber_manager.chambers, test_manager.tests)
             
             if request.algorithm == "ltr":
                 scheduler.least_test_required(product_manager.products)

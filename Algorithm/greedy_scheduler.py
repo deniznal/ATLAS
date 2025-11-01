@@ -4,7 +4,7 @@ from Model.products import Product
 from Model.product_tests import ProductTest
 from Model.task import Task
 
-class Scheduler:
+class GreedyScheduler:
     chambers: List[Chamber]
     product_tests: List[ProductTest]
     base_days_between_tests: int = 1

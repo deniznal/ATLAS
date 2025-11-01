@@ -9,48 +9,18 @@ Product 5 is on time
 Product 6 is on time
 Product 7 is on time
 Product 8 is on time
-Product 9 is 3 time units late
+Product 9 is 6 time units late
 Product 10 is on time
 Product 11 is on time
 Product 12 is on time
-Product 13 is 6 time units late
+Product 13 is on time
 Product 14 is on time
-Product 15 is on time
+Product 15 is 8 time units late
 Product 16 is on time
 Product 17 is on time
-Product 18 is on time
-Product 19 is 14 time units late
-Product 20 is 23 time units late
-Product 21 is 12 time units late
-Product 22 is 29 time units late
-Product 23 is on time
-Product 24 is 18 time units late
-Product 25 is 1 time units late
-Product 26 is 23 time units late
-Product 27 is on time
-Product 28 is 17 time units late
-Product 29 is 6 time units late
-Product 30 is 4 time units late
-Product 31 is 5 time units late
-Product 32 is 22 time units late
-Product 33 is 40 time units late
-Product 34 is 34 time units late
-Product 35 is 60 time units late
-Product 36 is 54 time units late
-Product 37 is 19 time units late
-Product 38 is 43 time units late
-Product 39 is 58 time units late
-Product 40 is 40 time units late
-Product 41 is 23 time units late
-Product 42 is 57 time units late
-Product 43 is 57 time units late
-Product 44 is 62 time units late
-Product 45 is 54 time units late
-Product 46 is 31 time units late
-Product 47 is 35 time units late
-Product 48 is 43 time units late
-Product 49 is 59 time units late
-Product 50 is 58 time units late
+Product 18 is 14 time units late
+Product 19 is 28 time units late
+Product 20 is on time
 --------------------------------------------------
-Total tardiness across all products: 1010 time units
+Total tardiness across all products: 56 time units
 Some products are delayed. See details above.
