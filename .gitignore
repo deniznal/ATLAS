@@ -181,3 +181,6 @@ gantt_chart_product_output.txt
 gantt_chart_product.png
 gantt_chart.png
 tardiness_report_first_come_first_served.txt
+tardiness_report_least_test_required.txt
+tardiness_report_shortest_due_time.txt
+schedule_output.json
