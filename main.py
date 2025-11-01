@@ -1,4 +1,3 @@
-from Algorithm.scheduler_ver2 import SchedulerVer2
 from Model.chambers import ChamberManager
 from Model.product_tests import TestManager
 from Model.products import ProductsManager
@@ -43,10 +42,16 @@ def main():
     else:  # sdt
         chart = scheduler.shortest_due_time(product_manager.products)
     
+    json_schedule = scheduler.output_schedule_json()
+    with open("gantt_chart_output.json", "w") as json_file:
+        json_file.write(json_schedule)
+
+    # with open("gantt_chart_output.json", "w") as json_file:
+    #     json_file.write(json_schedule)
    
-    gantt_chart(chart)
+    # gantt_chart(chart)
     
-    gantt_chart_product(chart)
+    # gantt_chart_product(chart)
 
     # Initialize the validator
     validator = ScheduleOutputValidator(chamber_manager.chambers, test_manager.tests, product_manager.products)
