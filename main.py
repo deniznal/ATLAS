@@ -43,27 +43,29 @@ def main():
         chart = scheduler.shortest_due_time(product_manager.products)
     
     json_schedule = scheduler.output_schedule_json()
+    with open("gantt_chart_output.json", "w") as json_file:
+        json_file.write(json_schedule)
 
     # with open("gantt_chart_output.json", "w") as json_file:
     #     json_file.write(json_schedule)
    
-    gantt_chart(chart)
+    # gantt_chart(chart)
     
-    gantt_chart_product(chart)
+    # gantt_chart_product(chart)
 
     # Initialize the validator
-    # validator = ScheduleOutputValidator(chamber_manager.chambers, test_manager.tests, product_manager.products)
+    validator = ScheduleOutputValidator(chamber_manager.chambers, test_manager.tests, product_manager.products)
 
     # Validate an output file
-    # errors = validator.validate_output_file("gantt_chart_output.txt")
+    errors = validator.validate_output_file("gantt_chart_output.txt")
 
-    # # Check if there are any errors
-    # if errors:
-    #     print("Validation errors found:")
-    #     for error in errors:
-    #         print(f"- {error}")
-    # else:
-    #     print("Schedule is valid!")
+    # Check if there are any errors
+    if errors:
+        print("Validation errors found:")
+        for error in errors:
+            print(f"- {error}")
+    else:
+        print("Schedule is valid!")
 
 
 if __name__ == "__main__":

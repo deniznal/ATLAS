@@ -378,10 +378,30 @@ class Scheduler:
         self.measure_tardiness(products, "Shortest Due Time")
         return self.chambers
 
-    def output_schedule_json(self) -> Dict:
+    def output_schedule_json(self) -> str:
         """
         Output the current schedule in JSON format.
         
         Returns:
-            Dict: JSON representation of the schedule
+            str: JSON representation of the schedule
         """
+        import json
+
+        schedule_output = []
+        for chamber in self.chambers:
+            for station_id, station_tasks in enumerate(chamber.list_of_tests):
+                for task in station_tasks:
+                    task_info = {
+                        "chamber": chamber.name,
+                        "station_id": station_id + 1,
+                        "station_name": f"Station {station_id + 1}",
+                        "test_name": task.test.test_name,
+                        "product_id": task.product.id + 1,
+                        "start_time": task.start_time,
+                        "duration": task.duration,
+                        "sample_number": task.sample_number + 1,
+                        "stage": task.test.stage
+                    }
+                    schedule_output.append(task_info)
+
+        return json.dumps(schedule_output, indent=4)
