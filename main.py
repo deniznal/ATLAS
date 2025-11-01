@@ -43,7 +43,7 @@ def main():
         chart = scheduler.shortest_due_time(product_manager.products)
     
     json_schedule = scheduler.output_schedule_json()
-    with open("gantt_chart_output.json", "w") as json_file:
+    with open("schedule_output.json", "w") as json_file:
         json_file.write(json_schedule)
    
     gantt_chart(chart)
