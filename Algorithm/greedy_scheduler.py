@@ -10,16 +10,18 @@ class GreedyScheduler:
     base_days_between_tests: int = 1
     MAX_SAMPLES_PER_PRODUCT: int = 3
 
-    def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest]):
+    def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest], verbose: bool = False):
         """
         Initialize the Scheduler with chambers and product tests.
         
         Args:
             chambers: List of available test chambers
             product_tests: List of possible product tests that can be performed
+            verbose: Whether to print debug information
         """
         self.chambers = chambers
         self.product_tests = product_tests
+        self.verbose = verbose
         # Track active samples for each product
         self.active_samples: Dict[Product, List[Task]] = {}
 
@@ -102,7 +104,8 @@ class GreedyScheduler:
         self.update_active_samples(product, max_end_time)
         sample_available_time = self.get_earliest_sample_available_time(product, max_end_time)
         
-        print(f"max_end_time: {max_end_time}, current_stage: {current_stage}, current_test_id: {current_test_id}, sample: {sample_number}, sample_available_time: {sample_available_time}")
+        if self.verbose:
+            print(f"max_end_time: {max_end_time}, current_stage: {current_stage}, current_test_id: {current_test_id}, sample: {sample_number}, sample_available_time: {sample_available_time}")
         return sample_available_time
     
     def find_available_slot(self, test: ProductTest, product: Product, min_start_time: int) -> Optional[tuple[Chamber, int, str, int]]:
@@ -220,10 +223,12 @@ class GreedyScheduler:
                     self.active_samples[product] = []
                 self.active_samples[product].append(task)
                 
-                print(f"Assigned {test.test_name} (Sample {available_sample + 1}) to {station_name} at time {actual_start_time}")
+                if self.verbose:
+                    print(f"Assigned {test.test_name} (Sample {available_sample + 1}) to {station_name} at time {actual_start_time}")
                 return True
             
-            print(f"No suitable chamber found for test {test.test_name} (Sample {available_sample + 1}) at or after time {min_start_time}. Increasing base_increase by {self.base_days_between_tests}")
+            if self.verbose:
+                print(f"No suitable chamber found for test {test.test_name} (Sample {available_sample + 1}) at or after time {min_start_time}. Increasing base_increase by {self.base_days_between_tests}")
             base_increase += self.base_days_between_tests
 
     def measure_tardiness(self, products: List[Product], algorithm_name: str) -> Tuple[List[int], bool]:
