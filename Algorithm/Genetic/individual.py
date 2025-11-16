@@ -9,16 +9,19 @@ from Algorithm.greedy_scheduler import GreedyScheduler
 class Individual:
     """
     Represents an individual solution in the genetic algorithm.
-    Uses priority-based encoding: chromosome is a permutation of (product_id, test_index, sample_index) tuples.
+    Uses priority-based encoding: chromosome is a permutation of (product_id, test_index) tuples.
+    Each gene represents all required samples of a given test for a given product.
     """
     
-    def __init__(self, chromosome: List[Tuple[int, int, int]], chambers: List[Chamber], 
+    def __init__(self, chromosome: List[Tuple[int, int]], chambers: List[Chamber],
                  product_tests: List[ProductTest], products: List[Product]):
         """
         Initialize an individual.
         
         Args:
-            chromosome: List of (product_id, test_index, sample_index) tuples representing task priority order
+            chromosome: List of (product_id, test_index) tuples representing task priority order.
+                        When decoding, all samples required for that (product, test) pair
+                        will be scheduled according to the product's test matrix.
             chambers: List of available test chambers
             product_tests: List of possible product tests
             products: List of products to be scheduled
@@ -50,17 +53,27 @@ class Individual:
         scheduler = GreedyScheduler(chambers_copy, self.product_tests, verbose=False)
         
         # Process each gene in chromosome order
+        # One gene = one (product, test) pair. For that pair we schedule all required samples
+        # according to the product's test matrix.
         for gene in self.chromosome:
-            product_id, test_index, sample_number = gene
+            product_id, test_index = gene
             product = self.products[product_id]
-            
-            # Schedule this specific task
-            scheduler.schedule_single_test(
-                test=self.product_tests[test_index],
-                product=product,
-                test_index=test_index,
-                sample_number=sample_number
-            )
+
+            # How many samples are required for this test for this product?
+            num_samples_required = product.tests[test_index]
+
+            # If no samples are required, skip (defensive – such genes shouldn't normally exist)
+            if num_samples_required <= 0:
+                continue
+
+            # Schedule all samples for this (product, test) pair
+            for sample_number in range(num_samples_required):
+                scheduler.schedule_single_test(
+                    test=self.product_tests[test_index],
+                    product=product,
+                    test_index=test_index,
+                    sample_number=sample_number,
+                )
         
         return chambers_copy
     

@@ -38,20 +38,21 @@ class Population:
         # Create initial population
         self._initialize_population(seed_with_greedy)
     
-    def _create_all_genes(self) -> List[Tuple[int, int, int]]:
+    def _create_all_genes(self) -> List[Tuple[int, int]]:
         """
         Create all genes (tasks) that need to be scheduled.
-        Each gene is a tuple: (product_id, test_index, sample_index)
+        Each gene is a tuple: (product_id, test_index).
+        The number of samples required for each (product, test) pair is read
+        from the product's test matrix during decoding.
         
         Returns:
             List of all genes
         """
-        genes = []
+        genes: List[Tuple[int, int]] = []
         for product in self.products:
             for test_index, num_samples in enumerate(product.tests):
                 if num_samples > 0:  # Only schedule tests that require samples
-                    for sample_index in range(num_samples):
-                        genes.append((product.id, test_index, sample_index))
+                    genes.append((product.id, test_index))
         return genes
     
     def _initialize_population(self, seed_with_greedy: bool):
@@ -84,7 +85,7 @@ class Population:
                 individual = Individual(chromosome, self.chambers, self.product_tests, self.products)
                 self.individuals.append(individual)
     
-    def _add_greedy_solution(self, algorithm_name: str, all_genes: List[Tuple[int, int, int]]):
+    def _add_greedy_solution(self, algorithm_name: str, all_genes: List[Tuple[int, int]]):
         """
         Add a greedy solution to the population by extracting task order from greedy schedule.
         
@@ -117,17 +118,22 @@ class Population:
         # Sort tasks by start time to get execution order
         scheduled_tasks.sort(key=lambda t: t.start_time)
         
-        # Create chromosome from scheduled task order
-        chromosome = []
+        # Create chromosome from scheduled task order.
+        # One gene per (product, test) pair; duplicates are ignored.
+        chromosome: List[Tuple[int, int]] = []
+        seen_genes = set()
+
         for task in scheduled_tasks:
-            gene = (task.product.id, task.test.id, task.sample_number)
-            if gene in all_genes:  # Make sure it's a valid gene
+            gene = (task.product.id, task.test.id)
+            if gene in all_genes and gene not in seen_genes:
                 chromosome.append(gene)
-        
+                seen_genes.add(gene)
+
         # Add any missing genes (shouldn't happen, but just in case)
         for gene in all_genes:
-            if gene not in chromosome:
+            if gene not in seen_genes:
                 chromosome.append(gene)
+                seen_genes.add(gene)
         
         individual = Individual(chromosome, self.chambers, self.product_tests, self.products)
         self.individuals.append(individual)

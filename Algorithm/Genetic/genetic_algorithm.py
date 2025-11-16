@@ -67,7 +67,7 @@ class GeneticAlgorithm:
             point1, point2 = point2, point1
         
         # Create offspring 1
-        offspring1_chromosome: List[Tuple[int, int, int]] = [None] * size  # type: ignore
+        offspring1_chromosome: List[Tuple[int, int]] = [None] * size  # type: ignore
         offspring1_chromosome[point1:point2] = parent1.chromosome[point1:point2]
         
         # Fill remaining positions from parent2
@@ -80,7 +80,7 @@ class GeneticAlgorithm:
                 fill_pos += 1
         
         # Create offspring 2
-        offspring2_chromosome: List[Tuple[int, int, int]] = [None] * size  # type: ignore
+        offspring2_chromosome: List[Tuple[int, int]] = [None] * size  # type: ignore
         offspring2_chromosome[point1:point2] = parent2.chromosome[point1:point2]
         
         # Fill remaining positions from parent1
