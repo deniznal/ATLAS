@@ -292,29 +292,10 @@ class GeneticAlgorithm:
             elif method == "shortest_due_time":
                 scheduler.shortest_due_time(self.products)
             
-            # Calculate makespan
-            makespan = 0
-            for chamber in chambers_copy:
-                for station_tasks in chamber.list_of_tests:
-                    for task in station_tasks:
-                        end_time = task.start_time + task.duration
-                        makespan = max(makespan, end_time)
-
-            # Calculate total tardiness (sum over all products)
-            total_tardiness = 0
-            for product in self.products:
-                last_task_end_for_product = 0
-                for chamber in chambers_copy:
-                    for station_tasks in chamber.list_of_tests:
-                        for task in station_tasks:
-                            if task.product == product:
-                                end_time = task.start_time + task.duration
-                                if end_time > last_task_end_for_product:
-                                    last_task_end_for_product = end_time
-
-                if last_task_end_for_product > 0:
-                    tardiness = max(0, last_task_end_for_product - product.due_time)
-                    total_tardiness += tardiness
+            # Calculate metrics using shared helper
+            tardinesses, all_on_time, total_tardiness, makespan = GreedyScheduler.compute_schedule_metrics(
+                chambers_copy, self.products
+            )
             
             results.append((name, makespan, total_tardiness))
             print(f"{name:30s}: Makespan = {makespan} days, Total Tardiness = {total_tardiness} time units")

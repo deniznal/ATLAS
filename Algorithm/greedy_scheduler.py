@@ -25,6 +25,53 @@ class GreedyScheduler:
         # Track active samples for each product
         self.active_samples: Dict[Product, List[Task]] = {}
 
+    @staticmethod
+    def compute_schedule_metrics(chambers: List[Chamber], products: List[Product]) -> Tuple[List[int], bool, int, int]:
+        """
+        Compute per-product tardiness, global total tardiness and makespan
+        for a given schedule.
+
+        Args:
+            chambers: List of chambers with scheduled tasks
+            products: List of products
+
+        Returns:
+            Tuple[
+                List[int],  # tardiness per product (aligned with products list)
+                bool,       # all_on_time flag
+                int,        # total_tardiness (sum over products)
+                int         # makespan (latest completion time across all tasks)
+            ]
+        """
+        tardinesses = [0] * len(products)
+        all_on_time = True
+        total_tardiness = 0
+        makespan = 0
+
+        # Pre-collect tasks per product to avoid repeated scanning
+        tasks_by_product: Dict[Product, List[Task]] = {p: [] for p in products}
+        for chamber in chambers:
+            for station in chamber.list_of_tests:
+                for task in station:
+                    tasks_by_product.setdefault(task.product, []).append(task)
+                    end_time = task.start_time + task.duration
+                    if end_time > makespan:
+                        makespan = end_time
+
+        for idx, product in enumerate(products):
+            product_tasks = tasks_by_product.get(product, [])
+            if not product_tasks:
+                continue
+
+            last_task_end = max(task.start_time + task.duration for task in product_tasks)
+            tardiness = max(0, last_task_end - product.due_time)
+            tardinesses[idx] = tardiness
+            total_tardiness += tardiness
+            if tardiness > 0:
+                all_on_time = False
+
+        return tardinesses, all_on_time, total_tardiness, makespan
+
     def get_earliest_sample_available_time(self, product: Product, current_time: int) -> int:
         """
         Get the earliest time when a new sample can be started for a product.
@@ -244,26 +291,9 @@ class GreedyScheduler:
         Returns:
             Tuple[List[int], bool]: List of tardiness values and whether all products are on time
         """
-        tardinesses = [0] * len(products)
-        all_on_time = True
-        total_tardiness = 0
-
-        # Calculate tardiness for all products
-        for product in products:
-            product_tasks = []
-            for chamber in self.chambers:
-                for station in chamber.list_of_tests:
-                    for task in station:
-                        if task.product == product:
-                            product_tasks.append(task)
-            
-            if product_tasks:
-                last_task_end = max(task.start_time + task.duration for task in product_tasks)
-                tardiness = max(0, last_task_end - product.due_time)
-                tardinesses[products.index(product)] = tardiness
-                total_tardiness += tardiness
-                if tardiness > 0:
-                    all_on_time = False
+        tardinesses, all_on_time, total_tardiness, _ = GreedyScheduler.compute_schedule_metrics(
+            self.chambers, products
+        )
 
         # Create list of (product_id, tardiness) tuples and sort by product_id
         product_tardiness = [(products[i].id, tardinesses[i]) for i in range(len(products))]

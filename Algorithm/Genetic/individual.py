@@ -94,32 +94,10 @@ class Individual:
         # Decode chromosome to schedule
         scheduled_chambers = self.decode_to_schedule()
 
-        # 1) Calculate makespan: maximum end time across all tasks
-        max_end_time = 0
-        for chamber in scheduled_chambers:
-            for station_tasks in chamber.list_of_tests:
-                for task in station_tasks:
-                    end_time = task.start_time + task.duration
-                    if end_time > max_end_time:
-                        max_end_time = end_time
-
-        # 2) Calculate total penalty (sum of tardiness over all products)
-        total_penalty = 0
-        for product in self.products:
-            last_task_end_for_product = 0
-
-            # Find the last finishing time of any task for this product
-            for chamber in scheduled_chambers:
-                for station_tasks in chamber.list_of_tests:
-                    for task in station_tasks:
-                        if task.product == product:
-                            end_time = task.start_time + task.duration
-                            if end_time > last_task_end_for_product:
-                                last_task_end_for_product = end_time
-
-            if last_task_end_for_product > 0:
-                tardiness = max(0, last_task_end_for_product - product.due_time)
-                total_penalty += tardiness
+        # Use shared metrics computation to avoid duplicated logic
+        tardinesses, all_on_time, total_penalty, max_end_time = GreedyScheduler.compute_schedule_metrics(
+            scheduled_chambers, self.products
+        )
 
         self.makespan = max_end_time          # for information / reporting
         self.fitness = total_penalty          # optimization objective
