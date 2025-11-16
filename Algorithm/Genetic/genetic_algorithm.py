@@ -12,7 +12,8 @@ from Algorithm.Genetic.population import Population
 class GeneticAlgorithm:
     """
     Genetic Algorithm for optimizing product test scheduling.
-    Minimizes makespan (last completion day) while respecting all constraints.
+    Primary objective: minimize total tardiness (sum of deadline overruns across products).
+    Secondary metric (reported but not optimized): makespan (last completion day).
     """
     
     def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest], 
@@ -246,6 +247,8 @@ class GeneticAlgorithm:
         print("GENETIC ALGORITHM COMPLETED")
         print("=" * 80)
         print(f"Time Elapsed: {elapsed:.2f} seconds")
+        # Report both optimization objective and auxiliary metric
+        print(f"Best Total Tardiness (fitness): {self.best_solution.fitness} time units")
         print(f"Best Makespan: {self.best_solution.makespan} days")
         print(f"Final Population Diversity: {self.population.get_diversity():.2%}")
         print("=" * 80)
@@ -271,6 +274,7 @@ class GeneticAlgorithm:
             ("Shortest Due Time", "shortest_due_time")
         ]
         
+        # results: list of tuples (algorithm_name, makespan, total_tardiness)
         results = []
         
         for name, method in algorithms:
@@ -295,18 +299,51 @@ class GeneticAlgorithm:
                     for task in station_tasks:
                         end_time = task.start_time + task.duration
                         makespan = max(makespan, end_time)
+
+            # Calculate total tardiness (sum over all products)
+            total_tardiness = 0
+            for product in self.products:
+                last_task_end_for_product = 0
+                for chamber in chambers_copy:
+                    for station_tasks in chamber.list_of_tests:
+                        for task in station_tasks:
+                            if task.product == product:
+                                end_time = task.start_time + task.duration
+                                if end_time > last_task_end_for_product:
+                                    last_task_end_for_product = end_time
+
+                if last_task_end_for_product > 0:
+                    tardiness = max(0, last_task_end_for_product - product.due_time)
+                    total_tardiness += tardiness
             
-            results.append((name, makespan))
-            print(f"{name:30s}: Makespan = {makespan} days")
+            results.append((name, makespan, total_tardiness))
+            print(f"{name:30s}: Makespan = {makespan} days, Total Tardiness = {total_tardiness} time units")
         
-        print(f"{'Genetic Algorithm':30s}: Makespan = {self.best_solution.makespan if self.best_solution else 'N/A'} days")
+        ga_makespan = self.best_solution.makespan if self.best_solution else None
+        ga_tardiness = self.best_solution.fitness if self.best_solution else None
+        print(f"{'Genetic Algorithm':30s}: Makespan = {ga_makespan if ga_makespan is not None else 'N/A'} days, "
+              f"Total Tardiness = {ga_tardiness if ga_tardiness is not None else 'N/A'} time units")
         print("=" * 80)
         
-        # Calculate improvement
-        if self.best_solution and self.best_solution.makespan:
-            best_greedy = min(results, key=lambda x: x[1])
-            improvement = ((best_greedy[1] - self.best_solution.makespan) / best_greedy[1]) * 100
-            print(f"\nImprovement over best greedy ({best_greedy[0]}): {improvement:.2f}%")
+        # Calculate improvement (primary: total tardiness, secondary: makespan)
+        if self.best_solution and self.best_solution.fitness is not None and results:
+            # Improvement in total tardiness
+            best_greedy_tardiness = min(results, key=lambda x: x[2])
+            ga_total_tardiness = self.best_solution.fitness
+            if best_greedy_tardiness[2] > 0:
+                improvement_tardiness = ((best_greedy_tardiness[2] - ga_total_tardiness) / best_greedy_tardiness[2]) * 100
+            else:
+                improvement_tardiness = 0.0
+            print(f"\nImprovement in total tardiness over best greedy ({best_greedy_tardiness[0]}): {improvement_tardiness:.2f}%")
+
+            # Optional: also report makespan improvement for information
+            if self.best_solution.makespan is not None:
+                best_greedy_makespan = min(results, key=lambda x: x[1])
+                if best_greedy_makespan[1] > 0:
+                    improvement_makespan = ((best_greedy_makespan[1] - self.best_solution.makespan) / best_greedy_makespan[1]) * 100
+                else:
+                    improvement_makespan = 0.0
+                print(f"Improvement in makespan over best greedy ({best_greedy_makespan[0]}): {improvement_makespan:.2f}%")
             print("=" * 80)
 
 

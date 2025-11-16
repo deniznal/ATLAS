@@ -86,7 +86,7 @@ class Individual:
         **not** used as the optimization objective.
         
         Returns:
-            float: The fitness value (makespan)
+            float: The fitness value (total tardiness)
         """
         if self.fitness is not None:
             return self.fitness
