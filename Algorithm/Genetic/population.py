@@ -151,7 +151,7 @@ class Population:
         Get the best individual in the population.
         
         Returns:
-            The individual with the lowest fitness (makespan)
+            The individual with the lowest fitness (total tardiness)
         """
         self.evaluate_fitness()
         return min(self.individuals, key=lambda ind: ind.fitness or float('inf'))
@@ -161,7 +161,7 @@ class Population:
         Get the worst individual in the population.
         
         Returns:
-            The individual with the highest fitness (makespan)
+            The individual with the highest fitness (total tardiness)
         """
         self.evaluate_fitness()
         return max(self.individuals, key=lambda ind: ind.fitness or 0)
