@@ -70,23 +70,35 @@ class ScheduleValidator:
         """Validates that sample constraints are met for each product."""
         for product in self.products:
             product_tasks = self._get_product_tasks(product)
-            
-            # Group tasks by test type
-            test_tasks: Dict[str, List[Task]] = {}
+
+            # Count tasks per concrete test variant (by index in self.product_tests),
+            # instead of grouping by test_name. This avoids mixing different variants
+            # that share the same name (e.g. multiple "Performance" tests).
+            actual_counts = [0] * len(self.product_tests)
+
             for task in product_tasks:
-                if task.test.test_name not in test_tasks:
-                    test_tasks[task.test.test_name] = []
-                test_tasks[task.test.test_name].append(task)
-            
-            # Check if each test has the required number of samples
+                # Find the index of this test in the master test list.
+                # Tasks created by the scheduler should reference the same
+                # ProductTest instances as self.product_tests, so list.index
+                # is safe and unambiguous here.
+                try:
+                    test_index = self.product_tests.index(task.test)
+                except ValueError:
+                    # If a task's test is not in product_tests, we skip it here;
+                    # other validators (e.g. chamber constraints) will still
+                    # flag structural inconsistencies.
+                    continue
+                actual_counts[test_index] += 1
+
+            # Check each test index against the required number of samples
             for test_index, required_samples in enumerate(product.tests):
                 test_name = self.product_tests[test_index].test_name
-                if test_name in test_tasks:
-                    if len(test_tasks[test_name]) != required_samples:
-                        self.validation_errors.append(
-                            f"Invalid sample count for Product {product.id}, Test {test_name}: "
-                            f"Expected {required_samples} samples, got {len(test_tasks[test_name])}"
-                        )
+                actual = actual_counts[test_index]
+                if actual != required_samples:
+                    self.validation_errors.append(
+                        f"Invalid sample count for Product {product.id}, Test {test_name}: "
+                        f"Expected {required_samples} samples, got {actual}"
+                    )
 
     def _validate_time_constraints(self):
         """Validates that time constraints are met."""
