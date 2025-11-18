@@ -17,31 +17,14 @@ from Algorithm.Genetic.population import Population
 
 
 class GeneticAlgorithm:
-    """
-    Genetic Algorithm for optimizing product test scheduling.
-    Primary objective: minimize total tardiness (sum of deadline overruns across products).
-    Secondary metric (reported but not optimized): makespan (last completion day).
-    """
+
     
     def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest], 
                  products: List[Product], population_size: int = 100, 
                  generations: int = 300, crossover_rate: float = 0.8, 
                  mutation_rate: float = 0.15, tournament_size: int = 5, 
                  elitism_count: int = 2):
-        """
-        Initialize the Genetic Algorithm.
         
-        Args:
-            chambers: List of available test chambers
-            product_tests: List of possible product tests
-            products: List of products to be scheduled
-            population_size: Size of the population
-            generations: Number of generations to run
-            crossover_rate: Probability of crossover
-            mutation_rate: Probability of mutation
-            tournament_size: Size of tournament for selection
-            elitism_count: Number of best individuals to keep unchanged
-        """
         self.chambers = chambers
         self.product_tests = product_tests
         self.products = products
@@ -55,16 +38,7 @@ class GeneticAlgorithm:
         self.best_solution = None
         
     def order_crossover(self, parent1: Individual, parent2: Individual) -> Tuple[Individual, Individual]:
-        """
-        Perform Order Crossover (OX) on two parents.
         
-        Args:
-            parent1: First parent
-            parent2: Second parent
-            
-        Returns:
-            Tuple of two offspring
-        """
         size = len(parent1.chromosome)
         
         # Select two random crossover points
@@ -106,15 +80,7 @@ class GeneticAlgorithm:
         return offspring1, offspring2
     
     def swap_mutation(self, individual: Individual) -> Individual:
-        """
-        Perform swap mutation: swap two random genes.
         
-        Args:
-            individual: Individual to mutate
-            
-        Returns:
-            Mutated individual
-        """
         chromosome = individual.chromosome.copy()
         
         if len(chromosome) >= 2:
@@ -124,15 +90,7 @@ class GeneticAlgorithm:
         return Individual(chromosome, self.chambers, self.product_tests, self.products)
     
     def insert_mutation(self, individual: Individual) -> Individual:
-        """
-        Perform insert mutation: remove a gene and insert it elsewhere.
         
-        Args:
-            individual: Individual to mutate
-            
-        Returns:
-            Mutated individual
-        """
         chromosome = individual.chromosome.copy()
         
         if len(chromosome) >= 2:
@@ -144,28 +102,14 @@ class GeneticAlgorithm:
         return Individual(chromosome, self.chambers, self.product_tests, self.products)
     
     def mutate(self, individual: Individual) -> Individual:
-        """
-        Apply mutation to an individual.
-        Randomly chooses between swap and insert mutation.
         
-        Args:
-            individual: Individual to mutate
-            
-        Returns:
-            Mutated individual
-        """
         if random.random() < 0.5:
             return self.swap_mutation(individual)
         else:
             return self.insert_mutation(individual)
     
     def run(self) -> Individual:
-        """
-        Run the genetic algorithm.
         
-        Returns:
-            Best individual found
-        """
         print("=" * 80)
         print("GENETIC ALGORITHM FOR TEST SCHEDULING")
         print("=" * 80)
@@ -263,12 +207,7 @@ class GeneticAlgorithm:
         return self.best_solution
     
     def compare_with_greedy(self, product_set: int = 0):
-        """
-        Compare GA results with greedy algorithms.
         
-        Args:
-            product_set: Which product set to use
-        """
         from Algorithm.greedy_scheduler import GreedyScheduler
         
         print("\n" + "=" * 80)
@@ -338,9 +277,7 @@ class GeneticAlgorithm:
 
 
 def main():
-    """
-    Main function to run the genetic algorithm.
-    """
+    
     # Load data
     print("Loading data...")
     

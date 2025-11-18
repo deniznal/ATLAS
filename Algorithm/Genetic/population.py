@@ -9,22 +9,11 @@ from Algorithm.greedy_scheduler import GreedyScheduler
 
 
 class Population:
-    """
-    Manages a population of individuals for the genetic algorithm.
-    """
+    
     
     def __init__(self, size: int, chambers: List[Chamber], product_tests: List[ProductTest], 
                  products: List[Product], seed_with_greedy: bool = True):
-        """
-        Initialize a population.
         
-        Args:
-            size: Population size
-            chambers: List of available test chambers
-            product_tests: List of possible product tests
-            products: List of products to be scheduled
-            seed_with_greedy: Whether to seed the population with greedy solutions
-        """
         self.size = size
         self.chambers = chambers
         self.product_tests = product_tests
@@ -39,15 +28,7 @@ class Population:
         self._initialize_population(seed_with_greedy)
     
     def _create_all_genes(self) -> List[Tuple[int, int]]:
-        """
-        Create all genes (tasks) that need to be scheduled.
-        Each gene is a tuple: (product_id, test_index).
-        The number of samples required for each (product, test) pair is read
-        from the product's test matrix during decoding.
-        
-        Returns:
-            List of all genes
-        """
+       
         genes: List[Tuple[int, int]] = []
         for product in self.products:
             for test_index, num_samples in enumerate(product.tests):
@@ -56,13 +37,7 @@ class Population:
         return genes
     
     def _initialize_population(self, seed_with_greedy: bool):
-        """
-        Initialize the population with individuals.
-        Seeds with greedy solutions if requested, then fills with random permutations.
         
-        Args:
-            seed_with_greedy: Whether to include greedy solutions
-        """
         all_genes = self._create_all_genes()
         
         if seed_with_greedy and self.size >= 3:
@@ -86,13 +61,7 @@ class Population:
                 self.individuals.append(individual)
     
     def _add_greedy_solution(self, algorithm_name: str, all_genes: List[Tuple[int, int]]):
-        """
-        Add a greedy solution to the population by extracting task order from greedy schedule.
         
-        Args:
-            algorithm_name: Name of the greedy algorithm to use
-            all_genes: List of all genes that need to be scheduled
-        """
         # Create a fresh copy of chambers and scheduler
         chambers_copy = copy.deepcopy(self.chambers)
         for chamber in chambers_copy:
@@ -139,60 +108,33 @@ class Population:
         self.individuals.append(individual)
     
     def evaluate_fitness(self):
-        """
-        Evaluate fitness for all individuals in the population.
-        """
+        
         for individual in self.individuals:
             if individual.fitness is None:
                 individual.calculate_fitness()
     
     def get_best_individual(self) -> Individual:
-        """
-        Get the best individual in the population.
         
-        Returns:
-            The individual with the lowest fitness (total tardiness)
-        """
         self.evaluate_fitness()
         return min(self.individuals, key=lambda ind: ind.fitness or float('inf'))
     
     def get_worst_individual(self) -> Individual:
-        """
-        Get the worst individual in the population.
         
-        Returns:
-            The individual with the highest fitness (total tardiness)
-        """
         self.evaluate_fitness()
         return max(self.individuals, key=lambda ind: ind.fitness or 0)
     
     def get_average_fitness(self) -> float:
-        """
-        Calculate the average fitness of the population.
         
-        Returns:
-            Average fitness value
-        """
         self.evaluate_fitness()
         return sum(ind.fitness or 0 for ind in self.individuals) / len(self.individuals)
     
     def tournament_selection(self, tournament_size: int = 5) -> Individual:
-        """
-        Select an individual using tournament selection.
         
-        Args:
-            tournament_size: Number of individuals to compete in tournament
-            
-        Returns:
-            Selected individual
-        """
         tournament = random.sample(self.individuals, min(tournament_size, len(self.individuals)))
         return min(tournament, key=lambda ind: ind.fitness if ind.fitness is not None else float('inf'))
     
     def update_statistics(self):
-        """
-        Update population statistics for tracking progress.
-        """
+        
         self.evaluate_fitness()
         best = self.get_best_individual()
         worst = self.get_worst_individual()
@@ -203,12 +145,7 @@ class Population:
         self.worst_fitness_history.append(worst.fitness)
     
     def get_diversity(self) -> float:
-        """
-        Calculate population diversity based on unique chromosomes.
         
-        Returns:
-            Diversity ratio (0.0 to 1.0)
-        """
         unique_chromosomes = len(set(tuple(ind.chromosome) for ind in self.individuals))
         return unique_chromosomes / len(self.individuals)
     

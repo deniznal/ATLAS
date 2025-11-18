@@ -7,25 +7,11 @@ from Algorithm.greedy_scheduler import GreedyScheduler
 
 
 class Individual:
-    """
-    Represents an individual solution in the genetic algorithm.
-    Uses priority-based encoding: chromosome is a permutation of (product_id, test_index) tuples.
-    Each gene represents all required samples of a given test for a given product.
-    """
+    
     
     def __init__(self, chromosome: List[Tuple[int, int]], chambers: List[Chamber],
                  product_tests: List[ProductTest], products: List[Product]):
-        """
-        Initialize an individual.
         
-        Args:
-            chromosome: List of (product_id, test_index) tuples representing task priority order.
-                        When decoding, all samples required for that (product, test) pair
-                        will be scheduled according to the product's test matrix.
-            chambers: List of available test chambers
-            product_tests: List of possible product tests
-            products: List of products to be scheduled
-        """
         self.chromosome = chromosome
         self.chambers = chambers
         self.product_tests = product_tests
@@ -35,13 +21,7 @@ class Individual:
         self.is_valid = None
         
     def decode_to_schedule(self) -> List[Chamber]:
-        """
-        Decode the chromosome into a schedule using the greedy scheduler.
-        Processes genes (tasks) in the order specified by the chromosome.
-        
-        Returns:
-            List[Chamber]: The scheduled chambers with tasks assigned
-        """
+       
         # Deep copy chambers to avoid modifying the original
         chambers_copy = copy.deepcopy(self.chambers)
         
@@ -78,16 +58,7 @@ class Individual:
         return chambers_copy
     
     def calculate_fitness(self) -> float:
-        """
-        Calculate the fitness of this individual.
-        Fitness is defined as total tardiness.
-        
-        We still compute and store the makespan for reporting, but it is
-        **not** used as the optimization objective.
-        
-        Returns:
-            float: The fitness value (total tardiness)
-        """
+       
         if self.fitness is not None:
             return self.fitness
         
@@ -105,12 +76,7 @@ class Individual:
         return self.fitness
     
     def validate(self) -> Tuple[bool, List[str]]:
-        """
-        Validate the schedule generated from this chromosome.
         
-        Returns:
-            Tuple[bool, List[str]]: (is_valid, list of error messages)
-        """
         from test_schedule_validator import ScheduleValidator
         
         # Decode chromosome to schedule
@@ -131,7 +97,6 @@ class Individual:
         return (self.is_valid, errors)
     
     def __lt__(self, other):
-        """Less than comparison for sorting (lower fitness is better)."""
         if self.fitness is None:
             self.calculate_fitness()
         if other.fitness is None:
