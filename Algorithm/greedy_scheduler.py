@@ -341,7 +341,7 @@ class GreedyScheduler:
 
         return tardinesses, all_on_time
 
-    def first_come_first_served(self, products: List[Product]) -> List[Chamber]:
+    def first_come_first_served(self, products: List[Product], report: bool = True) -> List[Chamber]:
         """
         Schedule tests for all products using First Come First Served algorithm.
         
@@ -359,11 +359,12 @@ class GreedyScheduler:
                 for sample_number in range(product.tests[test_index]):
                     self.schedule_single_test(test, product, test_index, sample_number)
 
-        # Measure tardiness after scheduling
-        self.measure_tardiness(products, "First Come First Served")
+        # Measure tardiness after scheduling (optional)
+        if report:
+            self.measure_tardiness(products, "First Come First Served")
         return self.chambers
 
-    def least_test_required(self, products: List[Product]) -> List[Chamber]:
+    def least_test_required(self, products: List[Product], report: bool = True) -> List[Chamber]:
         """
         Schedule products with least test requirements first.
         
@@ -384,11 +385,12 @@ class GreedyScheduler:
                 for sample_number in range(product.tests[test_index]):
                     self.schedule_single_test(test, product, test_index, sample_number)
 
-        # Measure tardiness after scheduling
-        self.measure_tardiness(products, "Least Test Required")
+        # Measure tardiness after scheduling (optional)
+        if report:
+            self.measure_tardiness(products, "Least Test Required")
         return self.chambers
 
-    def shortest_due_time(self, products: List[Product]) -> List[Chamber]:
+    def shortest_due_time(self, products: List[Product], report: bool = True) -> List[Chamber]:
         """
         Schedule products with earliest due dates first.
         
@@ -409,8 +411,9 @@ class GreedyScheduler:
                 for sample_number in range(product.tests[test_index]):
                     self.schedule_single_test(test, product, test_index, sample_number)
 
-        # Measure tardiness after scheduling
-        self.measure_tardiness(products, "Shortest Due Time")
+        # Measure tardiness after scheduling (optional)
+        if report:
+            self.measure_tardiness(products, "Shortest Due Time")
         return self.chambers
 
     def output_schedule_json(self) -> str:

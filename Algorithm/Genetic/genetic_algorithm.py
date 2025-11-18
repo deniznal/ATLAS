@@ -293,11 +293,13 @@ class GeneticAlgorithm:
             # Run greedy algorithm
             scheduler = GreedyScheduler(chambers_copy, self.product_tests, verbose=False)
             if method == "first_come_first_served":
-                scheduler.first_come_first_served(self.products)
+                # For final comparison we want the detailed tardiness reports,
+                # so keep reporting enabled here.
+                scheduler.first_come_first_served(self.products, report=True)
             elif method == "least_test_required":
-                scheduler.least_test_required(self.products)
+                scheduler.least_test_required(self.products, report=True)
             elif method == "shortest_due_time":
-                scheduler.shortest_due_time(self.products)
+                scheduler.shortest_due_time(self.products, report=True)
             
             # Calculate metrics using shared helper
             tardinesses, all_on_time, total_tardiness, makespan = GreedyScheduler.compute_schedule_metrics(

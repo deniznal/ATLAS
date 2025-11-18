@@ -102,11 +102,11 @@ class Population:
         
         # Run the greedy algorithm
         if algorithm_name == "first_come_first_served":
-            scheduler.first_come_first_served(self.products)
+            scheduler.first_come_first_served(self.products, report=False)
         elif algorithm_name == "least_test_required":
-            scheduler.least_test_required(self.products)
+            scheduler.least_test_required(self.products, report=False)
         elif algorithm_name == "shortest_due_time":
-            scheduler.shortest_due_time(self.products)
+            scheduler.shortest_due_time(self.products, report=False)
         
         # Extract task order from the scheduled chambers
         scheduled_tasks = []
