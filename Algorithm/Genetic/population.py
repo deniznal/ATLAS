@@ -114,10 +114,7 @@ class Population:
                 individual.calculate_fitness()
     
     def get_best_individual(self) -> Individual:
-        """
-        Get the best individual in the population (lowest fitness).
-        Properly handles 0 fitness values instead of treating them as missing.
-        """
+        
         self.evaluate_fitness()
         return min(
             self.individuals,
@@ -125,9 +122,7 @@ class Population:
         )
     
     def get_worst_individual(self) -> Individual:
-        """
-        Get the worst individual in the population (highest fitness).
-        """
+       
         self.evaluate_fitness()
         return max(
             self.individuals,
@@ -135,10 +130,7 @@ class Population:
         )
     
     def get_average_fitness(self) -> float:
-        """
-        Calculate the average fitness of the population.
-        Ignores individuals whose fitness has not been evaluated yet.
-        """
+       
         self.evaluate_fitness()
         fitness_values = [ind.fitness for ind in self.individuals if ind.fitness is not None]
         return sum(fitness_values) / len(fitness_values) if fitness_values else float('inf')
@@ -169,6 +161,9 @@ class Population:
         avg = self.get_average_fitness()
         worst = self.get_worst_individual()
         diversity = self.get_diversity()
-        return (f"Population(gen={self.generation}, size={self.size}, "
-                f"best={best.fitness:.2f}, avg={avg:.2f}, worst={worst.fitness:.2f}, "
-                f"diversity={diversity:.2%})")
+        best_ms = best.makespan if best.makespan is not None else float('inf')
+        return (
+            f"Population(gen={self.generation}, size={self.size}, "
+            f"best={best.fitness:.2f}, avg={avg:.2f}, worst={worst.fitness:.2f}, "
+            f"best_ms={best_ms:.2f}, diversity={diversity:.2%})"
+        )
