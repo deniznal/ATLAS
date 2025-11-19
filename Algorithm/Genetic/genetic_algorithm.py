@@ -295,7 +295,7 @@ def main():
     test_manager.load_from_json("Data/tests.json")
     
     product_manager = ProductsManager()
-    product_set = 1  # Use product set 0 (20 products) or 1 (50 products)
+    product_set = 0  # Use product set 0 (20 products) or 1 (50 products)
     product_manager.load_from_json("Data/products.json", "Data/products_due_time.json", product_set)
     
     print(f"Loaded {len(chamber_manager.chambers)} chambers")
@@ -307,6 +307,8 @@ def main():
         chambers=chamber_manager.chambers,
         product_tests=test_manager.tests,
         products=product_manager.products,
+        population_size=50,
+        generations=50,
     )
     
     best_solution = ga.run()

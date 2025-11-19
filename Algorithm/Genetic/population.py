@@ -163,7 +163,7 @@ class Population:
         diversity = self.get_diversity()
         best_ms = best.makespan if best.makespan is not None else float('inf')
         return (
-            f"Population(gen={self.generation}, size={self.size}, "
+            f"Population(gen={self.generation}, "
             f"best={best.fitness:.2f}, avg={avg:.2f}, worst={worst.fitness:.2f}, "
             f"best_ms={best_ms:.2f}, diversity={diversity:.2%})"
         )
