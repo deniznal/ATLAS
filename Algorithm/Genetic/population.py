@@ -114,19 +114,34 @@ class Population:
                 individual.calculate_fitness()
     
     def get_best_individual(self) -> Individual:
-        
+        """
+        Get the best individual in the population (lowest fitness).
+        Properly handles 0 fitness values instead of treating them as missing.
+        """
         self.evaluate_fitness()
-        return min(self.individuals, key=lambda ind: ind.fitness or float('inf'))
+        return min(
+            self.individuals,
+            key=lambda ind: ind.fitness if ind.fitness is not None else float('inf'),
+        )
     
     def get_worst_individual(self) -> Individual:
-        
+        """
+        Get the worst individual in the population (highest fitness).
+        """
         self.evaluate_fitness()
-        return max(self.individuals, key=lambda ind: ind.fitness or 0)
+        return max(
+            self.individuals,
+            key=lambda ind: ind.fitness if ind.fitness is not None else float('-inf'),
+        )
     
     def get_average_fitness(self) -> float:
-        
+        """
+        Calculate the average fitness of the population.
+        Ignores individuals whose fitness has not been evaluated yet.
+        """
         self.evaluate_fitness()
-        return sum(ind.fitness or 0 for ind in self.individuals) / len(self.individuals)
+        fitness_values = [ind.fitness for ind in self.individuals if ind.fitness is not None]
+        return sum(fitness_values) / len(fitness_values) if fitness_values else float('inf')
     
     def tournament_selection(self, tournament_size: int = 5) -> Individual:
         
