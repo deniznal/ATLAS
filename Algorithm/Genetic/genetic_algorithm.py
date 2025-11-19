@@ -193,7 +193,7 @@ class GeneticAlgorithm:
         
         end_time = datetime.now()
         elapsed = (end_time - start_time).total_seconds()
-        
+
         print("\n" + "=" * 80)
         print("GENETIC ALGORITHM COMPLETED")
         print("=" * 80)
@@ -203,7 +203,14 @@ class GeneticAlgorithm:
         print(f"Best Makespan: {self.best_solution.makespan} days")
         print(f"Final Population Diversity: {self.population.get_diversity():.2%}")
         print("=" * 80)
-        
+
+        # Generate a detailed per-product tardiness report for the GA best solution,
+        # using the same reporting style as the greedy algorithms.
+        from Algorithm.greedy_scheduler import GreedyScheduler
+        scheduled_chambers = self.best_solution.decode_to_schedule()
+        ga_scheduler = GreedyScheduler(scheduled_chambers, self.product_tests, verbose=False)
+        ga_scheduler.measure_tardiness(self.products, "Genetic Algorithm")
+
         return self.best_solution
     
     def compare_with_greedy(self, product_set: int = 0):
