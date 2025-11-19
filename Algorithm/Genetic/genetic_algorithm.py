@@ -295,24 +295,18 @@ def main():
     test_manager.load_from_json("Data/tests.json")
     
     product_manager = ProductsManager()
-    product_set = 0  # Use product set 0 (20 products) or 1 (50 products)
+    product_set = 1  # Use product set 0 (20 products) or 1 (50 products)
     product_manager.load_from_json("Data/products.json", "Data/products_due_time.json", product_set)
     
     print(f"Loaded {len(chamber_manager.chambers)} chambers")
     print(f"Loaded {len(test_manager.tests)} test types")
     print(f"Loaded {len(product_manager.products)} products (set {product_set})")
     
-    # Create and run genetic algorithm
+    # Create and run genetic algorithm (use default GA hyperparameters)
     ga = GeneticAlgorithm(
         chambers=chamber_manager.chambers,
         product_tests=test_manager.tests,
         products=product_manager.products,
-        population_size=50,  # Reduced for faster testing
-        generations=50,       # Reduced for faster testing
-        crossover_rate=0.8,
-        mutation_rate=0.15,
-        tournament_size=5,
-        elitism_count=2
     )
     
     best_solution = ga.run()
