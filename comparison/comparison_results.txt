@@ -1,0 +1,60 @@
+====================================================================================================
+ALGORITHM COMPARISON REPORT
+Generated: 2025-12-03 22:05:39
+Product Set: 0
+Number of Products: 20
+Number of Chambers: 28
+Number of Test Types: 17
+====================================================================================================
+
+====================================================================================================
+SUMMARY TABLE
+====================================================================================================
+Algorithm                              Tardiness     Makespan    Last Completion     Time (s)    On Time
+----------------------------------------------------------------------------------------------------
+Shortest Due Time (SDT)                        0           80                 80       0.0232        Yes
+Genetic Algorithm (GA)                         0           60                 60      56.9338        Yes
+Hill Climbing (HC)                             0           80                 80       4.1425        Yes
+Least Test Required (LTR)                     42           80                 80       0.0229         No
+First Come First Served (FCFS)                56           80                 80       0.0229         No
+----------------------------------------------------------------------------------------------------
+
+🏆 BEST ALGORITHM: Shortest Due Time (SDT)
+   Total Tardiness: 0
+   Makespan: 80
+   Last Test Completion Time: 80
+
+====================================================================================================
+IMPROVEMENT ANALYSIS (compared to FCFS baseline)
+====================================================================================================
+  Shortest Due Time (SDT): +100.00% tardiness reduction
+  Genetic Algorithm (GA): +100.00% tardiness reduction
+  Hill Climbing (HC): +100.00% tardiness reduction
+  Least Test Required (LTR): +25.00% tardiness reduction
+
+====================================================================================================
+PER-PRODUCT TARDINESS DETAILS
+====================================================================================================
+Product           SDT         GA         HC        LTR       FCFS
+--------------------------------------------------------------------------------
+Product 1           0          0          0          0          0
+Product 2           0          0          0          0          0
+Product 3           0          0          0          0          0
+Product 4           0          0          0          0          0
+Product 5           0          0          0          0          0
+Product 6           0          0          0          0          0
+Product 7           0          0          0          0          0
+Product 8           0          0          0          0          0
+Product 9           0          0          0         11          6
+Product 10          0          0          0          0          0
+Product 11          0          0          0          0          0
+Product 12          0          0          0          0          0
+Product 13          0          0          0          0          0
+Product 14          0          0          0          0          0
+Product 15          0          0          0         18          8
+Product 16          0          0          0          0          0
+Product 17          0          0          0          0          0
+Product 18          0          0          0          0         14
+Product 19          0          0          0         13         28
+Product 20          0          0          0          0          0
+====================================================================================================
