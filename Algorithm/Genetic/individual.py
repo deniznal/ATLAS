@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List, Tuple, Union
 import copy
 from Model.chambers import Chamber
 from Model.products import Product
@@ -9,7 +9,7 @@ from Algorithm.greedy_scheduler import GreedyScheduler
 class Individual:
     
     
-    def __init__(self, chromosome: List[Tuple[int, int]], chambers: List[Chamber],
+    def __init__(self, chromosome: List[List[Tuple[int, int]]], chambers: List[Chamber],
                  product_tests: List[ProductTest], products: List[Product]):
         
         self.chromosome = chromosome
@@ -32,28 +32,32 @@ class Individual:
         # Create a greedy scheduler instance
         scheduler = GreedyScheduler(chambers_copy, self.product_tests, verbose=False)
         
-        # Process each gene in chromosome order
-        # One gene = one (product, test) pair. For that pair we schedule all required samples
-        # according to the product's test matrix.
-        for gene in self.chromosome:
-            product_id, test_index = gene
-            product = self.products[product_id]
+        # Process each stage segment in order
+        for stage_genes in self.chromosome:
+            # Process each gene in the current stage segment
+            for gene in stage_genes:
+                # In some cases due to crossover issues, gene might be None. Skip it.
+                if gene is None:
+                    continue
+                    
+                product_id, test_index = gene
+                product = self.products[product_id]
 
-            # How many samples are required for this test for this product?
-            num_samples_required = product.tests[test_index]
+                # How many samples are required for this test for this product?
+                num_samples_required = product.tests[test_index]
 
-            # If no samples are required, skip (defensive – such genes shouldn't normally exist)
-            if num_samples_required <= 0:
-                continue
+                # If no samples are required, skip (defensive – such genes shouldn't normally exist)
+                if num_samples_required <= 0:
+                    continue
 
-            # Schedule all samples for this (product, test) pair
-            for sample_number in range(num_samples_required):
-                scheduler.schedule_single_test(
-                    test=self.product_tests[test_index],
-                    product=product,
-                    test_index=test_index,
-                    sample_number=sample_number,
-                )
+                # Schedule all samples for this (product, test) pair
+                for sample_number in range(num_samples_required):
+                    scheduler.schedule_single_test(
+                        test=self.product_tests[test_index],
+                        product=product,
+                        test_index=test_index,
+                        sample_number=sample_number,
+                    )
         
         return chambers_copy
     

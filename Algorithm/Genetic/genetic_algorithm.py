@@ -37,10 +37,15 @@ class GeneticAlgorithm:
         self.population = None
         self.best_solution = None
         
-    def order_crossover(self, parent1: Individual, parent2: Individual) -> Tuple[Individual, Individual]:
-        
-        size = len(parent1.chromosome)
-        
+    def order_crossover_single_stage(self, parent1_stage: List[Tuple[int, int]], parent2_stage: List[Tuple[int, int]]) -> Tuple[List[Tuple[int, int]], List[Tuple[int, int]]]:
+        # Ensure parents have same length to avoid slice assignment resizing issues
+        if len(parent1_stage) != len(parent2_stage):
+            return parent1_stage.copy(), parent2_stage.copy()
+
+        size = len(parent1_stage)
+        if size < 2:
+            return parent1_stage.copy(), parent2_stage.copy()
+
         # Select two random crossover points
         point1 = random.randint(0, size - 1)
         point2 = random.randint(0, size - 1)
@@ -49,30 +54,48 @@ class GeneticAlgorithm:
             point1, point2 = point2, point1
         
         # Create offspring 1
-        offspring1_chromosome: List[Tuple[int, int]] = [None] * size  # type: ignore
-        offspring1_chromosome[point1:point2] = parent1.chromosome[point1:point2]
+        offspring1_genes: List[Tuple[int, int]] = [None] * size  # type: ignore
+        offspring1_genes[point1:point2] = parent1_stage[point1:point2]
         
         # Fill remaining positions from parent2
         fill_pos = point2
-        for gene in parent2.chromosome[point2:] + parent2.chromosome[:point2]:
-            if gene not in offspring1_chromosome:
+        for gene in parent2_stage[point2:] + parent2_stage[:point2]:
+            if gene not in offspring1_genes:
                 if fill_pos >= size:
                     fill_pos = 0
-                offspring1_chromosome[fill_pos] = gene
-                fill_pos += 1
+                if fill_pos < size:
+                    offspring1_genes[fill_pos] = gene
+                    fill_pos += 1
         
         # Create offspring 2
-        offspring2_chromosome: List[Tuple[int, int]] = [None] * size  # type: ignore
-        offspring2_chromosome[point1:point2] = parent2.chromosome[point1:point2]
+        offspring2_genes: List[Tuple[int, int]] = [None] * size  # type: ignore
+        offspring2_genes[point1:point2] = parent2_stage[point1:point2]
         
         # Fill remaining positions from parent1
         fill_pos = point2
-        for gene in parent1.chromosome[point2:] + parent1.chromosome[:point2]:
-            if gene not in offspring2_chromosome:
+        for gene in parent1_stage[point2:] + parent1_stage[:point2]:
+            if gene not in offspring2_genes:
                 if fill_pos >= size:
                     fill_pos = 0
-                offspring2_chromosome[fill_pos] = gene
-                fill_pos += 1
+                if fill_pos < size:
+                    offspring2_genes[fill_pos] = gene
+                    fill_pos += 1
+                
+        return offspring1_genes, offspring2_genes
+
+    def order_crossover(self, parent1: Individual, parent2: Individual) -> Tuple[Individual, Individual]:
+        
+        num_stages = len(parent1.chromosome)
+        offspring1_chromosome = []
+        offspring2_chromosome = []
+        
+        for i in range(num_stages):
+            p1_genes = parent1.chromosome[i]
+            p2_genes = parent2.chromosome[i]
+            
+            o1_genes, o2_genes = self.order_crossover_single_stage(p1_genes, p2_genes)
+            offspring1_chromosome.append(o1_genes)
+            offspring2_chromosome.append(o2_genes)
         
         offspring1 = Individual(offspring1_chromosome, self.chambers, self.product_tests, self.products)
         offspring2 = Individual(offspring2_chromosome, self.chambers, self.product_tests, self.products)
@@ -81,23 +104,36 @@ class GeneticAlgorithm:
     
     def swap_mutation(self, individual: Individual) -> Individual:
         
-        chromosome = individual.chromosome.copy()
+        # Deep copy the chromosome (list of lists)
+        chromosome = [stage[:] for stage in individual.chromosome]
         
-        if len(chromosome) >= 2:
-            idx1, idx2 = random.sample(range(len(chromosome)), 2)
-            chromosome[idx1], chromosome[idx2] = chromosome[idx2], chromosome[idx1]
+        # Identify stages that have at least 2 genes
+        valid_stages = [i for i, stage in enumerate(chromosome) if len(stage) >= 2]
+        
+        if valid_stages:
+            stage_idx = random.choice(valid_stages)
+            stage_genes = chromosome[stage_idx]
+            idx1, idx2 = random.sample(range(len(stage_genes)), 2)
+            stage_genes[idx1], stage_genes[idx2] = stage_genes[idx2], stage_genes[idx1]
         
         return Individual(chromosome, self.chambers, self.product_tests, self.products)
     
     def insert_mutation(self, individual: Individual) -> Individual:
         
-        chromosome = individual.chromosome.copy()
+        # Deep copy the chromosome
+        chromosome = [stage[:] for stage in individual.chromosome]
         
-        if len(chromosome) >= 2:
-            remove_idx = random.randint(0, len(chromosome) - 1)
-            gene = chromosome.pop(remove_idx)
-            insert_idx = random.randint(0, len(chromosome))
-            chromosome.insert(insert_idx, gene)
+        # Identify stages that have at least 2 genes
+        valid_stages = [i for i, stage in enumerate(chromosome) if len(stage) >= 2]
+        
+        if valid_stages:
+            stage_idx = random.choice(valid_stages)
+            stage_genes = chromosome[stage_idx]
+            
+            remove_idx = random.randint(0, len(stage_genes) - 1)
+            gene = stage_genes.pop(remove_idx)
+            insert_idx = random.randint(0, len(stage_genes))
+            stage_genes.insert(insert_idx, gene)
         
         return Individual(chromosome, self.chambers, self.product_tests, self.products)
     
@@ -162,9 +198,10 @@ class GeneticAlgorithm:
                 if random.random() < self.crossover_rate:
                     offspring1, offspring2 = self.order_crossover(parent1, parent2)
                 else:
-                    offspring1 = Individual(parent1.chromosome.copy(), self.chambers, 
+                    # Create copy manually since we have complex structure
+                    offspring1 = Individual([s[:] for s in parent1.chromosome], self.chambers, 
                                           self.product_tests, self.products)
-                    offspring2 = Individual(parent2.chromosome.copy(), self.chambers, 
+                    offspring2 = Individual([s[:] for s in parent2.chromosome], self.chambers, 
                                           self.product_tests, self.products)
                 
                 # Mutation
@@ -295,7 +332,7 @@ def main():
     test_manager.load_from_json("Data/tests.json")
     
     product_manager = ProductsManager()
-    product_set = 0  # Use product set 0 (20 products) or 1 (50 products)
+    product_set = 1  # Use product set 0 (20 products) or 1 (50 products)
     product_manager.load_from_json("Data/products.json", "Data/products_due_time.json", product_set)
     
     print(f"Loaded {len(chamber_manager.chambers)} chambers")
@@ -307,8 +344,6 @@ def main():
         chambers=chamber_manager.chambers,
         product_tests=test_manager.tests,
         products=product_manager.products,
-        population_size=50,
-        generations=50,
     )
     
     best_solution = ga.run()
