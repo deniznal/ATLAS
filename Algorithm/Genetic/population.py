@@ -120,7 +120,14 @@ class Population:
 
         # Add genes from greedy schedule in order, but placing them in their respective stage bins
         for task in scheduled_tasks:
-            gene = (task.product.id, task.test.id)
+            # Find the actual index of this test in self.product_tests
+            # (task.test.id is the "order" field, NOT the list index)
+            try:
+                test_index = self.product_tests.index(task.test)
+            except ValueError:
+                continue  # Skip if test not found
+            
+            gene = (task.product.id, test_index)
             if gene in all_genes_flat and gene not in seen_genes:
                 stage_idx = task.test.stage - 1
                 if 0 <= stage_idx < self.max_stage:
