@@ -10,37 +10,34 @@ class GreedyScheduler:
     base_days_between_tests: int = 1
     MAX_SAMPLES_PER_PRODUCT: int = 3
 
-    def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest], verbose: bool = False):
-        
+    def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest]):
         self.chambers = chambers
         self.product_tests = product_tests
-        self.verbose = verbose
-        # Track active samples for each product
-        self.active_samples: Dict[Product, List[Task]] = {}
+        # Key by product.id to avoid object identity issues
+        self.active_samples: Dict[int, List[Task]] = {}
 
     @staticmethod
     def compute_schedule_metrics(chambers: List[Chamber], products: List[Product]) -> Tuple[List[int], bool, int, int]:
-        
         tardinesses = [0] * len(products)
         all_on_time = True
         total_tardiness = 0
         makespan = 0
 
-        # Pre-collect tasks per product to avoid repeated scanning
-        tasks_by_product: Dict[Product, List[Task]] = {p: [] for p in products}
+        # Map product.id -> list of tasks
+        tasks_by_product: Dict[int, List[Task]] = {p.id: [] for p in products}
         for chamber in chambers:
             for station in chamber.list_of_tests:
                 for task in station:
-                    tasks_by_product.setdefault(task.product, []).append(task)
+                    pid = task.product.id
+                    tasks_by_product.setdefault(pid, []).append(task)
                     end_time = task.start_time + task.duration
                     if end_time > makespan:
                         makespan = end_time
 
         for idx, product in enumerate(products):
-            product_tasks = tasks_by_product.get(product, [])
+            product_tasks = tasks_by_product.get(product.id, [])
             if not product_tasks:
                 continue
-
             last_task_end = max(task.start_time + task.duration for task in product_tasks)
             tardiness = max(0, last_task_end - product.due_time)
             tardinesses[idx] = tardiness
@@ -50,256 +47,231 @@ class GreedyScheduler:
 
         return tardinesses, all_on_time, total_tardiness, makespan
 
+    def _ensure_product_entry(self, product: Product):
+        pid = product.id
+        if pid not in self.active_samples:
+            self.active_samples[pid] = []
+
+    def _sample_is_free_at(self, product: Product, sample_number: int, start_time: int, duration: int) -> bool:
+        """
+        Returns True if the given sample_number for product is free
+        during interval [start_time, start_time + duration).
+        """
+        pid = product.id
+        self._ensure_product_entry(product)
+        for t in self.active_samples[pid]:
+            if t.sample_number != sample_number:
+                continue
+            # overlap check: [a_start, a_end) overlaps [b_start, b_end) ?
+            a_start, a_end = start_time, start_time + duration
+            b_start, b_end = t.start_time, t.start_time + t.duration
+            if not (a_end <= b_start or a_start >= b_end):
+                return False
+        return True
+
+    def _earliest_sample_free_time(self, product: Product) -> int:
+        """
+        If all samples are in use, return the earliest completion time across them.
+        If any sample slot is unused (i.e., fewer active tasks than MAX), return current time 0
+        (caller should compare with its min_start_time).
+        """
+        pid = product.id
+        self._ensure_product_entry(product)
+        if len(self.active_samples[pid]) < self.MAX_SAMPLES_PER_PRODUCT:
+            return 0
+        earliest = min((t.start_time + t.duration) for t in self.active_samples[pid])
+        return earliest
+
     def get_earliest_sample_available_time(self, product: Product, current_time: int) -> int:
-        
-        if product not in self.active_samples:
-            self.active_samples[product] = []
+        """
+        Returns a time >= current_time when at least one sample slot is available.
+        """
+        pid = product.id
+        self._ensure_product_entry(product)
+        if len(self.active_samples[pid]) < self.MAX_SAMPLES_PER_PRODUCT:
             return current_time
-
-        # If we have less than max samples, we can start immediately
-        if len(self.active_samples[product]) < self.MAX_SAMPLES_PER_PRODUCT:
-            return current_time
-
-        # Only check for next available time if all three samples are busy
-        if len(self.active_samples[product]) == self.MAX_SAMPLES_PER_PRODUCT:
-            # Find the earliest time when any sample will complete
-            earliest_completion = float('inf')
-            for task in self.active_samples[product]:
-                completion_time = task.start_time + task.duration
-                earliest_completion = min(earliest_completion, completion_time)
-            return max(current_time, earliest_completion)
-
-        return current_time
+        earliest = self._earliest_sample_free_time(product)
+        return max(current_time, earliest)
 
     def update_active_samples(self, product: Product, current_time: int):
-        
-        if product not in self.active_samples:
-            self.active_samples[product] = []
-            return
-
-        # Remove completed samples
-        self.active_samples[product] = [
-            task for task in self.active_samples[product]
-            if task.start_time + task.duration > current_time
+        """
+        Remove completed tasks for this product (by product.id) that finish at or before current_time.
+        """
+        pid = product.id
+        self._ensure_product_entry(product)
+        self.active_samples[pid] = [
+            task for task in self.active_samples[pid]
+            if (task.start_time + task.duration) > current_time
         ]
 
     def get_prev_stage_end_time(self, current_test_id: int, product: Product, sample_number: int = 0) -> int:
-        
+        """
+        Return the max end time of all tasks for this product in stages prior to the given test's stage.
+        Also updates active_samples with that time and accounts for sample availability.
+        """
         current_stage = self.product_tests[current_test_id].stage
         max_end_time = 0
-
-        # Check all previous stages
         for chamber in self.chambers:
             for station in chamber.list_of_tests:
                 for task in station:
-                    # Check if this task is from a previous stage
-                    if task.test.stage < current_stage and task.product == product:
-                        task_end_time = task.start_time + task.duration
-                        if max_end_time < task_end_time:
-                            max_end_time = task_end_time
+                    if task.test.stage < current_stage and task.product.id == product.id:
+                        end_t = task.start_time + task.duration
+                        if end_t > max_end_time:
+                            max_end_time = end_t
 
-        # Update active samples and check sample availability
+        # Remove completed samples up to max_end_time
         self.update_active_samples(product, max_end_time)
-        sample_available_time = self.get_earliest_sample_available_time(product, max_end_time)
-        
-        if self.verbose:
-            print(f"max_end_time: {max_end_time}, current_stage: {current_stage}, current_test_id: {current_test_id}, sample: {sample_number}, sample_available_time: {sample_available_time}")
-        return sample_available_time
-    
-    def find_available_slot(self, test: ProductTest, product: Product, min_start_time: int) -> Optional[tuple[Chamber, int, str, int]]:
-        
+        # Wait until some sample is available (if needed)
+        sample_avail = self.get_earliest_sample_available_time(product, max_end_time)
+        return sample_avail
+
+    def find_available_slot(self, test: ProductTest, product: Product, min_start_time: int) -> Optional[Tuple[Chamber, int, str, int]]:
+        """
+        Finds earliest station start time >= min_start_time where test can fit.
+        Returns (chamber, station_id, station_name, start_time) or None.
+        """
         best_slot = None
         earliest_overall_start_time = float('inf')
 
-        # Iterate through all chambers and their stations
         for chamber in self.chambers:
-            # Check if the chamber is compatible with the test
             if not chamber.is_test_suitable(test):
                 continue
 
             for station_id in range(len(chamber.list_of_tests)):
-                # Get the list of tasks for this station, sorted by start time
                 station_tasks = sorted(chamber.list_of_tests[station_id], key=lambda t: t.start_time)
-
-                # Find the earliest possible start time in this station at or after min_start_time
                 current_check_time = min_start_time
 
-                # Check all possible gaps in the schedule
-                for i, task in enumerate(station_tasks):
-                    # If the current check time and the test duration fit before this task starts
+                for task in station_tasks:
+                    # if we can fit before this scheduled task
                     if current_check_time + test.test_duration <= task.start_time:
-                        # Found a gap, check if it's earlier than our best so far
                         if current_check_time < earliest_overall_start_time:
                             earliest_overall_start_time = current_check_time
-                            station_name = f"{chamber.name} - Station {station_id}"
-                            best_slot = (chamber, station_id, station_name, current_check_time)
-                    
-                    # Move the check time to after this task ends
+                            best_slot = (chamber, station_id, f"{chamber.name} - Station {station_id + 1}", current_check_time)
+                    # move to after this task
                     current_check_time = max(current_check_time, task.start_time + task.duration)
 
-                # Check if there's a gap after the last task
+                # after last task in station
                 if current_check_time < earliest_overall_start_time:
                     earliest_overall_start_time = current_check_time
-                    station_name = f"{chamber.name} - Station {station_id}"
-                    best_slot = (chamber, station_id, station_name, current_check_time)
+                    best_slot = (chamber, station_id, f"{chamber.name} - Station {station_id + 1}", current_check_time)
 
         return best_slot
-    
-    def get_next_available_sample_number(self, product: Product) -> int:
-        
-        if product not in self.active_samples:
-            return 0
-            
-        # Get all currently used sample numbers
-        used_samples = {task.sample_number for task in self.active_samples[product]}
-        
-        # Find the first available sample number
+
+    def get_first_free_sample_number_at(self, product: Product, start_time: int, duration: int) -> Optional[int]:
+        """
+        Return a sample number [0..MAX-1] that is free at the interval [start_time, start_time+duration).
+        If none free, return None.
+        """
+        pid = product.id
+        self._ensure_product_entry(product)
+        used = {task.sample_number for task in self.active_samples[pid]}
+        # prefer an unused sample number if present
         for i in range(self.MAX_SAMPLES_PER_PRODUCT):
-            if i not in used_samples:
+            if i not in used:
                 return i
-                
-        return 0  # This should never happen due to MAX_SAMPLES_PER_PRODUCT check
+        # otherwise check which assigned sample is free at that time
+        for i in range(self.MAX_SAMPLES_PER_PRODUCT):
+            if self._sample_is_free_at(product, i, start_time, duration):
+                return i
+        return None
 
     def schedule_single_test(self, test: ProductTest, product: Product, test_index: int, sample_number: int = 0) -> bool:
-        
+        """
+        Schedules a single occurrence of `test` for `product`.
+        Ensures the chosen sample number is free during the scheduled interval.
+        Returns True on success, False only if no chamber supports the test.
+        """
+        # quick check: any chamber compatible?
+        if not any(ch.is_test_suitable(test) for ch in self.chambers):
+            return False
+
         base_increase = 0
-        while True:
-            # Get the next available sample number
-            available_sample = self.get_next_available_sample_number(product)
-            
-            # min_start_time now considers previous stages and samples, and sample availability constraints
-            min_start_time = self.get_prev_stage_end_time(test_index, product, available_sample) + base_increase
-            slot = self.find_available_slot(test, product, min_start_time)
-            
-            if slot:
-                chamber, station_id, station_name, actual_start_time = slot
+        # safety cap to avoid pathological infinite loops
+        max_attempts = 10000
+        attempts = 0
+
+        while attempts < max_attempts:
+            attempts += 1
+
+            # determine earliest start allowed by previous stages and sample availability
+            min_start = self.get_prev_stage_end_time(test_index, product, sample_number) + base_increase
+
+            # find earliest slot on any compatible station
+            slot = self.find_available_slot(test, product, min_start)
+            if not slot:
+                # no compatible slot at all (shouldn't happen often) -> push forward
+                base_increase += self.base_days_between_tests
+                continue
+
+            chamber, station_id, station_name, candidate_start = slot
+            # we must ensure a sample number is free at [candidate_start, candidate_start + duration)
+            chosen_sample = self.get_first_free_sample_number_at(product, candidate_start, test.test_duration)
+            if chosen_sample is not None:
+                # double-check: if caller requested a specific sample_number, prefer it if free
+                if sample_number is not None and sample_number < self.MAX_SAMPLES_PER_PRODUCT:
+                    if self._sample_is_free_at(product, sample_number, candidate_start, test.test_duration):
+                        chosen_sample = sample_number
+
+                # construct task and add to station
                 task = Task(
                     test=test,
-                    start_time=actual_start_time,
+                    start_time=candidate_start,
                     product=product,
                     duration=test.test_duration,
                     station_name=station_name,
-                    sample_number=available_sample
+                    sample_number=chosen_sample
                 )
-                # We already confirmed the slot is available in find_available_slot, but add_task_to_station will actually insert it.
-                # We should ideally check the return of add_task_to_station to be robust, but for now, assuming it succeeds.
-                chamber.add_task_to_station(task, station_id)
-                
-                # Add to active samples
-                if product not in self.active_samples:
-                    self.active_samples[product] = []
-                self.active_samples[product].append(task)
-                
-                if self.verbose:
-                    print(f"Assigned {test.test_name} (Sample {available_sample + 1}) to {station_name} at time {actual_start_time}")
+                # rely on chamber.add_task_to_station to insert; if it returns False treat as conflict
+                success = chamber.add_task_to_station(task, station_id)
+                if success is False:
+                    # conflict: push forward and retry
+                    base_increase += self.base_days_between_tests
+                    continue
+
+                # record as active sample
+                pid = product.id
+                self._ensure_product_entry(product)
+                self.active_samples[pid].append(task)
                 return True
-            
-            if self.verbose:
-                print(f"No suitable chamber found for test {test.test_name} (Sample {available_sample + 1}) at or after time {min_start_time}. Increasing base_increase by {self.base_days_between_tests}")
-            base_increase += self.base_days_between_tests
-
-    def measure_tardiness(self, products: List[Product], algorithm_name: str) -> Tuple[List[int], bool]:
-       
-        tardinesses, all_on_time, total_tardiness, _ = GreedyScheduler.compute_schedule_metrics(
-            self.chambers, products
-        )
-
-        # Create list of (product_id, tardiness) tuples and sort by product_id
-        product_tardiness = [(products[i].id, tardinesses[i]) for i in range(len(products))]
-        product_tardiness.sort(key=lambda x: x[0])  # Sort by product ID
-
-        # Prepare report content
-        report_lines = [
-            f"\nTardiness Report ({algorithm_name} Algorithm):",
-            "-" * 50
-        ]
-        
-        # Add sorted product tardiness information
-        for product_id, tardiness in product_tardiness:
-            if tardiness > 0:
-                report_lines.append(f"Product {product_id + 1} is {tardiness} time units late")
             else:
-                report_lines.append(f"Product {product_id + 1} is on time")
-        
-        report_lines.extend([
-            "-" * 50,
-            f"Total tardiness across all products: {total_tardiness} time units"
-        ])
-        
-        if all_on_time:
-            report_lines.append("All products are on time!")
-        else:
-            report_lines.append("Some products are delayed. See details above.")
-        
-        report_lines.append("")  # Add empty line at the end
-        
-        # Join lines with newlines
-        report_content = "\n".join(report_lines)
-        
-        # Print to console
-        print(report_content)
-        
-        # Save to file
-        filename = f"tardiness_report_{algorithm_name.lower().replace(' ', '_')}.txt"
-        try:
-            with open(filename, 'w') as f:
-                f.write(report_content)
-            print(f"Tardiness report saved to {filename}")
-        except IOError as e:
-            print(f"Error saving tardiness report: {e}")
+                # no sample free at candidate_start: find earliest sample completion and try again from that time
+                earliest_free = self._earliest_sample_free_time(product)
+                # ensure we advance (avoid infinite loop if earliest_free == candidate_start)
+                advance = max(self.base_days_between_tests, earliest_free - candidate_start, 0)
+                base_increase += advance if advance > 0 else self.base_days_between_tests
 
+        return False  # failed after many attempts
+
+    def measure_tardiness(self, products: List[Product]) -> Tuple[List[int], bool]:
+        tardinesses, all_on_time, *_ = GreedyScheduler.compute_schedule_metrics(self.chambers, products)
         return tardinesses, all_on_time
 
-    def first_come_first_served(self, products: List[Product], report: bool = True) -> List[Chamber]:
-        
+    def first_come_first_served(self, products: List[Product]) -> List[Chamber]:
         for product in products:
-            test_indices = list(range(len(product.tests)))
-            
-            for test_index in test_indices:
+            for test_index in range(len(product.tests)):
                 test = self.product_tests[test_index]
-                for sample_number in range(product.tests[test_index]):
-                    self.schedule_single_test(test, product, test_index, sample_number)
-
-        # Measure tardiness after scheduling (optional)
-        if report:
-            self.measure_tardiness(products, "First Come First Served")
+                for _ in range(product.tests[test_index]):
+                    self.schedule_single_test(test, product, test_index)
         return self.chambers
 
-    def least_test_required(self, products: List[Product], report: bool = True) -> List[Chamber]:
-        
-        # Sort products by total number of tests required
-        products = sorted(products, key=lambda x: sum(x.tests))
-
-        for product in products:
-            test_indices = list(range(len(product.tests)))
-            
-            for test_index in test_indices:
+    def least_test_required(self, products: List[Product]) -> List[Chamber]:
+        products_sorted = sorted(products, key=lambda x: sum(x.tests))
+        for product in products_sorted:
+            for test_index in range(len(product.tests)):
                 test = self.product_tests[test_index]
-                for sample_number in range(product.tests[test_index]):
-                    self.schedule_single_test(test, product, test_index, sample_number)
-
-        # Measure tardiness after scheduling (optional)
-        if report:
-            self.measure_tardiness(products, "Least Test Required")
+                for _ in range(product.tests[test_index]):
+                    self.schedule_single_test(test, product, test_index)
         return self.chambers
 
-    def shortest_due_time(self, products: List[Product], report: bool = True) -> List[Chamber]:
-        
-        # Sort products by due time
-        products = sorted(products, key=lambda x: x.due_time)
-
-        for product in products:
-            test_indices = list(range(len(product.tests)))
-            
-            for test_index in test_indices:
+    def shortest_due_time(self, products: List[Product]) -> List[Chamber]:
+        products_sorted = sorted(products, key=lambda x: x.due_time)
+        for product in products_sorted:
+            for test_index in range(len(product.tests)):
                 test = self.product_tests[test_index]
-                for sample_number in range(product.tests[test_index]):
-                    self.schedule_single_test(test, product, test_index, sample_number)
-
-        # Measure tardiness after scheduling (optional)
-        if report:
-            self.measure_tardiness(products, "Shortest Due Time")
+                for _ in range(product.tests[test_index]):
+                    self.schedule_single_test(test, product, test_index)
         return self.chambers
+
 
     def output_schedule_json(self) -> str:
        

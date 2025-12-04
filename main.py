@@ -10,12 +10,12 @@ import argparse
 
 def main():
     # Set up argument parser
-    # parser = argparse.ArgumentParser(description='Run the scheduling algorithm with different product sets.')
-    # parser.add_argument('--product-set', type=int, choices=[0, 1], default=0,
-    #                   help='Select product set (0 for first set, 1 for second set)')
-    # parser.add_argument('--algorithm', type=str, choices=['fcfs', 'ltr', 'sdt'], default='sdt',
-    #                   help='Select scheduling algorithm (fcfs: First Come First Served, ltr: Least Test Required, sdt: Shortest Due Time)')
-    # args = parser.parse_args()
+    parser = argparse.ArgumentParser(description='Run the scheduling algorithm with different product sets.')
+    parser.add_argument('--product-set', type=int, choices=[0, 1], default=1,
+                      help='Select product set (0 for first set, 1 for second set)')
+    parser.add_argument('--algorithm', type=str, choices=['fcfs', 'ltr', 'sdt'], default='sdt',
+                      help='Select scheduling algorithm (fcfs: First Come First Served, ltr: Least Test Required, sdt: Shortest Due Time)')
+    args = parser.parse_args()
 
     chamber_data_path: str = "Data/chambers.json"
     test_data_path: str = "Data/tests.json"
@@ -33,7 +33,6 @@ def main():
 
     # Initialize scheduler based on selected algorithm
     scheduler = GreedyScheduler(chamber_manager.chambers, test_manager.tests)
-    
     
     if True:
         chart = scheduler.first_come_first_served(product_manager.products)
