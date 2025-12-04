@@ -30,8 +30,6 @@ class Population:
             if test.stage > self.max_stage:
                 self.max_stage = test.stage
         
-        print(f"DEBUG: Max Stage Detected: {self.max_stage}")
-        
         # Create initial population
         self._initialize_population(seed_with_greedy)
     
@@ -44,11 +42,6 @@ class Population:
                 if num_samples > 0:  # Only schedule tests that require samples
                     test = self.product_tests[test_index]
                     stage_idx = test.stage - 1 # 0-based index
-                    
-                    # Debug print for first few products
-                    if product.id < 2:
-                         print(f"DEBUG: Product {product.id}, Test {test.test_name} (Index {test_index}), Stage {test.stage} -> Bin {stage_idx}")
-                    
                     if 0 <= stage_idx < self.max_stage:
                         genes_by_stage[stage_idx].append((product.id, test_index))
         

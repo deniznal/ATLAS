@@ -92,8 +92,9 @@ class GreedyScheduler:
         for chamber in self.chambers:
             for station in chamber.list_of_tests:
                 for task in station:
-                    # Check if this task is from a previous stage
-                    if task.test.stage < current_stage and task.product == product:
+                    # Check if this task is from a previous stage.
+                    # Use ID comparison for product to avoid object identity issues with deep copies.
+                    if task.test.stage < current_stage and task.product.id == product.id:
                         task_end_time = task.start_time + task.duration
                         if max_end_time < task_end_time:
                             max_end_time = task_end_time
