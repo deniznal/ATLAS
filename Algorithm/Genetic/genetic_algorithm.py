@@ -21,7 +21,7 @@ class GeneticAlgorithm:
     
     def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest], 
                  products: List[Product], population_size: int = 100, 
-                 generations: int = 300, crossover_rate: float = 0.8, 
+                 generations: int = 100, crossover_rate: float = 0.8, 
                  mutation_rate: float = 0.15, tournament_size: int = 5, 
                  elitism_count: int = 2):
         
@@ -245,8 +245,8 @@ class GeneticAlgorithm:
         # using the same reporting style as the greedy algorithms.
         from Algorithm.greedy_scheduler import GreedyScheduler
         scheduled_chambers = self.best_solution.decode_to_schedule()
-        ga_scheduler = GreedyScheduler(scheduled_chambers, self.product_tests, verbose=False)
-        ga_scheduler.measure_tardiness(self.products, "Genetic Algorithm")
+        ga_scheduler = GreedyScheduler(scheduled_chambers, self.product_tests)
+        ga_scheduler.measure_tardiness(self.products)
 
         return self.best_solution
     
@@ -274,15 +274,15 @@ class GeneticAlgorithm:
                 chamber.list_of_tests = [[] for _ in range(chamber.station)]
             
             # Run greedy algorithm
-            scheduler = GreedyScheduler(chambers_copy, self.product_tests, verbose=False)
+            scheduler = GreedyScheduler(chambers_copy, self.product_tests)
             if method == "first_come_first_served":
                 # For final comparison we want the detailed tardiness reports,
                 # so keep reporting enabled here.
-                scheduler.first_come_first_served(self.products, report=True)
+                scheduler.first_come_first_served(self.products)
             elif method == "least_test_required":
-                scheduler.least_test_required(self.products, report=True)
+                scheduler.least_test_required(self.products)
             elif method == "shortest_due_time":
-                scheduler.shortest_due_time(self.products, report=True)
+                scheduler.shortest_due_time(self.products)
             
             # Calculate metrics using shared helper
             tardinesses, all_on_time, total_tardiness, makespan = GreedyScheduler.compute_schedule_metrics(
@@ -361,6 +361,10 @@ def main():
     
     # Compare with greedy algorithms
     ga.compare_with_greedy(product_set)
+
+    json_schedule = best_solution.output_schedule_json()
+    with open("genetic_schedule_output.json", "w") as json_file:
+        json_file.write(json_schedule)
     
     print("\nDone!")
 

@@ -93,15 +93,15 @@ class Population:
         for chamber in chambers_copy:
             chamber.list_of_tests = [[] for _ in range(chamber.station)]
         
-        scheduler = GreedyScheduler(chambers_copy, self.product_tests, verbose=False)
+        scheduler = GreedyScheduler(chambers_copy, self.product_tests)
         
         # Run the greedy algorithm
         if algorithm_name == "first_come_first_served":
-            scheduler.first_come_first_served(self.products, report=False)
+            scheduler.first_come_first_served(self.products)
         elif algorithm_name == "least_test_required":
-            scheduler.least_test_required(self.products, report=False)
+            scheduler.least_test_required(self.products)
         elif algorithm_name == "shortest_due_time":
-            scheduler.shortest_due_time(self.products, report=False)
+            scheduler.shortest_due_time(self.products)
         
         # Extract task order from the scheduled chambers
         scheduled_tasks = []

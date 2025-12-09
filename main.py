@@ -36,7 +36,7 @@ def main():
     scheduler = GreedyScheduler(chamber_manager.chambers, test_manager.tests)
     
     if True:
-        chart = scheduler.first_come_first_served(product_manager.products)
+        chart = scheduler.shortest_due_time(product_manager.products)
     elif False:
         chart = scheduler.least_test_required(product_manager.products)
     else:  # sdt
@@ -52,20 +52,7 @@ def main():
     
     # gantt_chart_product(chart)
 
-    # Initialize the validator
-    # validator = ScheduleOutputValidator(chamber_manager.chambers, test_manager.tests, product_manager.products)
-
-    # Validate an output file
-    # errors = validator.validate_output_file("gantt_chart_output.txt")
-
     # Check if there are any errors
-    # if errors:
-    #     print("Validation errors found:")
-    #     for error in errors:
-    #         print(f"- {error}")
-    # else:
-    #     print("Schedule is valid!")
-
 
 if __name__ == "__main__":
     main()

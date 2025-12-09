@@ -30,7 +30,7 @@ class Individual:
             chamber.list_of_tests = [[] for _ in range(chamber.station)]
         
         # Create a greedy scheduler instance
-        scheduler = GreedyScheduler(chambers_copy, self.product_tests, verbose=False)
+        scheduler = GreedyScheduler(chambers_copy, self.product_tests)
         
         # Process each stage segment in order
         for stage_genes in self.chromosome:
@@ -112,3 +112,28 @@ class Individual:
     
     def __repr__(self) -> str:
         return self.__str__()
+    
+    def output_schedule_json(self) -> str:
+       
+        import json
+
+        schedule_output = []
+        for chamber in self.decode_to_schedule():
+            for station_id, station_tasks in enumerate(chamber.list_of_tests):
+                for task in station_tasks:
+                    task_info = {
+                        "chamber": chamber.name,
+                        "station_id": station_id + 1,
+                        "station_name": f"Station {station_id + 1}",
+                        "test_name": task.test.test_name,
+                        "product_id": task.product.id + 1,
+                        "start_time": task.start_time,
+                        "duration": task.duration,
+                        "sample_number": task.sample_number + 1,
+                        "stage": task.test.stage
+                    }
+                    schedule_output.append(task_info)
+
+        return json.dumps(schedule_output, indent=4)
+
+    
