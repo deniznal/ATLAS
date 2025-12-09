@@ -24,43 +24,69 @@ class Population:
         self.average_fitness_history = []
         self.worst_fitness_history = []
         
+        # Determine number of stages
+        self.max_stage = 0
+        for test in self.product_tests:
+            if test.stage > self.max_stage:
+                self.max_stage = test.stage
+        
+        print(f"DEBUG: Max Stage Detected: {self.max_stage}")
+        
         # Create initial population
         self._initialize_population(seed_with_greedy)
     
-    def _create_all_genes(self) -> List[Tuple[int, int]]:
+    def _create_all_genes_by_stage(self) -> List[List[Tuple[int, int]]]:
        
-        genes: List[Tuple[int, int]] = []
+        genes_by_stage: List[List[Tuple[int, int]]] = [[] for _ in range(self.max_stage)]
+        
         for product in self.products:
             for test_index, num_samples in enumerate(product.tests):
                 if num_samples > 0:  # Only schedule tests that require samples
-                    genes.append((product.id, test_index))
-        return genes
+                    test = self.product_tests[test_index]
+                    stage_idx = test.stage - 1 # 0-based index
+                    
+                    # Debug print for first few products
+                    if product.id < 2:
+                         print(f"DEBUG: Product {product.id}, Test {test.test_name} (Index {test_index}), Stage {test.stage} -> Bin {stage_idx}")
+                    
+                    if 0 <= stage_idx < self.max_stage:
+                        genes_by_stage[stage_idx].append((product.id, test_index))
+        
+        return genes_by_stage
     
     def _initialize_population(self, seed_with_greedy: bool):
         
-        all_genes = self._create_all_genes()
+        all_genes_by_stage = self._create_all_genes_by_stage()
         
         if seed_with_greedy and self.size >= 3:
             # Add three greedy solutions
-            self._add_greedy_solution("first_come_first_served", all_genes)
-            self._add_greedy_solution("least_test_required", all_genes)
-            self._add_greedy_solution("shortest_due_time", all_genes)
+            self._add_greedy_solution("first_come_first_served", all_genes_by_stage)
+            self._add_greedy_solution("least_test_required", all_genes_by_stage)
+            self._add_greedy_solution("shortest_due_time", all_genes_by_stage)
             
             # Fill rest with random permutations
             for _ in range(self.size - 3):
-                chromosome = all_genes.copy()
-                random.shuffle(chromosome)
+                chromosome = []
+                for stage_genes in all_genes_by_stage:
+                    stage_copy = stage_genes.copy()
+                    random.shuffle(stage_copy)
+                    chromosome.append(stage_copy)
+                
                 individual = Individual(chromosome, self.chambers, self.product_tests, self.products)
                 self.individuals.append(individual)
         else:
             # All random permutations
             for _ in range(self.size):
-                chromosome = all_genes.copy()
-                random.shuffle(chromosome)
+                chromosome = []
+                for stage_genes in all_genes_by_stage:
+                    stage_copy = stage_genes.copy()
+                    random.shuffle(stage_copy)
+                    chromosome.append(stage_copy)
+                
                 individual = Individual(chromosome, self.chambers, self.product_tests, self.products)
                 self.individuals.append(individual)
     
-    def _add_greedy_solution(self, algorithm_name: str, all_genes: List[Tuple[int, int]]):
+    def _add_greedy_solution(self, algorithm_name: str, all_genes_by_stage: List[List[Tuple[int, int]]]):
         
         # Create a fresh copy of chambers and scheduler
         chambers_copy = copy.deepcopy(self.chambers)
@@ -87,22 +113,33 @@ class Population:
         # Sort tasks by start time to get execution order
         scheduled_tasks.sort(key=lambda t: t.start_time)
         
-        # Create chromosome from scheduled task order.
-        # One gene per (product, test) pair; duplicates are ignored.
-        chromosome: List[Tuple[int, int]] = []
+        # Create structured chromosome from scheduled task order.
+        # We must preserve the stage grouping.
+        chromosome: List[List[Tuple[int, int]]] = [[] for _ in range(self.max_stage)]
+        
+        # Flatten all genes to set for quick lookup to avoid duplicates/missing
+        all_genes_flat = set()
+        for stage_list in all_genes_by_stage:
+            for gene in stage_list:
+                all_genes_flat.add(gene)
+
         seen_genes = set()
 
+        # Add genes from greedy schedule in order, but placing them in their respective stage bins
         for task in scheduled_tasks:
             gene = (task.product.id, task.test.id)
-            if gene in all_genes and gene not in seen_genes:
-                chromosome.append(gene)
-                seen_genes.add(gene)
+            if gene in all_genes_flat and gene not in seen_genes:
+                stage_idx = task.test.stage - 1
+                if 0 <= stage_idx < self.max_stage:
+                    chromosome[stage_idx].append(gene)
+                    seen_genes.add(gene)
 
         # Add any missing genes (shouldn't happen, but just in case)
-        for gene in all_genes:
-            if gene not in seen_genes:
-                chromosome.append(gene)
-                seen_genes.add(gene)
+        for stage_idx, stage_list in enumerate(all_genes_by_stage):
+            for gene in stage_list:
+                if gene not in seen_genes:
+                    chromosome[stage_idx].append(gene)
+                    seen_genes.add(gene)
         
         individual = Individual(chromosome, self.chambers, self.product_tests, self.products)
         self.individuals.append(individual)
@@ -153,7 +190,11 @@ class Population:
     
     def get_diversity(self) -> float:
         
-        unique_chromosomes = len(set(tuple(ind.chromosome) for ind in self.individuals))
+        # Convert list of lists to tuple of tuples for hashing
+        unique_chromosomes = len(set(
+            tuple(tuple(stage) for stage in ind.chromosome) 
+            for ind in self.individuals
+        ))
         return unique_chromosomes / len(self.individuals)
     
     def __str__(self) -> str:
