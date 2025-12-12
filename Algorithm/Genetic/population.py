@@ -127,7 +127,19 @@ class Population:
 
         # Add genes from greedy schedule in order, but placing them in their respective stage bins
         for task in scheduled_tasks:
-            gene = (task.product.id, task.test.id)
+            # Map the scheduled task's ProductTest instance back to its index in the
+            # master product_tests list. Using task.test.id (the "order" value from
+            # the JSON) breaks the chromosome format because those ids are not
+            # zero-based list indices and are reused. The rest of the GA expects
+            # genes to store the test's index position.
+            try:
+                test_index = self.product_tests.index(task.test)
+            except ValueError:
+                # If the task's test is somehow not in product_tests, skip it;
+                # the missing gene (if any) will be filled in the catch-up loop below.
+                continue
+
+            gene = (task.product.id, test_index)
             if gene in all_genes_flat and gene not in seen_genes:
                 stage_idx = task.test.stage - 1
                 if 0 <= stage_idx < self.max_stage:
