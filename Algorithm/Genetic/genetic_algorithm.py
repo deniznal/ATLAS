@@ -21,8 +21,8 @@ class GeneticAlgorithm:
     
     def __init__(self, chambers: List[Chamber], product_tests: List[ProductTest], 
                  products: List[Product], population_size: int = 100, 
-                 generations: int = 50, crossover_rate: float = 0.8, 
-                 mutation_rate: float = 0.15, tournament_size: int = 5, 
+                 generations: int = 50, crossover_rate: float = 0.9, 
+                 mutation_rate: float = 0.5, tournament_size: int = 5, 
                  elitism_count: int = 2):
         
         self.chambers = chambers
