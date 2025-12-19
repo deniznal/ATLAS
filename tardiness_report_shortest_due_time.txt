@@ -2,25 +2,55 @@
 Tardiness Report (Shortest Due Time Algorithm):
 --------------------------------------------------
 Product 1 is on time
-Product 2 is on time
-Product 3 is on time
-Product 4 is on time
-Product 5 is on time
-Product 6 is on time
+Product 2 is 21 time units late
+Product 3 is 2 time units late
+Product 4 is 17 time units late
+Product 5 is 7 time units late
+Product 6 is 11 time units late
 Product 7 is on time
-Product 8 is on time
+Product 8 is 33 time units late
 Product 9 is on time
-Product 10 is on time
-Product 11 is on time
-Product 12 is on time
+Product 10 is 10 time units late
+Product 11 is 11 time units late
+Product 12 is 31 time units late
 Product 13 is on time
-Product 14 is on time
-Product 15 is on time
-Product 16 is on time
-Product 17 is on time
-Product 18 is on time
+Product 14 is 33 time units late
+Product 15 is 33 time units late
+Product 16 is 22 time units late
+Product 17 is 26 time units late
+Product 18 is 22 time units late
 Product 19 is on time
 Product 20 is on time
+Product 21 is 2 time units late
+Product 22 is 4 time units late
+Product 23 is 23 time units late
+Product 24 is 3 time units late
+Product 25 is 26 time units late
+Product 26 is 8 time units late
+Product 27 is 41 time units late
+Product 28 is 17 time units late
+Product 29 is 26 time units late
+Product 30 is 24 time units late
+Product 31 is 35 time units late
+Product 32 is 22 time units late
+Product 33 is on time
+Product 34 is 19 time units late
+Product 35 is on time
+Product 36 is 4 time units late
+Product 37 is 29 time units late
+Product 38 is 3 time units late
+Product 39 is on time
+Product 40 is 15 time units late
+Product 41 is 38 time units late
+Product 42 is 7 time units late
+Product 43 is 12 time units late
+Product 44 is 2 time units late
+Product 45 is 9 time units late
+Product 46 is 31 time units late
+Product 47 is 35 time units late
+Product 48 is 23 time units late
+Product 49 is 19 time units late
+Product 50 is 18 time units late
 --------------------------------------------------
-Total tardiness across all products: 0 time units
-All products are on time!
+Total tardiness across all products: 774 time units
+Some products are delayed. See details above.
