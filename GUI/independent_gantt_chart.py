@@ -92,6 +92,12 @@ class GanttControlRoomV2:
 
         # Chambers section (scrollable)
         ttk.Label(filters, text="Chambers & Stations", font=("Segoe UI", 10, "bold")).pack(anchor="w")
+        ttk.Button(
+    filters,
+    text="Select / Deselect All Stations",
+    command=self.toggle_all_stations
+).pack(anchor="w", pady=(2, 6))
+
         chamber_container = ttk.Frame(filters)
         chamber_container.pack(fill="both", expand=False, pady=(4,8))
 
@@ -107,6 +113,12 @@ class GanttControlRoomV2:
 
         # Products & Samples section (scrollable)
         ttk.Label(filters, text="Products & Samples", font=("Segoe UI", 10, "bold")).pack(anchor="w", pady=(6,0))
+        ttk.Button(
+    filters,
+    text="Select / Deselect All Products",
+    command=self.toggle_all_products
+).pack(anchor="w", pady=(2, 6))
+
         prod_container = ttk.Frame(filters)
         prod_container.pack(fill="both", expand=False, pady=(4,8))
 
@@ -298,6 +310,41 @@ class GanttControlRoomV2:
         self.refresh_chart()
 
     # ---------- Filtering ----------
+    def toggle_all_stations(self):
+        if not self.station_vars:
+            return
+
+        # if any station unchecked → check all, else uncheck all
+        target = not all(v.get() for v in self.station_vars.values())
+    # set all stations
+        for svar in self.station_vars.values():
+            svar.set(target)
+
+    # sync chambers
+        for chamber, cvar in self.chamber_vars.items():
+            station_states = [
+                self.station_vars[(ch, s)].get()
+                for (ch, s) in self.station_vars
+                if ch == chamber
+            ]
+            if station_states:
+                cvar.set(all(station_states))
+
+    def toggle_all_products(self):
+        if not self.product_vars:
+            return
+
+        # if any product unchecked → check all, else uncheck all
+        target = not all(v.get() for v in self.product_vars.values())
+
+        # set all products
+        for pvar in self.product_vars.values():
+            pvar.set(target)
+
+        # set all samples explicitly
+        for svar in self.sample_vars.values():
+            svar.set(target)
+
     def get_selected_products_samples(self):
         """Return list of selected (product, sample_str) tuples."""
         selected = []
