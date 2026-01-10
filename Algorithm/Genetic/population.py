@@ -10,7 +10,6 @@ from Algorithm.greedy_scheduler import GreedyScheduler
 
 class Population:
     
-    
     def __init__(self, size: int, chambers: List[Chamber], product_tests: List[ProductTest], 
                  products: List[Product], seed_with_greedy: bool = True):
         

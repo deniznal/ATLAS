@@ -8,7 +8,6 @@ from Algorithm.greedy_scheduler import GreedyScheduler
 
 class Individual:
     
-    
     def __init__(self, chromosome: List[List[Tuple[int, int]]], chambers: List[Chamber],
                  product_tests: List[ProductTest], products: List[Product]):
         

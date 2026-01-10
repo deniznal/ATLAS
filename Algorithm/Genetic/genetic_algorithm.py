@@ -214,10 +214,6 @@ class GeneticAlgorithm:
         return Individual(chromosome, self.chambers, self.product_tests, self.products)
     
     def mutate(self, individual: Individual) -> Individual:
-        
-        if random.random() < 0.5:
-            return self.swap_mutation(individual)
-        else:
             return self.insert_mutation(individual)
 
     def run(self) -> Individual:
